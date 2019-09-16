@@ -1,3 +1,5 @@
+<?php /*FOOTER FILE*/
+?>
 <div class="clear"></div>
 </div>
 
