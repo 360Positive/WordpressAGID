@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: DI - Articolo con sidebar - single-di.php
+ * Template Name: DI - Articolo con sidebar
  * Template Post Type: post, product
  */
  

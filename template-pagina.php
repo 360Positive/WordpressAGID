@@ -1,6 +1,6 @@
 <?php
 	/*
-		* Template Name: Articolo Tema Modificato - template-pagina.php
+		* Template Name: Articolo Tema Modificato
 		* Template Post Type:product,page
 	*/
 	

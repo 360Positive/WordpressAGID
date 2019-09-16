@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Articolo DI - single-di-old.php
+ * Template Name: Articolo DI
  * Template Post Type: post, product
  */
  
