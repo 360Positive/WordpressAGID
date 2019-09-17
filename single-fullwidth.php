@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Articolo full-width
+ * Template Name: Articolo full-width - single-fullwidth.php
  * Template Post Type: post, product
  */
  

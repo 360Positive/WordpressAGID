@@ -26,9 +26,11 @@ get_header(); ?>
 	background:yellow;
 	padding:1%;
 	}
-	.breadcrumb{
-	margin-top:0px;
-	}
+	.breadcrumb {
+    margin-top: 0px;
+    background-color: #ffb402;
+    border-radius: 0px;
+    }
 	.icofont-*{
 	font-size:2em!important;
 	}

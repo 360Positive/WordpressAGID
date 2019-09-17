@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Articolo senza sidebar
+ * Template Name: Articolo senza sidebar - single-sidebar.php
  * Template Post Type: post, product
  */
  

@@ -1,6 +1,6 @@
 <?php
 	/*
-		* Template Name: Articolo Tema Modificato
+		* Template Name: Articolo Tema Modificato - template-single-modificato.php
 		* Template Post Type: post, product
 	*/
 	
@@ -46,37 +46,6 @@ get_header(); ?>
 				</div>
 				<div class="col-md-10">
 					
-						<!--<div class="float-right over">
-						<ul class="menu-moreaction">
-						<li>
-						<a href="#" onclick="window.print();return false;">
-						<span class="it-print"></span> Stampa
-						</a>
-						</li>
-						<li>
-						<a href="mailto:?subject=Condiviso&body=<?php the_title(); ?>%0D%0A<?php the_excerpt(); ?>">
-						<span class="it-mail"></span> Invia
-						</a>
-						</li>
-						<li>
-						<a target="_blank" href="https://twitter.com/home?status=<?php the_title(); ?> - <?php echo 'http://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
-						<span class="it-twitter"></span> Twitter
-						</a>
-						</li>
-						<li>
-						<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo 'http://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
-						<span class="it-facebook"></span> Facebook
-						</a>
-						</li>
-						<li>
-						<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo 'http://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>&title=<?php the_title(); ?>&summary=&source=<?php echo 'http://'. $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; ?>">
-						<span class="it-linkedin"></span> LinkedIn
-						</a>
-						</li>
-						</ul>
-						<div class="menu-moreaction moreact"><?php echo the_field('personallinks');?></div>
-						</div>
-					-->
 					<section class="entry-content contenuto">
 						<?php the_content(); ?>
 						<div class="entry-links"><?php wp_link_pages(); ?></div>

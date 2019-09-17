@@ -1,12 +1,12 @@
-<?php 
+<?php
    /* Template Name: Pagina con sidebar */
-   get_header(); 
+   get_header();
 ?>
 <section id="content" role="main" class="container">
    <div class="container">
       <div class="row">
 
-      <div class="col-md-7">
+      <div class="col-md-8">
          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="header">
@@ -22,17 +22,15 @@
          <?php if ( ! post_password_required() ) comments_template( '', true ); ?>
          <?php endwhile; endif; ?>
       </div>
-      
-      <div class="col-sm-4 offset-sm-1">
-   		<?php if ( is_active_sidebar( 'page-widget-area' ) ) : ?>
-   		<div class="container-fluid widget-area page-widget-area">
-   		   <ul class="xoxo">
-   		      <?php dynamic_sidebar( 'page-widget-area' ); ?>
-   		   </ul>
+
+      <div class="col-sm-3 offset-sm-1">
+   	   		<div class="container-fluid widget-area page-widget-area">
+                <?php //Inclusione modulo per la gestione dei social
+                include '360Moduli/sharesocial.php';?>
    		</div>
-   		<?php endif; ?>
+
 		</div>
-      
+
       </div>
    </div>
 </section>
