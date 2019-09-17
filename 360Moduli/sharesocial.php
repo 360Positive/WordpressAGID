@@ -1,8 +1,8 @@
 <?php
-$facebook="https://www.facebook.com/sharer/sharer.php?u=%s";
-$linkedin="";
-$twitter="https://twitter.com/share?text=%s&url=%s";
-
+/**
+ * Modulo per la condivisione dei social sviluppato utilizzando la libreria
+ * jsSocial che deve essere inclusa nell'header del tema
+ */
 $links=get_post_permalink();
 ?>
 <style>
@@ -21,12 +21,29 @@ $links=get_post_permalink();
     .testo-share{
         background:lightgrey;
         color: #8e001c!important;
-
         padding-left: 1em;
         padding-right: 1em;
         font-weight: 400!important;
         font-size: 2rem!important;
     }
+
+    div.jssocials-share > a {
+        background: #420301 !important;
+        font-size: 25.5px!important;
+    }
+
+    .jssocials-share {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0.1em 0.2em 0.1em 0;
+    }
+
+    .share-menu > div, .share-menu > div >i {
+        font-size: 1.5rem!important;
+        padding: 2%;
+        width: 100%;
+        cursor: pointer;}
+
 
 </style>
 
@@ -41,18 +58,10 @@ $links=get_post_permalink();
 
 
 <div id="links" class="row share-menu">
-    <div class="col-md-2 icon-share">
-        <a href=""><i class="icofont-facebook"></i></a>
+    <div id="links-social" class="col-md-12">
+
     </div>
-    <div class="col-md-2 icon-share">
-        <i class="icofont-twitter"></i>
-    </div>
-    <div class="col-md-2 icon-share">
-        <a<i class="icofont-linkedin"></i>
-    </div>
-    <div id="exit"class="col-md-2 icon-share">
-        <i class="icofont-ui-close"></i>
-    </div>
+
 </div>
 <script>
 
@@ -81,21 +90,20 @@ $links=get_post_permalink();
 
 
 
-    $("#front").jsSocials({
-            shares: ["email","twitter","facebook","whatsapp"],
-            url: "http://url.to.share",
-            text: "text to share",
-            showLabel: true,
-            showCount: true,
-            shareIn: "popup",
-            on: {
-            click: function(e) {},
-            mouseenter: function(e) {},
-            mouseleave: function(e) {},
-                },
-           });
 
+    $("#links-social").jsSocials({
+        shares: ["email", "twitter", "facebook", "whatsapp"],
+        url: "<?= $links ?>",
+        showLabel: true,
+        showCount: true,
+        shareIn: "popup"
+    });
 
+    $('.jssocials-shares').append(
+        "<div id=\"exit\"class=\"icon-share jssocials-share \">\n" +
+        "        <a class=\"jssocials-share-link\"><i class=\"icofont-ui-close\"></i></a>\n" +
+        "    </div>"
+    )
 
 </script>
     
