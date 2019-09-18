@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<faq ufficio="cultura">
+    <entry category="generale" riferiemnto="" costi="marca da bollo 16">
+        <domanda>
+            Cosa devo fare per presentare una domanda di patrocinio?
+        </domanda>
+        <risposta>
+            Richiedere informazioni e visualizzare il regolamento associato.
+        </risposta>
+    </entry>
+    <entry category="generale" riferiemnto="" costi="marca da bollo 16" propedeutico="ricevuta pagamento">
+        <domanda>
+            Devo pagare i buoni della mensa?
+        </domanda>
+        <risposta>
+        Il pagamento può avvenire in diversi modalità, e possibile gestire la proceudura sul portale dedicato.
+        </risposta>
+    </entry>
+    <entry category="generale" riferiemnto="" costi="marca da bollo 16">
+        <domanda>
+            Cosa devo fare per presentare una domanda di patrocinio?
+        </domanda>
+        <risposta>
+            Richiedere informazioni e visualizzare il regolamento associato.
+        </risposta>
+    </entry>
+</faq>

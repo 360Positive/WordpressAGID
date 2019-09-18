@@ -6,15 +6,17 @@ class XMLINTERPRETER
     protected $dirigente;
     protected $luogo;
     protected $giorni;
-    protected $settimana = array(
+    protected $settimana = array(array(
         "lunedi" => "Lunedì",
         "martedi" => "Martedì",
-        "mercoledi" => "Mercoledì",
+        "mercoledi" => "Mercoledì"
+    )
+    , array(
         "giovedi" => "Giovedì",
         "venerdi" => "Venerdì",
-        "sabato" => "Sabato",
-        "domenica" => "Domenica"
-    );
+        "sabato" => "Sabato"
+    ));
+
     protected $times = ['mattino', 'pomeriggio'];
 
     public function init($xmlurl)
@@ -31,36 +33,41 @@ class XMLINTERPRETER
     }
 
     public function orariList()
-    {
-        echo '<table class="table"> 
-            <thead class="thead-dark"><tr><th>Giorni</th><th>Mattino</th><th>Pomeriggio</th></tr></thead><tbody>';
+    {   echo '<div class="row">';
+        foreach ($this->settimana as $days) {
+            echo '<div class="col">';
+            echo '<table class="table"> 
+            <thead class="thead-dark"><tr><th></th><th>Mattino</th><th>Pomeriggio</th></tr></thead><tbody>';
 
-        foreach ($this->settimana as $key => $value) {
-            echo '<tr><td>' . $value, '</td>';
-            $mat = $this->giorni->$key->mattino->attributes();
-            $pom = $this->giorni->$key->pomeriggio->attributes();
+            foreach ($days as $key => $value) {
+                echo '<tr><td>' . $value, '</td>';
+                $mat = $this->giorni->$key->mattino->attributes();
+                $pom = $this->giorni->$key->pomeriggio->attributes();
 
-            if (!$mat) {
-                echo '<td>Chiuso</td>';
-            } else {
-                echo '<td>';
-                foreach ($mat as $a => $b) {
-                    echo $a, ' ', $b, ' ';
+                if (!$mat) {
+                    echo '<td>Chiuso</td>';
+                } else {
+                    echo '<td>';
+                    foreach ($mat as $a => $b) {
+                        echo $a, ' ', $b, ' ';
+                    }
+                    echo '</td>';
                 }
-                echo '</td>';
-            }
-            if (!$pom) {
-                echo '<td>Chiuso</td>';
-            } else {
-                echo '<td>';
-                foreach ($pom as $a => $b) {
-                    echo $a, ' ', $b, ' ';
+                if (!$pom) {
+                    echo '<td>Chiuso</td>';
+                } else {
+                    echo '<td>';
+                    foreach ($pom as $a => $b) {
+                        echo $a, ' ', $b, ' ';
+                    }
+                    echo '</td>';
                 }
-                echo '</td>';
             }
+            echo '</tr></tbody></table>';
+            echo '</div>';
+
         }
-        echo '</tr></tbody></table>';
-
+        echo '</div>';
     }
 
     public function dirigenteList()
@@ -95,18 +102,18 @@ class XMLINTERPRETER
 
     public function scadenzeList()
     {
-        echo '<div class="row">';
+        echo '<div class="row row-eq-height">';
         foreach ($this->scadenze->scadenza as $sentry) {
-            echo '<div class="col-3"><div class="card">
-  <div class="card-body">
-    <h5 class="card-title">' . $sentry . '</h5>
-    <h6 class="card-subtitle mb-2 text-muted">' . $sentry['description'] . '</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-  </div>
-</div>';
+          echo '<div class="col"><div class="card h-100">
+                  <div class="card-body">
+                    <span class="badge badge-secondary">' . $sentry['diretto'] . '</span>
+                    <h5 class="card-title">' . $sentry . '</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">' . $sentry['subtitle'] . '</h6>
+                    <div> <strong>Scadenza '. $sentry['tipologia'] . ' : </strong> ' . $sentry['data_termine'] . ' </div>
+                    <p class="card-text">' . $sentry['description'] . '</p>
+                  </div>
+                  </div>
+                </div>';
         }
         echo '</div>';
     }
