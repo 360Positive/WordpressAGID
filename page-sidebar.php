@@ -28,7 +28,12 @@
    	   		<div class="container-fluid widget-area page-widget-area">
                 <?php //Inclusione modulo per la gestione dei social
                 include '360Moduli/sharesocial.php';?>
-                <?php wp_nav_menu(array('menu'=>'"'.get_field('menusidebar').'""')); ?>
+
+                <?php
+                $val=get_field('menusidebar');
+                if($val){
+                wp_nav_menu(array('menu'=>'"'.$val.'""'));
+                } ?>
    		</div>
 
 		</div>

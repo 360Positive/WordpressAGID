@@ -2,6 +2,7 @@
    /* Template Name: Pagina full-width */
    get_header(); 
 ?>
+<?php wppa_breadcrumb(); ?>
 <section id="content" role="main" class="container">
    <div class="container">
       <div class="row">
