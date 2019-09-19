@@ -80,21 +80,26 @@ get_header(); ?>
                         else{
                             $xmi=new XMLINTERPRETER();
                             $xmi->init(get_field('xml'));
-                            echo "<div class='col'>";
-                            echo "<h2  class='alert alert-primary'>"._("Luogo") . '</h2>';
+                            echo "<div class='col-md-4'>";
+                            echo "<h2  class='alert alert-primary'>"._("Sede") . '</h2>';
                             $xmi->luogoList();
-                            echo "<h2  class='alert alert-primary'>" . _("Orari") . '</h2>';
-                            $xmi->orariList();
                             echo "</div>";
-
-                            echo "<div class='col'>";
+                            echo "<div class='col-md-4'>";
                             echo "<h2  class='alert alert-primary'>"._("Dirigente") . '</h2>';
                             $xmi->dirigenteList();
+                            echo "</div>";
+                            echo "<div class='col-md-4'>";
                             echo "<h2  class='alert alert-primary'>"._("Contatti").":</h2>";
                             $xmi->contattiList();
                             echo "</div>";
-                            echo "<div class='col-12'>";
-                            echo "<h2  class='alert alert-primary'>"._("Scadenze") . '</h2>';
+
+                            echo "<div class='col-md-12'>";
+                            echo "<h2  class='alert alert-primary'>" . _("Orario di attenzione al pubblico") . '</h2>';
+                            $xmi->orariList();
+                            echo "</div>";
+
+                            echo "<div class='col-md-12'>";
+                            echo "<h2  class='alert alert-primary'>"._("Scadenze") . '<br><small>Elenco delle prossime scadenze per gli utenti e i cittadini.</small></h2>';
                             $xmi->scadenzeList();
 
                             echo "</div>";

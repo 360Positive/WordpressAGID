@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<faq ufficio="turismo">
-    <entry category="generale" riferiemnto="" costi="marca da bollo 4">
+<faq ufficio="TURISMO">
+    <entry category="generale" riferimento="" costi="marca da bollo 4">
         <domanda>
             Cosa devo fare per presentare una domanda di patrocinio?
         </domanda>
         <risposta>
-            Richiedere informazioni e visualizzare il regolamento associato.
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.
         </risposta>
     </entry>
-    <entry category="generale" riferiemnto="" costi="marca da bollo 32">
+    <entry category="generale" riferimento="" costi="marca da bollo 32">
         <domanda>
             Cosa devo fare per presentare una domanda di patrocinio?
         </domanda>
         <risposta>
-            Richiedere informazioni e visualizzare il regolamento associato.
-        </risposta>
-    </entry>
-    <entry category="generale" riferiemnto="" costi="bollettino" propedeutico="ricevuta pagamento">
-        <domanda>
-            Cosa devo fare per presentare una domanda di patrocinio?
-        </domanda>
-        <risposta>
-            Richiedere informazioni e visualizzare il regolamento associato.
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.
         </risposta>
     </entry>
 </faq>

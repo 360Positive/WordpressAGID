@@ -86,7 +86,25 @@ Copyright - 2019
         <link type="text/css" rel="stylesheet" href="<?= get_site_url()?>/wp-content/themes/design-italia-child/360Moduli/jssocial/jssocials.css" />
 
         <link type="text/css" rel="stylesheet" href="<?= get_site_url()?>/wp-content/themes/design-italia-child/360Moduli/jssocial/jssocials-theme-flat.css" />
-        
+
+        <?php /*---   Data table   ----*/?>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+
+        <?php /*---   Data table mobile   ----*/?>
+        <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+        <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css" />
+        <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+
+
+
+
+
+
 		<style>
 		<?php /*---   Classe Stile  ----
 		La classe di stile che segue è obbligatoria per la gestione della corretta
@@ -198,7 +216,7 @@ Copyright - 2019
 		</style>
 		
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?= body_class()?>>
 	     <?php //Inclusione modulo per la gestione dell'hambureger menu
                                         include '360Moduli/hamburger.php';?>
 		<div id="wrapper" class="hfeed">

@@ -4,13 +4,12 @@
 class XMLINTERPRETERFAQ
 {
     protected $xml_voices = array();
-    protected $id=0;
+    protected $id = 0;
 
     public function init($xmlurl)
     {
         $local = site_url();
         $files = array();
-
 
 
         if (!$xmlurl) {
@@ -43,7 +42,7 @@ class XMLINTERPRETERFAQ
 
     public function domande()
     {
-        echo '<table id="faqtable" class="display compact">';
+        echo '<table id="faqtable" class="table table-striped" style="width: 100%">';
         echo '<thead>
                 <th>Ufficio</th>
                 <th>Domanda</th>
@@ -52,12 +51,12 @@ class XMLINTERPRETERFAQ
         foreach ($this->xml_voices as $ufficio) {
 
             foreach ($ufficio->entry as $voce) {
-                $this->id+=1;
-                $id=$this->id;
+                $this->id += 1;
+                $id = $this->id;
 
                 $info = "";
                 foreach ($voce->attributes() as $a => $b) {
-                    $info .= $a . ' ' . $b . "<br>";
+                    $info .= "<span class='" . $a . "'>" . $a . ' : ' . $b . " </span>";
                 }
                 echo '<tr>';
                 echo '<td>';
@@ -65,24 +64,18 @@ class XMLINTERPRETERFAQ
                 echo '</td>';
                 echo '<td>';
                 echo '
-                <div class="accordion" id="accordion'.$id.'">
-  <div class="card">
-    <div class="card-header" id="heading'.$id.'">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$id.'" aria-expanded="true" aria-controls="collapse'.$id.'">
-          '.$voce->domanda .'
-        </button>
-      </h2>
-    </div>
+            <div class="buttonfloat" id="accordion' . $id . '" data-toggle="toggle" data-target="#collapse' . $id . '" aria-expanded="true" aria-controls="collapse' . $id . '" 
+            style="word-wrap: break-word;cursor: pointer;">
+         ' . $voce->domanda . '
+       </div>
+        <p id="collapse' . $id . '" class="collapse w-100" >
+      
+        ' . $info . "<br>" . $voce->risposta . '
+          
+    </p>
 
-    <div id="collapse'.$id.'" class="collapse show" aria-labelledby="heading'.$id.'" data-parent="#accordion'.$id.'">
-      <div class="card-body">
-        '.$info."<br>".$voce->risposta .'
-          </div>
-    </div>
-  </div>
- </div>
-</div>';
+
+';
                 echo '</td>';
                 echo '</tr>';
 
@@ -91,6 +84,25 @@ class XMLINTERPRETERFAQ
         echo '</tbody>';
         echo '</table>';
 
+        for ($id = 0; $id < $this->id; $id++) {
+            echo '
+        <script>
+        $(\'#accordion' . $id . '\').click(
+function() {
+    $(\'#collapse' . $id . '\').toggle()
+})
+        </script>';
+
+        }
+
+        echo '<style>
+            .buttonfloat{
+            background: #ffb402;
+            padding: 2%;
+            cursor: pointer;
+            
+            }
+            </style>';
     }
 
 }
