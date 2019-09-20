@@ -48,12 +48,12 @@ class XMLINTERPRETERMODULISTICA
                 $id = $this->id;
                 echo '<tr>';
                 echo '<td>';
-                echo '<strong>'.$ufficio.'</strong>';
+                echo '<strong style="text-transform: uppercase;">'.str_replace('-',' ',str_replace('_',' ',$ufficio)).'</strong>';
                 echo '</td>';
                 echo '<td>';
-                $ext = pathinfo($file, PATHINFO_EXTENSION);
+                $ext = ".".pathinfo($file, PATHINFO_EXTENSION);
                 $filename=basename($file);
-                echo '<a href="'.site_url().'/'.$file.'" title="'.$filename.'"><i class="icofont-file-pdf"></i> '.$filename.'</a>';
+                echo '<a target="_blank" style="text-transform: capitalize;" href="'.site_url().'/'.$file.'" title="'.$filename.'"><i class="icofont-file-pdf"></i> '.str_replace('-',' ',str_replace('_',' ',str_replace($ext,' ',$filename))).'</a>';
                 echo '</td>';
                 echo '</tr>';
 
