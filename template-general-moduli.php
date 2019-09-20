@@ -95,7 +95,9 @@ get_header(); ?>
             var groupColumn = 0;
 
             var table = $('#moduletable').DataTable({
-
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Italian.json"
+                },
                 "columnDefs": [
                     { "visible": false, "targets": groupColumn }
                 ],
@@ -115,7 +117,8 @@ get_header(); ?>
                             last = group;
                         }
                     } );
-                },/**/
+                },
+
               } );
 
 
@@ -131,6 +134,8 @@ get_header(); ?>
         } );
         } );
     </script>'
+
+
 
 
 <?php get_footer(); ?>
