@@ -35,15 +35,18 @@ $links=get_post_permalink();
     .jssocials-share {
         display: inline-block;
         vertical-align: top;
-        margin: 0.1em 0.2em 0.1em 0;
+        margin: 0;
     }
 
     .share-menu > div, .share-menu > div >i {
         font-size: 1.5rem!important;
-        padding: 2%;
-        width: 100%;
+         width: 100%;
         cursor: pointer;}
 
+    div#links-social {
+        margin: 0px;
+        padding: 0px;
+    }
 
 </style>
 
