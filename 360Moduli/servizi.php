@@ -83,7 +83,7 @@ $servizi=[
 			              <div class="servizi text-center">
                               <i class="icofont-<?=$servizio[2]?>" style="font-size: 2em!important"></i>
                               <br>
-                              <a class="servizititolo" href="<?=$servizio[3]?>" title="<?=$servizio[0]?>"> <?=$servizio[0]?></a>
+                              <a class="servizititolo" href="<?=$servizio[3]?>" title="Apre pagina interna : <?=$servizio[0]?>"> <?=$servizio[0]?></a>
                               </br>
 			                  <span class="servizisub"><?=$servizio[1]?></span>
 			              </div>
