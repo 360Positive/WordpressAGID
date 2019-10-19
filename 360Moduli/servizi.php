@@ -5,8 +5,10 @@
 	*/
 ?>
 
-	
 <style>
+    <?php
+/**Stile associato alla sezione dei servizi*/
+?>
     div.container.servizi{
         background:#eeeeee;
         padding-bottom:2%;
@@ -28,6 +30,7 @@
         -webkit-box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
         -moz-box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
         box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
+       width: 100%;
         }
     span.servizisub{
         font-style: italic;
@@ -37,24 +40,28 @@
     .servizititolo >a, .servizititolo >a > i {
         font-size:0.98rem!important;
         }
-	
+    .equal {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: nowrap;
+
+    }
 </style>
 <?php
 /*Il 3 valore dell'array è il nome dell'icona della libreria icofont*/
 $servizi=[
-	['Patrimonio','ERP - Canoni di locazioni e affitti - Patrimonio immobiliare di Roma Capitale','institution',''],
+	['Patrimonio','ERP - Canoni di locazioni e affitti - Patrimonio immobiliare','institution',''],
     ['Formazione e Lavoro','Formazione professionale - Orientamento al lavoro - Scuole Arte e dei Mestieri','briefcase',''],
-
     [' Anagrafe e servizi civici','Ufficio Anagrafe - Ufficio Servizi Elettorali - Ufficio Stato Civile','certificate-alt-1',''],
     ['Casa e Urbanistica','Assistenza alloggiativa temporanea - Condono edilizio - Contributi e Interventi di sostegno','home',''],
     ['Commercio Impresa','Commercio su aree pubbliche - Pubblica affissione di manifesti - S.U.A.P.','chart-histogram',''],
-    ['Cultura','Autorizzazioni pubblico spettacolo - Biblioteche di Roma - Musei','book',''],
+    ['Cultura','Autorizzazioni pubblico spettacolo - Biblioteca - Musei','book',''],
 	['Diritti e Pari Opportunità','Centri Antiviolenza - Accesso agli atti - Reclami e segnalazioni','law-alt-3',''],
     ['Disabilità','Assistenza alla persona e domiciliare - Trasporto e agevolazioni - Spazio di sosta disabili','wheelchair',''],
     ['Ambiente','Benessere animali - Gestione rifiuti - Verde urbano','tree',''],
-    ['Innovazione e Smart City','Agenda digitale - Punti Roma Facile - WiFi','wifi',''],
+    ['Innovazione e Smart City','Agenda digitale - WiFi','wifi',''],
     ['Mobilità e Trasporti','Parcheggi - Trasporto Pubblico - Viabilità e ZTL','bus-alt-1',''],
-    ['Opere e manutenzione della Città','Impianti tecnologici - Scavi - Strade grande viabilità','under-construction-alt',''],
+    ['Opere e manutenzione','Impianti tecnologici - Scavi - Strade  ','under-construction-alt',''],
 
     ];
 
@@ -64,16 +71,21 @@ $servizi=[
    
         <h1 class="servizi"><?=_('Servizi per Tematica')?></h1>
 	<div class="col-md-12">
-		<div class="row">
+		<div class="row max-height-col">
+
             <?php
-                
-				global $post;
+            global $post;
 				foreach ( $servizi as $servizio ) {
-			?>
-			 <div class="col-md-3">
-			              <div class="servizi">
-			                  <p class="servizititolo"><i class="icofont-<?=$servizio[2]?>"></i><a href="<?=$servizio[3]?>" title="<?=$servizio[0]?>"> <?=$servizio[0]?></a></br>
-			                  <span class="servizisub"><?=$servizio[1]?></p>
+			?><?php
+                    /**   Struttura del singolo blocco dei servizi             */
+                    ?>
+			 <div class="col-md-3 equal">
+			              <div class="servizi text-center">
+                              <i class="icofont-<?=$servizio[2]?>" style="font-size: 2em!important"></i>
+                              <br>
+                              <a class="servizititolo" href="<?=$servizio[3]?>" title="<?=$servizio[0]?>"> <?=$servizio[0]?></a>
+                              </br>
+			                  <span class="servizisub"><?=$servizio[1]?></span>
 			              </div>
 			 </div>
 			<?php }; 
