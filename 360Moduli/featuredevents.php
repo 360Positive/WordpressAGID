@@ -54,7 +54,7 @@
         border-radius: 5px 5px 0px 0px;
         background: #ffb300 !important;
         min-height: 50px;
-        padding: 5%;
+        padding-bottom: 0px!important;
         }
 
     h1.featuredevent {
@@ -73,7 +73,11 @@
 
 
     .card .card-body {
-        margin-bottom: -55px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+
+
     }
 
 </style>
@@ -110,11 +114,11 @@
                                 <p cla="text-sm-center"><? echo substr(get_the_excerpt(), 0, 100) . '...'; ?>
                                <a href="<?= get_permalink() ?>"
                                    title="<?php the_title(); ?>">
-                                    <?= _("Leggi"); ?>
+                                    <strong><?= _("Leggi"); ?></strong>
                                 </a></p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-muted" style="font-size: 0.9em !important">Da <?= get_field('da') ?> a <?= get_field('a') ?></small>
+                                <small class="text-muted" style="font-size: 0.9em !important">Dal <?= get_field('da') ?> al <?= get_field('a') ?></small>
                             </div>
                         </div>
                     <?php endforeach;
