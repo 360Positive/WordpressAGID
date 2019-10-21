@@ -111,7 +111,7 @@
                     <div class="card lastnews">
                         <img class="card-img-top" src="<?= get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
                         <div class="card-body">
-                            <small class="categroy-card"><?php echo get_the_category_list( ', '); ?></small>
+                            <br><small class="categroy-card"><?php echo get_the_category_list( ', '); ?></small>
                             <br>
                             <small class="text-muted date-card"><?= get_the_date(); ?></small>
                             <h5 class="card-title  align-middle ">
