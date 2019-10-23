@@ -16,6 +16,7 @@ Copyright - 2019
     <meta name="yandex-verification" content="2a130b656effd4bf"/>
     <?php wp_head(); ?>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <?php /*---  Sviluppo ----
 		 Le librerie utilizzate localmente son salvate nel tema Child, nella cartella /lib
 		  */ ?>
@@ -115,6 +116,8 @@ Copyright - 2019
 
     <link type="text/css" rel="stylesheet"
           href="https://cdn.datatables.net/rowreorder/1.2.5/css/rowReorder.dataTables.min.css"/>
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"/>
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
 
 
