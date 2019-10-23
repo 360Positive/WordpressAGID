@@ -4,11 +4,28 @@
  * 360Moduli/template/amministratori.php
 */
 ?>
+    <style>
+        .toolbar {
+            float: left;
+            width: min-content;
+        }
 
+        .nominativo {
+            font-size: 2em !important;
+        }
+        tr.group,
+        tr.group:hover {
+            text-transform:uppercase!important;
+            background-color: #ddd !important;
+        }
+    </style>
 <?php
+/**
+ * Rendering structure function
+ */
 $cognome = get_field('cognome');
 $nome = get_field('nome');
-$language="//cdn.datatables.net/plug-ins/1.10.20/i18n/Italian.json";
+$language = "//cdn.datatables.net/plug-ins/1.10.20/i18n/Italian.json";
 
 
 function renderDocumentation($files)
@@ -27,87 +44,171 @@ function renderDocumentation($files)
     }
 }
 
-function renderTableDocumentation($files, $nameTable)
-{   $language="//cdn.datatables.net/plug-ins/1.10.20/i18n/Italian.json";
-
-    if (!$files) {
-        echo 'Non sono presenti informazioni';
-        return '';
-    }
-    $cognome = get_field('cognome');
-    $nome = get_field('nome');
-
-    echo '<table class="table compact" id="' . $nameTable . '">';
-    echo '<thead>
-            <th>Documento</th>
-            <th>Protocollo</th>
-            <th>Anno</th>
-            </thead>';
-
+function renderRowDocumentation($files, $nameTable)
+{ if (!$files) {//Se non fossero presenti documenti associati alla categoria
+    ?>
+    <tr>
+        <td><?= $nameTable ?></td>
+        <td>Non sono presenti documneti della tipologia indicata.</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <?php
+    return '';
+}
 
     foreach ($files as $file) {
-//          print_r($files);
         $allegato = $file['allegato'];
         ?>
         <tr>
+            <td><?= str_replace('_',' ',$nameTable); ?></td>
             <td><a class="links" href="<?= $allegato['url'] ?>"
-                   title="Apre il documneto <?= $cognome ?>  <?= $nome ?>"> <?= str_replace('-',' ' , $allegato['title']); ?></a></td>
+                   title="Apre il documneto <?= $allegato['title'] ?>"> <?= str_replace('-', ' ', $allegato['title']); ?></a>
+            </td>
             <td><?= $file['protocollo'] ?></td>
             <td><?= $file['data'] ?></td>
         </tr>
         <?php
 
     }
-    echo '</table>';
-    echo '<script type="text/javascript">
-            $(document).ready( function () {
-                var tab=$(\'#' . $nameTable . '\').DataTable({
-            "paging":   false,
-        "ordering": false,
-        "info":     false,
-        "language": {
-                "url": \''.$language.'\'
-            }     
-            });
-           
-            } );
-            
-            </script>';
+
+
 }
 
-function renderTableImporti($importi, $nameTable, $sy = "")
-{ $language="//cdn.datatables.net/plug-ins/1.10.20/i18n/Italian.json";
-    if (!$importi) {
-        echo 'Non sono presenti informazioni';
-        return '';
-    }
-    echo '<table class="table compact" id="' . $nameTable . '">';
-    echo '<thead>
-            <th>Importo</th>
-            <th>Anno</th></thead>';
+function renderRowTabelle($importi, $nameTable, $sy = "")
+{ if (!$importi) {//Se non fossero presenti documenti associati alla categoria
+    ?>
+    <tr>
+        <td><?= $nameTable ?></td>
+        <td>Non sono presenti documneti della tipologia indicata.</td>
+        <td></td>
+    </tr>
+    <?php
+    return '';
+}
 
     foreach ($importi as $importo) {
         ?>
         <tr>
+            <td><?= str_replace('_',' ',$nameTable); ?></td>
             <td><?= $importo['importo'] ?><?= $sy ?> </td>
             <td><?= $importo['data'] ?></td>
         </tr>
         <?php
 
     }
-    echo '</table>';
+
+
+}
+
+function renderTableDocumentation($nameTable)
+{
+    $language = "//cdn.datatables.net/plug-ins/1.10.20/i18n/Italian.json";
+
+
+    $cognome = get_field('cognome');
+    $nome = get_field('nome');
+
+    echo '<table class="display compact" id="' . $nameTable . '">';
+    echo '<thead>
+            <th>Tipologia</th>
+            <th>Documento</th>
+            <th>Protocollo</th>
+            <th>Anno</th>
+            </thead>
+            <tbody>';
+    $files = get_field('documentazione_generale');
+    renderRowDocumentation($files, 'documentazione_generale');
+     $files = get_field('redditi');
+    renderRowDocumentation($files, 'redditi');
+    $files = get_field('patrimoniale');
+    renderRowDocumentation($files, 'patrimoniale');
+
+    echo '</tbody></table>';
     echo '<script type="text/javascript">
             $(document).ready( function () {
+                 var groupColumn = 0;
                 $(\'#' . $nameTable . '\').DataTable({
-            "paging":   false,
-        "ordering": false,
-        "info":     false ,
-        "language": {
-                "url": \''.$language.'\'
-            }
-             
-            });
+                    "columnDefs": [
+            { "visible": false, "targets": groupColumn }
+        ],
+        "responsive": true,
+        "paging":false,
+         "language": {
+                "url": "'.$language.'"
+            },
+        "order": [[ groupColumn, \'asc\' ]],
+        "displayLength": 25,
+        "drawCallback": function ( settings ) {
+            var api = this.api();
+            var rows = api.rows( {page:\'current\'} ).nodes();
+            var last=null;
+ 
+            api.column(groupColumn, {page:\'current\'} ).data().each( function ( group, i ) {
+                if ( last !== group ) {
+                    $(rows).eq( i ).before(
+                        \'<tr class="group"><td colspan="5">\'+group+\'</td></tr>\'
+                    );
+ 
+                    last = group;
+                }
             } );
+        }});
+            });
+           
+            </script>';
+
+}
+
+function renderTableImporti($nameTable)
+{
+    $language = "//cdn.datatables.net/plug-ins/1.10.20/i18n/Italian.json";
+
+    echo '<table class="display compact" id="' . $nameTable . '">';
+    echo '<thead>
+            <th>Tipologia</th>
+            <th>Importo</th>
+            <th>Anno</th></thead>
+            <tbody>';
+
+            $importi = get_field('importi');
+            renderRowTabelle($importi, 'importi', $sy = "€");
+
+            $importi = get_field('emolumenti');
+            renderRowTabelle($importi, 'emolumenti', $sy = "€");
+
+    echo '</tbody>
+    </table>';
+    echo '<script type="text/javascript">
+            $(document).ready( function () {
+                 var groupColumn = 0;
+                $(\'#' . $nameTable . '\').DataTable({
+                    "columnDefs": [
+            { "visible": false, "targets": groupColumn }
+        ],
+        "responsive": true,
+        "paging":false,
+        "order": [[ groupColumn, \'asc\' ]],
+        "displayLength": 25,
+        "language": {
+                "url": "'.$language.'"
+            },
+        "drawCallback": function ( settings ) {
+            var api = this.api();
+            var rows = api.rows( {page:\'current\'} ).nodes();
+            var last=null;
+ 
+            api.column(groupColumn, {page:\'current\'} ).data().each( function ( group, i ) {
+                if ( last !== group ) {
+                    $(rows).eq( i ).before(
+                        \'<tr class="group"><td colspan="5">\'+group+\'</td></tr>\'
+                    );
+ 
+                    last = group;
+                }
+            } );
+        }});
+            });
             </script>';
 }
 
@@ -122,73 +223,49 @@ function renderTableImporti($importi, $nameTable, $sy = "")
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <h1 class="display-4">
+                        <h1 class="display-4 nominativo">
+                            <?= $cognome ?>  <?= $nome ?>
                             <small>
-                                <?php if (get_field('tipologia')) {
+                                <?php if (get_field('tipologia')=='giunta') {
                                     echo get_field('giunta');
-                                    echo get_field('consiglieri');
-                                } ?>
-                            </small>
-                            <?= $cognome ?>  <?= $nome ?></h1>
+                                    }
+                                    else{
+                                        echo "Consigliere di ".get_field('consiglieri');
+                                    }
+ ?>
+                            </small></h1>
                         <h2>
                             <?php if (get_field('deleghe')) {
-                                echo __('Deleghe: ');
+                                echo '<strong>' . __('Deleghe: ') . '</strong>';
                                 foreach (get_field('deleghe') as $delega) {
 //                                   print_r($delega);
                                     echo $delega['delega'];
                                 }
                             } ?>
+
                         </h2>
 
 
                         <p class="lead">
                             <?php if (get_field('in_carica') == 1) {
-                                echo __('Nominato il: ') . get_field('data_nomina');
+                                echo '<strong>' . __('Nominato il: ') . '</strong>' . get_field('data_nomina');
                             } else {
-                                echo __('Dimissionario dal: ') . get_field('data_dimissioni');
+                                echo '<strong>' . __('Dimissionario dal: ') . '</strong>' . get_field('data_dimissioni');
                             } ?>
                         </p>
                         <hr class="my-4">
 
                         <h3>Documentazione</h3>
-                        <table id="fulltab"></table>
                         <?php
-                        //Sezione Curriculum
-                        echo 'CURRICULUM';
-                        $files = get_field('curriculum');
-                        renderDocumentation($files);
+                        //Rendering tabella documenti allegati
+                        renderTableDocumentation('Documentazione');
+                        renderTableImporti('Importi');
 
-                        //Sezione Documenti generali
-                        echo '<hr><br>GENERALI';
-                        $files = get_field('documentazione_generale');
-                        renderTableDocumentation($files, 'documentazione_generale');
-
-                        //Sezione Redditi
-                        echo 'REDDITI';
-                        $files = get_field('redditi');
-                        renderTableDocumentation($files, 'redditi');
-
-                        //Sezione Patrimoniale
-                        echo 'PATRIMONIALE';
-                        $files = get_field('patrimoniale');
-                        renderTableDocumentation($files, 'patrimoniale');
-
-                        echo '<div class="alert alert-primary" role="alert">
-                             <h4>Importi di viaggio e missioni<br><small>art.14 comma 1 lettera c</small></h4>
-                            </div>';
-
-                        $importi = get_field('importi');
-                        $nameTable = 'importi';
-                        renderTableImporti($importi, $nameTable, '€');
-
-                        echo '<div class="alert alert-primary" role="alert">
-                              <h4>Emolumenti percepiti per l\'incarico politico<br>Indennità di carica - <small>art.14 comma 1</small></h4>
-                            </div>';
-
-                        $importi = get_field('emolumenti');
-                        $nameTable = 'emolumenti';
-                        renderTableImporti($importi, $nameTable, '€');
                         ?>
+
+                        <h4>Importi di viaggio e missioni<br><small>art.14 comma 1 lettera c</small></h4>
+                        <h4>Emolumenti percepiti per l'incarico politico<br>Indennità di carica - <small>art.14 comma 1</small></h4>
+
                     </div>
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -203,35 +280,48 @@ function renderTableImporti($importi, $nameTable, $sy = "")
                     </div>
                 </div>
         </section>
-        <div class="alert alert-info" role="alert">
-                   <p>Legenda <br>
-            Riferimenti normativi delle sezioni indicate nella pagina. Art. 14, c. 1, lett. a), d.lgs. n. 33/2013
-        </p>
 
-        <p><b style="font-size: 25pt;">A</b>
-            Atto di nomina o di proclamazione, con l'indicazione della durata dell'incarico o del mandato elettivo.
-        </p><hr>
-        <p><b style="font-size: 25pt;">B</b>
-            Curricula
-        </p><hr>
-        <p><b style="font-size: 25pt;">C</b>
-            Compensi di qualsiasi natura connessi all'assunzione della carica; importi di viaggio, servizio e missioni
-            pagati
-            con fondi pubblici. </p><hr>
-        <p><b style="font-size: 25pt;">D</b>
-            Dati relativi all'assunzione di altre cariche, presso enti pubblici o privati, e relativi compensi a qualsiasi
-            titolo corrisposti. </p><hr>
-        <p><b style="font-size: 25pt;">E</b>
-            Altri eventuali incarichi con oneri a carico della finanza pubblica e indicazione dei compensi spettanti. </p><hr>
-        <p><b style="font-size: 25pt;">F</b>
-            Le dichiarazioni di cui all'articolo 2 della legge 5 luglio1982, n. 441, nonché le attestazioni e
-            dichiarazioni di cui agli articoli 3 e 4 della medesima legge, come modificata dal presente decreto,
-            limitatamente
-            al soggetto, al coniuge non separato e ai parenti entro il secondo grado, ove gli stessi vi consentano. Viene in
-            ogni caso data evidenza al mancato consenso. Alle informazioni di cui alla presente lettera concernenti soggetti
-            diversi dal titolare dell'organo di indirizzo politico non si applicano le disposizioni di cui all'articolo 7.
-        </p>
-                    </div>
+
+        <div class="alert alert-info" role="alert" style="padding-top: 2.5em">
+            <p>Legenda <br>
+                Riferimenti normativi delle sezioni indicate nella pagina. Art. 14, c. 1, lett. a), d.lgs. n. 33/2013
+            </p>
+
+            <p><b style="font-size: 25pt;">A</b>
+                Atto di nomina o di proclamazione, con l'indicazione della durata dell'incarico o del mandato elettivo.
+            </p>
+            <hr>
+            <p><b style="font-size: 25pt;">B</b>
+                Curricula
+            </p>
+            <hr>
+            <p><b style="font-size: 25pt;">C</b>
+                Compensi di qualsiasi natura connessi all'assunzione della carica; importi di viaggio, servizio e
+                missioni
+                pagati
+                con fondi pubblici. </p>
+            <hr>
+            <p><b style="font-size: 25pt;">D</b>
+                Dati relativi all'assunzione di altre cariche, presso enti pubblici o privati, e relativi compensi a
+                qualsiasi
+                titolo corrisposti. </p>
+            <hr>
+            <p><b style="font-size: 25pt;">E</b>
+                Altri eventuali incarichi con oneri a carico della finanza pubblica e indicazione dei compensi
+                spettanti. </p>
+            <hr>
+            <p><b style="font-size: 25pt;">F</b>
+                Le dichiarazioni di cui all'articolo 2 della legge 5 luglio1982, n. 441, nonché le attestazioni e
+                dichiarazioni di cui agli articoli 3 e 4 della medesima legge, come modificata dal presente decreto,
+                limitatamente
+                al soggetto, al coniuge non separato e ai parenti entro il secondo grado, ove gli stessi vi consentano.
+                Viene in
+                ogni caso data evidenza al mancato consenso. Alle informazioni di cui alla presente lettera concernenti
+                soggetti
+                diversi dal titolare dell'organo di indirizzo politico non si applicano le disposizioni di cui
+                all'articolo 7.
+            </p>
+        </div>
 
         <script type="text/javascript">
             /**
