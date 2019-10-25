@@ -23,7 +23,7 @@
           //Spampa data e informazioni di aggiornamento della pagina
           echo _('<br>');
           echo _('Ultima modifica il: ');
-          the_modified_time('d-m-Y');
+          the_modified_time('d F Y');
           ?>
       </div>
 
