@@ -1,6 +1,12 @@
-<?php get_header(); ?>
+<?php get_header();
+include "360Moduli/Trasparenza/normativa.php";
+
+$normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/Trasparenza/sezioni.xml');
+
+?>
     <section id="content" role="main" class="container">
         <div class="container">
+
             <div class="row">
                 <div class="col-sm-8">
 
@@ -17,6 +23,18 @@
                             }
                             ?></h1>
                     </header>
+                    <?php
+                    //Estrazione della normativa corrispondente.
+                    $norme = $normativa->searchin($text = substr(get_the_archive_title(), 9), "title")[0]->norma;
+                    foreach ($norme as $norma) {
+                        echo '<div class="alert alert-primary" role="alert">';
+                        echo $norma[0];
+                        echo '</div>';
+
+                    }
+                    //                    echo ($normativa->searchin($text=substr(get_the_archive_title(),9),"title")[0]->norma[0]);
+
+                    ?>
                     <table id="elenco" class="display" style="width:100%">
                         <thead>
                         <tr>
@@ -27,48 +45,48 @@
 
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<!--                                --><?php //get_template_part('entry'); ?>
+                            <!--                                --><?php //get_template_part('entry'); ?>
                             <tr>
                                 <td>
                                     <h3 class="big-heading">
-                                        <a href="<?= get_post()->guid;?>" title="Apre pagina <?= get_the_title(); ?> ">
-                                           <i class="icofont-link"></i> <?= get_the_title(); ?></a>
+                                        <a href="<?= get_post()->guid; ?>" title="Apre pagina <?= get_the_title(); ?> ">
+                                            <i class="icofont-link"></i> <?= get_the_title(); ?></a>
                                         <br><small class="text-muted"> Aggiornato:
                                             <?php
-                                            $timestamp=strtotime(get_post()->post_modified);
-                                            $modify=date('d/m/Y', $timestamp);
+                                            $timestamp = strtotime(get_post()->post_modified);
+                                            $modify = date('d/m/Y', $timestamp);
                                             ?>
                                             <?= $modify; ?></small>
                                     </h3>
                                     <?php
-//                                    print_r(get_post());
-//                                    foreach ( get_terms() as $record ){
-//                                        print($record->description.'<br>');
-//                                    } ?>
+                                    //                                    print_r(get_post());
+                                    //                                    foreach ( get_terms() as $record ){
+                                    //                                        print($record->description.'<br>');
+                                    //                                    } ?>
 
                                     <?php the_excerpt(); ?>
                                 </td>
-                        </tr>
+                            </tr>
                         <?php endwhile; endif; ?>
-                       </tbody>
+                        </tbody>
                     </table>
                     <script type="text/javascript">
-                        $(document).ready(function() {
+                        $(document).ready(function () {
                             $('#elenco').DataTable();
-                        } );
+                        });
                     </script>
 
 
-                    </div>
-                    <?php get_template_part('nav', 'below'); ?>
-
                 </div>
-                <div class="col-sm-3 offset-sm-1">
-                    <!--Da decidere cosa mettere-->
-                    <!--         --><?php //get_sidebar(); ?>
-                </div>
+                <?php get_template_part('nav', 'below'); ?>
 
             </div>
+            <div class="col-sm-3 offset-sm-1">
+                <!--Da decidere cosa mettere-->
+                <!--         --><?php //get_sidebar(); ?>
+            </div>
+
+        </div>
         </div>
     </section>
 
