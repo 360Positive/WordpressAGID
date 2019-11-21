@@ -115,8 +115,8 @@
                             <br>
                             <small class="text-muted date-card"><?= get_the_date(); ?></small>
                             <h5 class="card-title  align-middle ">
-                                <a href="<?= get_category_link($cat) ?>"
-                                   title="<?php the_title(); ?>">
+                                <a href="<?= get_post_permalink() ?>"
+                                   title="<?php the_title(); ?>" target="_blank">
                                     <?php the_title(); ?>
                                 </a>
                             </h5>
