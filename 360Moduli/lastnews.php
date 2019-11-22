@@ -108,13 +108,13 @@
                 $myposts = get_posts($args);
                 foreach ($myposts as $post) : setup_postdata($post);
                     ?>
-                    <div class="card lastnews">
+                    <div class="card lastnews text-center">
                         <img class="card-img-top" src="<?= get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
-                        <div class="card-body">
+                        <div class="card-body ">
                             <br><small class="categroy-card"><?php echo get_the_category_list( ', '); ?></small>
                             <br>
                             <small class="text-muted date-card"><?= get_the_date(); ?></small>
-                            <h5 class="card-title  align-middle ">
+                            <h5 class="card-title align-middle my-3 ">
                                 <a href="<?= get_post_permalink() ?>"
                                    title="<?php the_title(); ?>" target="_blank">
                                     <?php the_title(); ?>
