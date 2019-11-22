@@ -45,6 +45,7 @@ get_header(); ?>
             border-color: #ffb402;
         }
 
+
     </style>
     <section class="entry-content thumbnail topimage">
         <p class="dida"><?php the_post_thumbnail_caption() ?></p>
@@ -61,7 +62,7 @@ get_header(); ?>
                         <?php //get_template_part( 'entry' ); ?>
                         <h1><?php the_title(); ?></h1>
                         <hr>
-                        <?php the_field('introduzione'); ?>
+                        <div id="introduzione"><?php the_field('introduzione'); ?></div>
                         <strong>Assessore</strong><br>
                         <?php
                         $iconuser="icofont-hand-right";
@@ -133,7 +134,7 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <div class="container-fluid widget-area page-widget-area">
                         <?php //Inclusione modulo per la gestione dei social
                         include '360Moduli/sharesocial.php'; ?>
@@ -143,6 +144,13 @@ get_header(); ?>
                             wp_nav_menu(array('menu' => '"' . $val . '""'));
                         } ?>
                     </div>
+                    <div id="sidenav">
+                       <p class="text-center py-1">
+                           <?= __("Naviga nella pagina, clicca sul pulsante per raggiungere la sezione dedicata.") ?>
+                       </p>
+                        <p id="menu"></p>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -158,10 +166,18 @@ get_header(); ?>
             font-size: 80% !important;
             font-weight: 800;
         }
+        a.navigation.btn.btn-block{
+            background: #ffb421!important;
+
+        }
+        #sidenav{
+            background: lightgray!important;
+            padding: 1% !important;
+            width: 100%!important;
+        }
     </style>
 
     <script type="text/javascript">
-
         /*Aggiunta classe struttura per i titoli*/
         $.each($('div.accordion-local > div'), function (index, el) {
             title = $('div > p:nth-child(1)', el).text()
@@ -173,7 +189,7 @@ get_header(); ?>
                 "href=\"#sec" + index + "\" " +
                 "role=\"button\" " +
                 "aria-expanded=\"false\" " +
-                "aria-controls=\"collapseExample\"" +
+                "aria-controls=\"sec" + index + "\" " +
                 ">"+ title +
                 "        <span class=\"icofont-rounded-down pull-right\" style=\"padding:1%; background: darkgrey; margin-top: -1%; \">" +
                 "        </span>" +
@@ -230,10 +246,23 @@ get_header(); ?>
 
         /*Aggiunta classe collapse per toggle*/
         $.each($('div.accordion-local > div > div'), function (index, el) {
-            $(el).addClass('collapse')
+           // $(el).addClass('collapse')
             el.setAttribute("id", 'sec' + index);
             el.setAttribute("target", '_blank');
 
+        });
+
+
+        /*Navigation menu*/
+
+        $(document).ready( function() {
+             $.each($('#introduzione > h5'), function (index, el) {
+                var side=$('#sidenav > p#menu');
+                var title=el.innerText
+                 var id='n-'+title.replace(/\s/g, '')
+                 $(el).attr('id',id)
+                side.append("<a class='navigation btn btn-block my-1 mx-0' href='#"+id+"'>"+title+"</a>");
+            });
         });
 
 
