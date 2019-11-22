@@ -52,7 +52,7 @@ $category_query = new WP_Query($category_query_args);
                             </span>
                     </a>
                     <div id="uffici" class="collapse">
-                        <ol>
+                        <ul>
                             <?php
                             echo _('<br>');
                             //Elenco degli uffici associati alla categoria
@@ -63,7 +63,7 @@ $category_query = new WP_Query($category_query_args);
                                 </li>
                             <?php
                             endwhile; endif; ?>
-                        </ol>
+                        </ul>
                     </div>
 
                     <?php
