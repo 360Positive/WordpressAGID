@@ -1,7 +1,7 @@
 <?php get_header();
 include "360Moduli/Trasparenza/normativa.php";
 
-$normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/Trasparenza/sezioni.xml');
+$normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/Trasparenza/servizi.xml');
 
 ?>
     <section id="content" role="main" class="container">
@@ -35,7 +35,7 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
                     //                    echo ($normativa->searchin($text=substr(get_the_archive_title(),9),"title")[0]->norma[0]);
 
                     ?>
-                    <table id="elenco" class="display" style="width:100%">
+                    <table id="elencoList" class="display" style="width:100%">
                         <thead>
                         <tr>
                             <th>Documentazione</th>
@@ -44,8 +44,6 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
                         <tbody>
 
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-                            <!--                                --><?php //get_template_part('entry'); ?>
                             <tr>
                                 <td>
                                     <h3 class="big-heading">
@@ -58,12 +56,6 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
                                             ?>
                                             <?= $modify; ?></small>
                                     </h3>
-                                    <?php
-                                    //                                    print_r(get_post());
-                                    //                                    foreach ( get_terms() as $record ){
-                                    //                                        print($record->description.'<br>');
-                                    //                                    } ?>
-
                                     <?php the_excerpt(); ?>
                                 </td>
                             </tr>
@@ -72,14 +64,15 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
                     </table>
                     <script type="text/javascript">
                         $(document).ready(function () {
-                            $('#elenco').DataTable();
+                            $('#elencoList').DataTable({
+                                "iDisplayLength": 100,
+
+                            });
                         });
                     </script>
 
 
                 </div>
-                <?php get_template_part('nav', 'below'); ?>
-
             </div>
             <div class="col-sm-3 offset-sm-1">
                 <!--Da decidere cosa mettere-->
@@ -87,7 +80,8 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
             </div>
 
         </div>
-        </div>
+
+
     </section>
 
 <?php get_footer(); ?>

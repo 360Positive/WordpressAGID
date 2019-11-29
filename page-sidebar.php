@@ -1,5 +1,7 @@
 <?php
-   /* Template Name: Pagina con sidebar - page-sidebar.php */
+   /* Template Name: Pagina con sidebar - page-sidebar.php
+   Template Post Type: post, page, product*/
+
    get_header();
 ?>
 <style>
@@ -43,7 +45,7 @@
       </div>
 
 </section>
-<?php if ( ! post_password_required() ) comments_template( '', true ); ?>
+
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

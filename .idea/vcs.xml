@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/360Moduli/TelegramBot/bot/example-bot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/360Moduli/TelegramBotPHP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/360Moduli/lisb/TelegramBotPHP" vcs="Git" />
   </component>
 </project>

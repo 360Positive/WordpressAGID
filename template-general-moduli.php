@@ -60,7 +60,7 @@ get_header(); ?>
                             <?php
                             $xmi=new XMLINTERPRETERMODULISTICA();
                             //get_field('xml')
-                            $xmi->init();
+                            $xmi->init('');
                             $xmi->createLayout();
 
                             ?>

@@ -4,6 +4,8 @@
     * Template Post Type: post, product
 */
 
+use function Composer\Autoload\includeFile;
+
 get_header(); ?>
     <!--single.php -->
     <style>
@@ -46,6 +48,12 @@ get_header(); ?>
 <?php } ?>
 
 <?php wppa_breadcrumb(); ?>
+<?php
+if(get_field('isamministratore')=='attivo') {
+        /*Template amministratori*/
+        require('360Moduli/template/amministratori.php');
+}
+    else {/*Template base*/?>
     <div class="container">
     <div class="row">
 
@@ -88,56 +96,66 @@ get_header(); ?>
                 <div class="col-md-3 offset-md-1">
                     <?php //get_sidebar(); ?>
                 </div>
-             </div>
-    </section>
+            </div>
+        </section>
         <script type="text/javascript">
             /**
              * Script per l'inserimento delle icone dei collegamenti ai file esterni ed interni della pagina
              * @type {jQuery|HTMLElement}
              */
-            var content=$('#content');
-            $('a',content).each(function(key, value){
-                var file=$(this).attr('href');
-                // console.log(file)
-                var ext = file.split('.').pop();
-                switch(ext) {
-                    case 'jpg':
-                        typefile='icofont-file-image';
-                        title="Apre un file immagine"
-                        break;
-                    case 'png':
-                        typefile='icofont-file-image';
-                        title="Apre un file immagine"
-                        break;
-                    case 'gif':
-                        typefile='icofont-file-image';
-                        title="Apre un file immagine";
-                        break;
-                    case 'doc':
-                        typefile='icofont-file-document';
-                        title="Apre un file documneto";
-                        break;
-                    case 'docx':
-                        typefile='icofont-file-document';
-                        title="Apre un file documneto";
-                        break;
-                    case 'xls':
-                        typefile='icofont-file-excel';
-                        title="Apre un file foglio di calcolo";
-                        break;
-                    case 'pdf':
-                        typefile='icofont-file-pdf';
-                        title="Apre un file pdf";
-                        break;
-                    default:
-                        typefile='icofont-link';
-                        title="Apre un link";
-                        break;
-                }
-                $(this).before('<i class="'+typefile+'"></i>')
-                $(this).attr({'title':title})
+            $(window).on('load', function(){
+                var content = $('#content');
+                $('a', content).each(function (key, value) {
+                    var file = $(this).attr('href');
+                    // console.log(file)
+                    var ext = file.split('.').pop();
+                    switch (ext) {
+                        case 'jpg':
+                            typefile = 'icofont-file-image';
+                            title = "Apre un file immagine"
+                            break;
+                        case 'png':
+                            typefile = 'icofont-file-image';
+                            title = "Apre un file immagine"
+                            break;
+                        case 'gif':
+                            typefile = 'icofont-file-image';
+                            title = "Apre un file immagine";
+                            break;
+                        case 'doc':
+                            typefile = 'icofont-file-document';
+                            title = "Apre un file documneto";
+                            break;
+                        case 'docx':
+                            typefile = 'icofont-file-document';
+                            title = "Apre un file documneto";
+                            break;
+                        case 'xls':
+                            typefile = 'icofont-file-excel';
+                            title = "Apre un file foglio di calcolo";
+                            break;
+                        case 'pdf':
+                            typefile = 'icofont-file-pdf';
+                            title = "Apre un file pdf";
+                            break;
+                        default:
+                            typefile = 'icofont-link';
+                            title = "Apre un link";
+                            break;
+                    }
+
+                    $(this).before('<i class="' + typefile + '"></i>')
+                    var hastitle = $(this).attr('title');
+                    console.log(hastitle);
+
+                    if (!hastitle) {
+                        $(this).attr({'title': title});
+                    }
+                })
             })
         </script>
 
     </div>
+    <?php } ?>
+
 <?php get_footer(); ?>

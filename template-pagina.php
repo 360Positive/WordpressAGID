@@ -40,7 +40,7 @@ get_header(); ?>
 	<?php wppa_breadcrumb(); ?>
 	
 	<section id="content" role="main" class="container">
-		<div class="container">
+
             <div class="row">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -52,7 +52,7 @@ get_header(); ?>
 				</article>
 				
 			</div>
-		</div>
+
 		
 	</section>
 	<?php get_footer(); ?>

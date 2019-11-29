@@ -65,20 +65,20 @@ get_header(); ?>
                         <div id="introduzione"><?php the_field('introduzione'); ?></div>
                         <strong>Assessore</strong><br>
                         <?php
-                        $iconuser="icofont-hand-right";
-                        $assessori=get_field('assessore').'<br>';
-                        $funz_el=explode(',',$assessori);
-                        foreach ( $funz_el as $el){
-                            echo '<i class="'.$iconuser.'"></i>'.$el.'<br>';
+                        $iconuser = "icofont-hand-right";
+                        $assessori = get_field('assessore') . '<br>';
+                        $funz_el = explode(',', $assessori);
+                        foreach ($funz_el as $el) {
+                            echo '<i class="' . $iconuser . '"></i>' . $el . '<br>';
                         }
                         ?>
                         <strong>Funzionari</strong><br>
                         <?php
-                        $iconuser="icofont-user-alt-4";
-                        $funzionari=get_field('funzionari');
-                        $funz_el=explode(',',$funzionari);
-                        foreach ( $funz_el as $el){
-                            echo '<i class="'.$iconuser.'"></i>'.$el.'<br>';
+                        $iconuser = "icofont-user-alt-4";
+                        $funzionari = get_field('funzionari');
+                        $funz_el = explode(',', $funzionari);
+                        foreach ($funz_el as $el) {
+                            echo '<i class="' . $iconuser . '"></i>' . $el . '<br>';
                         }
                         ?>
                         <?php the_content(); ?>
@@ -145,9 +145,9 @@ get_header(); ?>
                         } ?>
                     </div>
                     <div id="sidenav">
-                       <p class="text-center py-1">
-                           <?= __("Naviga nella pagina, clicca sul pulsante per raggiungere la sezione dedicata.") ?>
-                       </p>
+                        <p class="text-center py-1">
+                            <?= __("Naviga nella pagina, clicca sul pulsante per raggiungere la sezione dedicata.") ?>
+                        </p>
                         <p id="menu"></p>
                     </div>
 
@@ -166,15 +166,25 @@ get_header(); ?>
             font-size: 80% !important;
             font-weight: 800;
         }
-        a.navigation.btn.btn-block{
-            background: #ffb421!important;
+
+        a.navigation.btn.btn-block {
+            background: #ffb421 !important;
+            white-space: normal;
 
         }
-        #sidenav{
-            background: lightgray!important;
+
+        #sidenav {
+            background: lightgray !important;
             padding: 1% !important;
-            width: 100%!important;
+            width: 100% !important;
         }
+
+        .evidenza {
+            background: #ffb421;
+            padding: 1%;
+        }
+
+
     </style>
 
     <script type="text/javascript">
@@ -190,10 +200,10 @@ get_header(); ?>
                 "role=\"button\" " +
                 "aria-expanded=\"false\" " +
                 "aria-controls=\"sec" + index + "\" " +
-                ">"+ title +
+                ">" + title +
                 "        <span class=\"icofont-rounded-down pull-right\" style=\"padding:1%; background: darkgrey; margin-top: -1%; \">" +
                 "        </span>" +
-                "</div>"+
+                "</div>" +
                 "<\/a> ";
 
             $(el).before(button)
@@ -202,31 +212,28 @@ get_header(); ?>
             $.each(links, function (index, link) {
                 var link_icon = "icofont-external-link"
                 var testo = $(link).text()
-                var testo_base=testo
+                var testo_base = testo
                 var lin = $(link).attr('href')
 
                 //isa innerlink
-                var local=document.location.host
+                var local = document.location.host
                 var n = lin.indexOf(local);
-                if (n>0){
-                    if(lin.indexOf('.pdf')>0){
-                        testo='Apre il documento pdf '+testo
-                    }
-                    else if(lin.indexOf('.doc')>0){
-                        testo='Apre il documento testo '+testo
-                    }
-                    else {
-                        testo='Apre la pagina interna'+testo
+                if (n > 0) {
+                    if (lin.indexOf('.pdf') > 0) {
+                        testo = 'Apre il documento pdf ' + testo
+                    } else if (lin.indexOf('.doc') > 0) {
+                        testo = 'Apre il documento testo ' + testo
+                    } else {
+                        testo = 'Apre la pagina interna' + testo
                     }
 
+                } else {
+                    testo = 'Apre la pagina esterna del sito' + testo
                 }
-                else{
-                    testo='Apre la pagina esterna del sito'+testo
-                }
-                testo=testo+" in una pagina nuova"
+                testo = testo + " in una pagina nuova"
 
 
-                    //inserimento automatico del title per i link
+                //inserimento automatico del title per i link
 
                 link.setAttribute("title", testo)
 
@@ -246,7 +253,7 @@ get_header(); ?>
 
         /*Aggiunta classe collapse per toggle*/
         $.each($('div.accordion-local > div > div'), function (index, el) {
-           // $(el).addClass('collapse')
+            // $(el).addClass('collapse')
             el.setAttribute("id", 'sec' + index);
             el.setAttribute("target", '_blank');
 
@@ -255,16 +262,30 @@ get_header(); ?>
 
         /*Navigation menu*/
 
-        $(document).ready( function() {
-             $.each($('#introduzione > h5'), function (index, el) {
-                var side=$('#sidenav > p#menu');
-                var title=el.innerText
-                 var id='n-'+title.replace(/\s/g, '')
-                 $(el).attr('id',id)
-                side.append("<a class='navigation btn btn-block my-1 mx-0' href='#"+id+"'>"+title+"</a>");
-            });
-        });
+        $(document).ready(function () {
+            $.each($('#introduzione > h5'), function (index, el) {
+                var side = $('#sidenav > p#menu');
+                var title = el.innerText
+                var id = 'n-' + title.replace(/\s/g, '')
+                var aid = "a" + id
+                $(el).attr('id', id)
+                side.append("<a id='" + aid + "'  class='navigation btn btn-block my-1 mx-0' href='#" + id + "'>" + title + "</a>");
 
+                //Sfondo in evidenza al click del mouse
+                $('#' + aid).click(function () {
+                    if (!$('#' + id).hasClass('evidenza')) {
+                        // alert('no evidenza '+aid)
+                        $('#' + id).addClass('evidenza')
+                        setTimeout(function () {
+                            $('#' + id).removeClass('evidenza')
+                        }, 3000);
+
+                    }
+                });
+            });
+
+
+        });
 
     </script>
 <?php get_footer(); ?>

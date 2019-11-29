@@ -6,24 +6,16 @@ class XMLINTERPRETERFAQ
     protected $xml_voices = array();
     protected $id = 0;
 
-    public function init($xmlurl)
+    public function init()
     {
         $local = site_url();
         $files = array();
 
-
-        if (!$xmlurl) {
-            /**
-             * Lettura dei file presenti nella cartella
-             */
-
-            $xmlurl = 'wp-content/themes/design-italia-child/360Moduli/XML/Faq/*.xml';
-
-            foreach (glob($xmlurl) as $file) {
+        $xmlurl = 'wp-content/themes/design-italia-child/360Moduli/XML/Faq/*.xml';
+        foreach (glob($xmlurl) as $file) {
                 array_push($files, $file);
             }
-            //print_r($files);
-        }
+
 
         foreach ($files as $file) {
             //print("<br>".$local . '/' . $file);
@@ -56,7 +48,7 @@ class XMLINTERPRETERFAQ
 
                 $info = "";
                 foreach ($voce->attributes() as $a => $b) {
-                    $info .= "<span class='" . $a . "'>" . $a . ' : ' . $b . " </span>";
+                    $info .= "<strong class='text-capitalize " . $a . "'>" . $a . ' : </strong> ' . $b . " <br>";
                 }
                 echo '<tr>';
                 echo '<td>';
@@ -68,7 +60,7 @@ class XMLINTERPRETERFAQ
             style="word-wrap: break-word;cursor: pointer;">
          ' . $voce->domanda . '
        </div>
-        <p id="collapse' . $id . '" class="collapse w-100" >
+        <p id="collapse' . $id . '" class="collapse w-100 text-justify" >
       
         ' . $info . "<br>" . $voce->risposta . '
           

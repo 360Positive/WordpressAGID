@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Sistema di allertamento per la gestione della messaggistica
@@ -25,14 +26,14 @@
     }
     h1.alert-heading, h1.alert-heading>i{
         font-size:1.5rem!important;
-		margin-top: 25px;
+
     }
     .fullpge{
      width:100%!important;   
     }
     .alert{
         padding:3%!important;
-        text-align:justify;
+        /*text-align:justify;*/
     }
 </style>
 

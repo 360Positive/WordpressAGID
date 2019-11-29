@@ -5,7 +5,7 @@
  */
 ?>
 <style>
-   .amministrazione > a {
+    .amministrazione > a {
         font-size: 13px !important;
         font-weight: bold;
         color: #420101
@@ -52,57 +52,60 @@
         color: black;
         padding: 17px;
         font-weight: 800 !important;
+
     }
 
     .card.amministrazione {
         box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
+        display: block!important;
+        width: auto!important;
+        height: fit-content;
     }
 
     h5.card-title.align-middle {
         margin-top: 2%;
         margin-bottom: 0%;
     }
+    .card.amministrazione > div.card-body{
+        margin-bottom: 1em!important;
+    }
 </style>
+<div class="light">
+    <div class="container">
+        <h1 class="amministrazione"><?= _('Dall\'amministrazione') ?></h1>
+        <div class="card-deck ">
+            <?php
+            /**
+             * Estrazione degli articoli associati alle nuove notizie
+             */
+            $pages=[];
+            $ids= array(523, 538, 2450, 2494);
 
-<div class="container " style="padding-bottom: 3%;">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="amministrazione"><?= _('Dall\'amministrazione') ?></h1>
-            <div class="card-deck">
-                <?php
-                /**
-                 * Estrazione degli articoli associati alle nuove notizie
-                 */
-                $pages=[];
-                $ids= array(523, 538, 2479, 2494);
+            //Carciamento delle pagine da visualizzare
+            foreach ($ids as $page_id){
+                array_push($pages,get_page( $page_id ));
+            }
 
-                //Carciamento delle pagine da visualizzare
-                foreach ($ids as $page_id){
-                    array_push($pages,get_page( $page_id ));
-                }
-
-                foreach ($pages as $post) : setup_postdata($post);
-                    ?>
-                    <div class="card amministrazione text-center">
-                        <img class="card-img-top h-75" src="<?= get_the_post_thumbnail_url() ?>"
-                             alt="<?php the_title(); ?>">
-                        <div class="card-body">
-                            <br><small class="categroy-card"><?php echo get_the_category_list(', '); ?></small>
-                            <br>
-                            <h5 class="card-title align-middle ">
-                                   <a href="<?= $post->guid; ?>"
-                                   title="<?php the_title(); ?>">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-                <?php endforeach;
+            foreach ($pages as $post) : setup_postdata($post);
                 ?>
-                <?php wp_reset_postdata(); ?>
-            </div>
+                <div class="card amministrazione text-center">
+                    <img class="card-img-top h-75" src="<?= get_the_post_thumbnail_url() ?>"
+                         alt="<?php the_title(); ?>">
+                    <div class="card-body my-3">
+
+                        <h5 class="card-title ">
+                            <a href="<?= $post->guid; ?>"
+                               title="<?php the_title(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            <?php endforeach;
+            ?>
+            <?php wp_reset_postdata(); ?>
         </div>
+
     </div>
 
-</div>
 </div>

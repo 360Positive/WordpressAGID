@@ -42,11 +42,13 @@ $category_query = new WP_Query($category_query_args);
 
                     //Pulsante il menu a tendina
                     ?>
+
                     <a class="text-left btn angle btn-lg btn-block text-wrap"
                        style="padding-right: 0px; border-radius: 0; "
                        data-toggle="collapse"
                        href="#uffici" role="button"
-                       aria-expanded="false" aria-controls="uffici"> ELENCO UFFICI
+                       aria-expanded="true" aria-controls="uffici"
+                    > ELENCO UFFICI
                             <span class="icofont-rounded-down pull-right"
                                   style="padding:1%; background: darkgrey; margin-top: -1%; ">
                             </span>

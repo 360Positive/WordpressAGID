@@ -42,7 +42,7 @@ Scraping delle informazioni dal codice HTML della pagina
         font-weight:700;
     }
     titolo{
-        font-size:1.5rem!important;
+        font-size:1.2rem!important;
     }
    
 </style>
@@ -56,10 +56,12 @@ Scraping delle informazioni dal codice HTML della pagina
                 
 				<?php
             
-                function sortByParamt($a, $b)
+                function sortByParam($a, $b)
                     {
-                        $a = $a['termine'];
-                        $b = $b['termine'];
+//   print_r($a);
+                        $termine='termin';
+                        $a = $a[$termine];
+                        $b = $b[$termine];
                     
                         if ($a == $b) return 0;
                         return ($a < $b) ? -1 : 1;
@@ -76,7 +78,13 @@ Scraping delle informazioni dal codice HTML della pagina
 				    
 				setup_postdata( $post ); 
 				
-				    $a=['title'=>get_the_title(),'rif'=>get_field('riferimento'),'tipo'=>get_field('tipologia'),'termin'=>get_field('termine'),'inizio'=>get_field('inizio'), 'excerpt'=>substr(get_the_content(), 0, 800)];
+				    $a=['title'=>get_the_title(),
+                        'rif'=>get_field('riferimento'),
+                        'tipo'=>get_field('tipologia'),
+                        'termin'=>get_field('termine'),
+                        'inizio'=>get_field('inizio'),
+                        'excerpt'=>substr(get_the_content(), 0, 200),
+                        'link'=> get_post_permalink()];
 				    array_push($entries,$a);
 				    
 				    /*
@@ -90,7 +98,7 @@ Scraping delle informazioni dal codice HTML della pagina
 				} 
 		    	
 		    	
-			    usort($entries, 'sortByParamt'); //Ordinamento bandi in base alla data di scadenza
+			    usort($entries, 'sortByParam'); //Ordinamento bandi in base alla data di scadenza
 			    
 			    echo '<br>';
 			    foreach($entries as $entry){
@@ -102,8 +110,8 @@ Scraping delle informazioni dal codice HTML della pagina
 			        <p>
 			        <label>rif:</label> <tipo><?=$entry['rif']?></tipo> 
 			        <label>Tipologia:</label> <tipo><?=$entry['tipo']?></tipo> - <?=$entry['termin']?> - 
-			        <titolo><?=$entry['title']?></titolo><br>
-			        <?=$entry['excerpt']?>
+			        <a href="<?=$entry['link']?>" target="_blank"> <titolo> <?=$entry['title']?> </titolo></a><br>
+<!--			        --><?//=$entry['excerpt']?>
 			        </p><hr>
 			    
 			</div>
@@ -111,6 +119,6 @@ Scraping delle informazioni dal codice HTML della pagina
 		
 		</div>
 	</div>
-          <a href="#" title="Bandi, avvisi e concorsi"><h2 class="bandi" style="text-align: right;">Tutti i bandi, avvisi e concorsi</h2></a>
+          <a href="<?= get_site_url();?>/bandi-avvisi-concorsi/" title="Bandi, avvisi e concorsi"><h2 class="bandi" style="text-align: right;">Tutti i bandi, avvisi e concorsi</h2></a>
 
 </div>

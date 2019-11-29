@@ -1,5 +1,6 @@
 <?php 
-   /* Template Name: Pagina con sidebar Modificato */
+   /* Template Name: Pagina con sidebar Modificato
+   Template Post Type: post, page, product */
    get_header(); 
 ?>
 <style>

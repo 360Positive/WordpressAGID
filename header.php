@@ -16,7 +16,8 @@ Copyright - 2019
     <meta name="yandex-verification" content="2a130b656effd4bf"/>
     <?php wp_head(); ?>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <?php /*---  Sviluppo ----
 		 Le librerie utilizzate localmente son salvate nel tema Child, nella cartella /lib
 		  */ ?>
@@ -103,7 +104,8 @@ Copyright - 2019
           href="<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/jssocial/jssocials-theme-flat.css"/>
 
     <?php /*---   Data table   ----*/ ?>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <!--    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
 
     <?php /*---   Data table mobile   ----*/ ?>
@@ -111,7 +113,7 @@ Copyright - 2019
             src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
     <script type="text/javascript"
             src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <!--    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>-->
 
 
     <link type="text/css" rel="stylesheet"
@@ -119,126 +121,129 @@ Copyright - 2019
     <link type="text/css" rel="stylesheet"
           href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"/>
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
 
-
-    <style>
-        <?php /*---   Classe Stile  ----
-        La classe di stile che segue è obbligatoria per la gestione della corretta
-        visualizzazione del header del portale. Nel codice è presente l'integrazione
-        dei font personalizzati.
-
-        */?>
-
-        * {
-            font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif !important;
-            font-size: 18px !important;
-
-        }
-
-        #menu-lingue > li > a > img {
-            min-height: 15px
-        }
-
-        .it-header-center-content-wrapper {
-            padding-right: 0px;
-        }
-
-        .it-brand-wrapper {
-            padding-right: 0px;
-        }
-
-        .it-brand-wrapper > a > img {
-            display: grid;
-            width: 100%;
-            max-width: 30rem;
-            padding-right: 0px;
-        }
-
-        .it-search-wrapper {
-            margin-left: 0px !important;
-        }
-
-        .it-footer .searchform input[type="text"], .it-header-wrapper .searchform input[type="text"] {
-            color: #000;
-            box-shadow: inset 0 -1px 0px #fff;
-            width: auto;
-            z-index: 4;
-        }
-
-        /*---   Altezza menu navigazione TOP  ----*/
-        .it-header-slim-wrapper {
-            height: auto;
-            padding: 0;
-        }
-
-        .button_dropdown {
-            text-align: center;
-            width: 100%;
-            background: #e09d34 !important;
-            font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif;
-            font-size: 18px !important;
-        }
-
-        .dropdown {
-            padding: 0px;
-            background: #e09d34 !important;
-            margin-bottom: 14px;
-            text-align: center;
-            font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif;
-        }
-
-        #message_drop_top {
-            background: #e09d34 !important;
-            text-align: center;
-            font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif;
-            padding: 10px;
-            margin-right: 0px;
-        }
-
-        a, a:hover {
-            color: unset;
-        }
-
-        a[class^="icofont-"].social, i[class^="icofont-"].social {
-            display: inline-block;
-            border-radius: 60px;
-            padding: 0.4em;
-            background: white;
-            color: #420101 !important;
-
-            margin-right: 5px;
-        }
-
-        i[class^="icofont-"].social:hover {
-            background: #e09d34 !important;
-        }
-
-        li[class^="icofont-"] > a {
-            padding-left: 1%;
-
-        }
-
-        li[id^="mega-menu"].mega-menu-row {
-            box-shadow: 5px 20px 20px -10px rgba(0, 0, 0, 0.75) !important;
-        }
-
-        ul.mega-sub-menu {
-            padding-bottom: 0px !important;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .showmobile {
-                display: block;
-            }
-        }
-
-        #flags {
-            width: 112px;
-        }
-    </style>
 
 </head>
-<body <?php echo body_class(); ?>>
+
+<style>
+    <?php /*---   Classe Stile  ----
+    La classe di stile che segue è obbligatoria per la gestione della corretta
+    visualizzazione del header del portale. Nel codice è presente l'integrazione
+    dei font personalizzati.
+
+    */?>
+
+    * {
+        font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif !important;
+        font-size: 18px !important;
+
+    }
+
+    #menu-lingue > li > a > img {
+        min-height: 15px
+    }
+
+    .it-header-center-content-wrapper {
+        padding-right: 0px;
+    }
+
+    .it-brand-wrapper {
+        padding-right: 0px;
+    }
+
+    .it-brand-wrapper > a > img {
+        display: grid;
+        width: 100%;
+        max-width: 30rem;
+        padding-right: 0px;
+    }
+
+    .it-search-wrapper {
+        margin-left: 0px !important;
+    }
+
+    .it-footer .searchform input[type="text"], .it-header-wrapper .searchform input[type="text"] {
+        color: #000;
+        box-shadow: inset 0 -1px 0px #fff;
+        width: auto;
+        z-index: 4;
+    }
+
+    /*---   Altezza menu navigazione TOP  ----*/
+    .it-header-slim-wrapper {
+        height: auto;
+        padding: 0;
+    }
+
+    .button_dropdown {
+        text-align: center;
+        width: 100%;
+        background: #e09d34 !important;
+        font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif;
+        font-size: 18px !important;
+    }
+
+    .dropdown {
+        padding: 0px;
+        background: #e09d34 !important;
+        margin-bottom: 14px;
+        text-align: center;
+        font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif;
+    }
+
+    #message_drop_top {
+        background: #e09d34 !important;
+        text-align: center;
+        font-family: UrbsDisplay-Regular, Titillium Web, Arial, sans-serif;
+        padding: 10px;
+        margin-right: 0px;
+    }
+
+    a, a:hover {
+        color: unset;
+    }
+
+    a[class^="icofont-"].social, i[class^="icofont-"].social {
+        display: inline-block;
+        border-radius: 60px;
+        padding: 0.4em;
+        background: white;
+        color: #420101 !important;
+
+        margin-right: 5px;
+    }
+
+    i[class^="icofont-"].social:hover {
+        background: #e09d34 !important;
+    }
+
+    li[class^="icofont-"] > a {
+        padding-left: 1%;
+
+    }
+
+    li[id^="mega-menu"].mega-menu-row {
+        box-shadow: 5px 20px 20px -10px rgba(0, 0, 0, 0.75) !important;
+    }
+
+    ul.mega-sub-menu {
+        padding-bottom: 0px !important;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .showmobile {
+            display: block;
+        }
+    }
+
+    #flags {
+        width: 112px;
+    }
+</style>
+
+
+<body <?= body_class(); ?> >
 
 <div id="wrapper" class="hfeed">
 
@@ -318,10 +323,10 @@ Copyright - 2019
 									<img class="" alt="" src="<?php header_image(); ?>">--><!-- </a> -->' ?>
 
 
-                            <div class="col-md-4"><a href="https://www.regione.piemonte.it"
+                            <div class="col-md-3"><a href="https://www.regione.piemonte.it"
                                                      title="Apri sito esterno della Regione Piemonte">Regione
                                     Piemonte</a></div>
-                            <div class="col-md-7 d-none d-md-block d-lg-block d-xl-block">
+                            <div class="col-md-7 text-center d-none d-md-block d-lg-block d-xl-block">
 
                                 <i class="icofont-compass"></i> Piazza Levi, 12-15011 - Acqui Terme - AL
                                 <i class="icofont-email"></i> urp@comune.acquiterme.al.it
@@ -384,11 +389,16 @@ Copyright - 2019
                                                 <div class="col-8" style="left:-20px;">
                                                     <div class="row d-none d-md-block d-lg-block d-xl-block">
                                                         <div class="col-md-12">
-                                                            <a class="icofont-linkedin social" title="Apre sito esterno di Linkedin"></a>
-                                                            <a class="icofont-instagram social" title="Apre sito esterno di Instagram"></a>
-                                                            <a class="icofont-brand-youtube social" title="Apre sito esterno di Youtube"></a>
-                                                            <a class="icofont-twitter social" title="Apre sito esterno di Twiter"></a>
-                                                            <a class="icofont-facebook social" title="Apre sito esterno di Facebook"></a>
+                                                            <a class="icofont-linkedin social"
+                                                               title="Apre sito esterno di Linkedin"></a>
+                                                            <a class="icofont-instagram social"
+                                                               title="Apre sito esterno di Instagram"></a>
+                                                            <a class="icofont-brand-youtube social"
+                                                               title="Apre sito esterno di Youtube"></a>
+                                                            <a class="icofont-twitter social"
+                                                               title="Apre sito esterno di Twiter"></a>
+                                                            <a class="icofont-facebook social"
+                                                               title="Apre sito esterno di Facebook"></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -435,7 +445,10 @@ Copyright - 2019
             </div>
 
         </div>
-</div>
-</header>
 
-<div id="container">
+    </header>
+    <!--Comportamento da mobile-->
+    <?php include '360Moduli/headerfixed.php'; ?>
+</div>
+
+<div id="container" class="mx-0 px-0">
