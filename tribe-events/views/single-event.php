@@ -10,13 +10,12 @@
  * @version 4.6.3
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 $events_label_singular = tribe_get_event_label_singular();
-$events_label_plural   = tribe_get_event_label_plural();
+$events_label_plural = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
 
@@ -41,7 +40,8 @@ $event_id = get_the_ID();
 	</div>
 
 	<!-- Event header -->
-	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
+	<div id="tribe-events-header"
+		<?php tribe_events_the_header_attributes() ?>>
 		<!-- Navigation -->
 		<h3 class="tribe-events-visuallyhidden"><?php printf( esc_html__( '%s Navigation', 'the-events-calendar' ), $events_label_singular ); ?></h3>
 		<ul class="tribe-events-sub-nav">
@@ -54,22 +54,24 @@ $event_id = get_the_ID();
 
 	<?php while ( have_posts() ) :  the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<!-- Event featured image, but exclude link -->
+		<!-- Event featured image, but exclude link -->
 			<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
 
 			<!-- Event content -->
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
-			<div class="tribe-events-single-event-description tribe-events-content">
+			<div
+			class="tribe-events-single-event-description tribe-events-content">
 				<?php the_content(); ?>
 			</div>
-			<!-- .tribe-events-single-event-description -->
+		<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 
 			<!-- Event meta -->
 			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
 			<?php tribe_get_template_part( 'modules/meta' ); ?>
 			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
-		</div> <!-- #post-x -->
+		</div>
+	<!-- #post-x -->
 		<?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
 	<?php endwhile; ?>
 
@@ -84,5 +86,6 @@ $event_id = get_the_ID();
 		<!-- .tribe-events-sub-nav -->
 	</div>
 	<!-- #tribe-events-footer -->
-<span>Prova</span>
-</div><!-- #tribe-events-content -->
+	<span>Prova</span>
+</div>
+<!-- #tribe-events-content -->

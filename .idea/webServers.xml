@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="653d7d85-e426-4e8f-8cf4-eab2dfd73873" name="Server Comune Acqui Terme" url="http://ftp.comune.acquiterme.al.it">
-        <fileTransfer host="ftp.comune.acquiterme.al.it" port="21">
+        <fileTransfer host="ftp.comune.acquiterme.al.it" port="21" rootFolder="/wp-content/themes/design-italia-child">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

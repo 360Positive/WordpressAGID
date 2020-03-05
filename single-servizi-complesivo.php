@@ -26,9 +26,14 @@ get_header(); ?>
     h2.headersub{
         background:#ffb402!important;
         padding:1%;
-        padding-left: 20%;
+        padding-left: 2%;
         font-weight: 500;
         font-size: 1.5rem!important;
+        vertical-align: middle!important;
+    }
+    h2 > i[class*='icofont']{
+        font-size: 1.5em!important;
+        vertical-align: middle!important;
     }
 
 </style>
@@ -151,7 +156,6 @@ foreach ($posts as $post) {
 
 ?>
 
-<?php wppa_breadcrumb(); ?>
 <div class="container">
     <div class="row">
         <section id="content" role="main" class="container">
@@ -166,23 +170,19 @@ foreach ($posts as $post) {
                             <?php
                             //Elenco sezioni
                             foreach ($servizi as $sez) { ?>
-                                <a href='#sec-<?= $sez[0][0]; ?>' id="<?= $sez[0][0]; ?>" class="navigation btn btn-warning btn-block text-left"
+                                <a href='#sec-<?= $sez[0][0]; ?>' id="<?= $sez[0][0]; ?>"
+                                   class="navigation btn btn-warning btn-block text-left"
                                    onclick="insertSecondMenu('#sec-<?= $sez[0][0]; ?>')">
-                                    <h2 style="text-transform: uppercase"> <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
+                                    <h2 class="main" style="text-transform: uppercase"> <i class="icofont-arrow-right"></i> <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
                                 </a>
 
 
                             <?php } ?>
                         </div>
-                        <div class="col-md-4">
-                            <div id="secondNavigation"></div>
+                        <div class="col-md-8">
+                            <div class="" id="secondNavigation"></div>
                         </div>
-                        <div class="col-md-4">
-                            <div id="blocco">
-
-                            </div>
                         </div>
-                    </div>
                     <?php
                     //Spampa data e informazioni di aggiornamento della pagina
                     echo _('<br>');
@@ -197,7 +197,9 @@ foreach ($posts as $post) {
 
                      as $sez) { ?>
             <div class="d-none" id="sec-<?= $sez[0][0] ?>">
-                <h2  class="headersub"style="text-transform: uppercase"> <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
+                <h2  class="headersub"style="text-transform: uppercase">
+                    <i class="icofont-info-square"></i>
+                    <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
                 <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                     <?php
                     $i=0;

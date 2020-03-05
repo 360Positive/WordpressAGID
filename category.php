@@ -11,7 +11,7 @@
       	<div class="col-sm-12">
             <div class="jumbotron text-center my-1 py-2">
                  <h1 class="big-heading" style="font-size: 1.9rem!important;"><?php single_cat_title(); ?></h1>
-                <p class="lead">Nella pagina potrete trovare gli articoli della corrispoente categroia del portale.<br>
+                <p class="lead">Nella pagina potrete trovare gli articoli della corrispondente categoria del portale.<br>
                     Pagina di riepilogo. </p>
             </div>
             <div class="row">

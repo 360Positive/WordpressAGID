@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class NewchatphotoCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'newchatphoto';
 
     /**
+     *
      * @var string
      */
     protected $description = 'New chat Photo';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -42,9 +45,8 @@ class NewchatphotoCommand extends SystemCommand
      */
     public function execute()
     {
-        //$message = $this->getMessage();
-        //$new_chat_photo = $message->getNewChatPhoto();
-
+        // $message = $this->getMessage();
+        // $new_chat_photo = $message->getNewChatPhoto();
         return parent::execute();
     }
 }

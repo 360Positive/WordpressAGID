@@ -8,10 +8,10 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-} ?>
+if (! defined('ABSPATH')) {
+    die('-1');
+}
+?>
 
 <div class="tribe-mini-calendar-list-wrapper">
 	<div class="tribe-events-loop">
@@ -20,12 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'tribe_events_mini_cal_list_inside_before_loop' ); ?>
 
 			<!-- Event  -->
-			<div class="<?php tribe_events_event_classes() ?>">
+		<div class="<?php tribe_events_event_classes() ?>">
 				<?php tribe_get_template_part( 'pro/widgets/modules/single-event' ) ?>
 			</div>
 
 			<?php do_action( 'tribe_events_mini_cal_list_inside_after_loop' ); ?>
 		<?php endwhile; ?>
 
-	</div><!-- .tribe-events-loop -->
-</div> <!-- .tribe-mini-calendar-list-wrapper -->
+	</div>
+	<!-- .tribe-events-loop -->
+</div>
+<!-- .tribe-mini-calendar-list-wrapper -->

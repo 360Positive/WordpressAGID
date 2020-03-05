@@ -8,13 +8,12 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 $day = tribe_events_get_current_month_day();
-$events_label = ( 1 === $day['total_events'] ) ? tribe_get_event_label_singular() : tribe_get_event_label_plural();
+$events_label = (1 === $day['total_events']) ? tribe_get_event_label_singular() : tribe_get_event_label_plural();
 ?>
 
 <!-- Day Header -->
@@ -35,22 +34,13 @@ $events_label = ( 1 === $day['total_events'] ) ? tribe_get_event_label_singular(
 
 <!-- View More -->
 <?php if ( $day['view_more'] ) : ?>
-	<div class="tribe-events-viewmore">
+<div class="tribe-events-viewmore">
 		<?php
 
-			$view_all_label = sprintf(
-				_n(
-					'View %1$s %2$s',
-					'View All %1$s %2$s',
-					$day['total_events'],
-					'the-events-calendar'
-				),
-				$day['total_events'],
-				$events_label
-			);
+    $view_all_label = sprintf(_n('View %1$s %2$s', 'View All %1$s %2$s', $day['total_events'], 'the-events-calendar'), $day['total_events'], $events_label);
 
-		?>
+    ?>
 		<a href="<?php echo esc_url( $day['view_more'] ); ?>"><?php echo $view_all_label ?> &raquo;</a>
-	</div>
+</div>
 <?php
 endif;

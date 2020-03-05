@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -22,17 +21,21 @@ use Longman\TelegramBot\Request;
  */
 class CallbackqueryCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'callbackquery';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Reply to callback query';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.1';
@@ -45,15 +48,15 @@ class CallbackqueryCommand extends SystemCommand
      */
     public function execute()
     {
-        $callback_query    = $this->getCallbackQuery();
+        $callback_query = $this->getCallbackQuery();
         $callback_query_id = $callback_query->getId();
-        $callback_data     = $callback_query->getData();
+        $callback_data = $callback_query->getData();
 
         $data = [
             'callback_query_id' => $callback_query_id,
-            'text'              => 'Hello World!',
-            'show_alert'        => $callback_data === 'thumb up',
-            'cache_time'        => 5,
+            'text' => 'Hello World!',
+            'show_alert' => $callback_data === 'thumb up',
+            'cache_time' => 5
         ];
 
         return Request::answerCallbackQuery($data);

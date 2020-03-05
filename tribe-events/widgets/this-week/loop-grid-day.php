@@ -8,19 +8,20 @@
  * @package TribeEventsCalendar
  *
  */
+if (! defined('ABSPATH')) {
+    die('-1');
+}
+?>
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-} ?>
-
-<div class="tribe-this-week-widget-day tribe-this-week-widget-day-<?php echo esc_attr( $day['day_number'] ) ?> <?php echo esc_attr( tribe_get_this_week_day_class( $day ) ); ?>">
+<div
+	class="tribe-this-week-widget-day tribe-this-week-widget-day-<?php echo esc_attr( $day['day_number'] ) ?> <?php echo esc_attr( tribe_get_this_week_day_class( $day ) ); ?>">
 
 	<div class="tribe-this-week-widget-header-date">
 		<span class="day"><?php echo esc_html( $day['formatted_day'] ); ?></span>
 		<span class="date"><?php echo esc_html( $day['formatted_date'] ); ?></span>
 	</div>
 
-		<div class="tribe-this-week-widget-day-wrap">
+	<div class="tribe-this-week-widget-day-wrap">
 
 			<?php if ( $day['has_events'] ) : ?>
 
@@ -40,25 +41,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="tribe-events-viewmore">
 						<?php
 
-						$label_text = $this_week_template_vars['events_label_singular'];
-						if ( 1 !== $day['total_events'] ) {
-							$label_text = $this_week_template_vars['events_label_plural'];
-						}
+        $label_text = $this_week_template_vars['events_label_singular'];
+        if (1 !== $day['total_events']) {
+            $label_text = $this_week_template_vars['events_label_plural'];
+        }
 
-						$view_all_label = sprintf(
-						  _n(
-						    'View %1$s %2$s',
-						    'View All %1$s %2$s',
-						    $day['total_events'],
-						    'tribe-events-calendar-pro'
-						  ),
-						  $day['total_events'],
-						  $label_text
-						);
+        $view_all_label = sprintf(_n('View %1$s %2$s', 'View All %1$s %2$s', $day['total_events'], 'tribe-events-calendar-pro'), $day['total_events'], $label_text);
 
-						?>
+        ?>
 						<a href="<?php echo esc_url( $day['view_more'] ); ?>"><?php echo esc_html( $view_all_label ); ?> &raquo;</a>
-					</div>
+		</div>
 
 				<?php endif ?>
 

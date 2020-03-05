@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
@@ -21,22 +20,27 @@ use Longman\TelegramBot\Request;
  */
 class ForcereplyCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'forcereply';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Force reply with reply markup';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/forcereply';
 
     /**
+     *
      * @var string
      */
     protected $version = '0.1.0';
@@ -49,12 +53,14 @@ class ForcereplyCommand extends UserCommand
      */
     public function execute()
     {
-        $chat_id = $this->getMessage()->getChat()->getId();
+        $chat_id = $this->getMessage()
+            ->getChat()
+            ->getId();
 
         $data = [
-            'chat_id'      => $chat_id,
-            'text'         => 'Write something:',
-            'reply_markup' => Keyboard::forceReply(),
+            'chat_id' => $chat_id,
+            'text' => 'Write something:',
+            'reply_markup' => Keyboard::forceReply()
         ];
 
         return Request::sendMessage($data);

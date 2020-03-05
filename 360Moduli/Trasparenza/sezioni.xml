@@ -1,162 +1,350 @@
 <xml>
-    <section title="Disposizioni Generali">
-        <subsection title="Piano triennale per la prevenzione della corruzione e della trasparenza
+	<section title="Disposizioni Generali">
+		<subsection
+			title="Piano triennale per la prevenzione della corruzione e della trasparenza
         "></subsection>
-        <subsection title="Atti generali"></subsection>
-        <subsection title="Oneri informativi per cittadini e imprese">
-            <norma> Art. 12 , c. 1bis del decreto legislativo 14 marzo 2013, n. 33 - Riordino della disciplina riguardante gli obblighi di pubblicità, trasparenza e diffusione di informazioni da parte delle pubbliche amministrazioni.
-            </norma>
-        </subsection>
-    </section>
-    <section title="Organizzazione">
-        <subsection title="Titolari di incarichi politici, di amministrazione, di direzione o di governo
+		<subsection title="Atti generali"></subsection>
+		<subsection
+			title="Oneri informativi per cittadini e imprese">
+			<norma>Art. 12 , c. 1bis del decreto legislativo 14 marzo 2013, n. 33
+				- Riordino della disciplina
+				riguardante gli obblighi di pubblicità, trasparenza e diffusione di
+				informazioni da parte delle
+				pubbliche amministrazioni.
+			</norma>
+		</subsection>
+	</section>
+	<section title="Organizzazione">
+		<subsection
+			title="Titolari di incarichi politici, di amministrazione, di direzione o di governo
+        ">
+			<norma>Art. 13-Obblighi di pubblicazione concernenti l'organizzazione
+				delle pubbliche amministrazioni
+				Art. 14-Obblighi di pubblicazione concernenti i componenti degli organi
+				di indirizzo politico
+			</norma>
+		</subsection>
+		<subsection
+			title="Sanzioni per mancata comunicazione dei dati">
+			<norma>Art. 47 del decreto legislativo 14 marzo 2013, n. 33 -
+				Riordino della disciplina riguardante gli
+				obblighi di pubblicità, trasparenza e diffusione di informazioni da parte
+				delle pubbliche
+				amministrazioni.
+			</norma>
+		</subsection>
+		<subsection
+			title="Rendiconti gruppi consiliari regionali/provinciali"></subsection>
+		<subsection title="Articolazione degli uffici"></subsection>
+		<subsection title="Telefono e posta elettronica"></subsection>
+	</section>
+	<section title="Consulenti e collaboratori">
+		<subsection
+			title="Titolari di incarichi di collaborazione o consulenza
         "></subsection>
-        <subsection title="Sanzioni per mancata comunicazione dei dati">
-            <norma>Sezione relativa alle sanzioni per mancata o incompleta comunicazione dei dati da parte dei titolari di incarichi dirigenziali, come indicato all'art. 47, del d.lgs. 33/2013</norma>
-            <norma>Sezione relativa alle sanzioni per mancata o incompleta comunicazione dei dati da parte dei titolari di incarichi dirigenziali, come indicato all'art. 47, del d.lgs. 33/2013</norma>
+	</section>
+	<section title="Personale">
+		<subsection
+			title="Titolari di incarichi dirigenziali amministrativi di vertice
+        "></subsection>
+		<subsection
+			title="Titolari di incarichi dirigenziali (dirigenti non generali)">
+			<norma>
+				Le retribuzioni dei dirigenti, pubblicate ai sensi dell’art.21 della
+				legge 18.6.2009 n.69, riportano la somma di quanto corrisposto
+				nell’anno di riferimento ai dirigenti e sono comprensive di
+				eventuali arretrati.
+				Le retribuzioni sono indicate al lordo delle ritenute per contributi e
+				fiscali.
+				Sono esclusi i compensi derivati da libera professione, indicati
+				separatamente.
+				Il totale delle retribuzioni indicate non coincide con l’imponibile
+				fiscale riportato sul CUD, poiché l’imponibile fiscale è al netto
+				delle ritenute per contributi.
+				In ottemperanza alla delibera dell'Autorità Nazionale AntiCorruzione
+				(A.N.A.C.) n. 382 del 12 aprile 2017, di seguito allegata, la
+				pubblicazione della situazione patrimoniale dei Dirigenti è sospesa
+				in attesa di diverse indicazioni dell'organo competente.
 
-        </subsection>
-        <subsection title="Rendiconti gruppi consiliari regionali/provinciali"></subsection>
-        <subsection title="Articolazione degli uffici"></subsection>
-        <subsection title="Telefono e posta elettronica"></subsection>
-    </section>
-    <section title="Consulenti e collaboratori">
-        <subsection title="Titolari di incarichi di collaborazione o consulenza
-        "></subsection>
-    </section>
-    <section title="Personale">
-        <subsection title="Titolari di incarichi dirigenziali amministrativi di vertice
-        "></subsection>
-        <subsection title="Titolari di incarichi dirigenziali (dirigenti non generali)"></subsection>
-        <subsection title="Dirigenti cessati"></subsection>
-        <subsection title="Posizioni organizzative"></subsection>
-        <subsection title="Dotazione organica"></subsection>
-        <subsection title="Personale non a tempo indeterminato"></subsection>
-        <subsection title="Tassi di assenza"></subsection>
-        <subsection title="Incarichi conferiti e autorizzati ai dipendenti (dirigenti e non dirigenti)"></subsection>
-        <subsection title="Contrattazione collettiva"></subsection>
-        <subsection title="Contrattazione integrativa"></subsection>
-        <subsection title="OIV"></subsection>
-    </section>
-    <section title="Bandi di Concorso">
-        <subsection title="Bandi di Concorso
-        "></subsection>
-    </section>
-    <section title="Performance">
-        <subsection title="Sistema di misurazione e valutazione della Performance
-        "></subsection>
-        <subsection title="Piano della Performance"></subsection>
-        <subsection title="Relazione sulla Performance"></subsection>
-        <subsection title="Documento dell'OIV di validazione della Relazione sulla Performance"></subsection>
-        <subsection title="Ammontare complessivo dei premi"></subsection>
-        <subsection title="Dati relativi ai premi"></subsection>
-    </section>
-    <section title="Enti controllati">
-        <subsection title="Enti pubblici vigilati
-        "></subsection>
-        <subsection title="Società partecipate"></subsection>
-        <subsection title="Enti di diritto privato controllati"></subsection>
-        <subsection title="Rappresentazione grafica"></subsection>
-    </section>
-    <section title="Attività e procedimenti">
-        <subsection title="Tipologie di procedimento
-        "></subsection>
-        <subsection title="Dichiarazioni sostitutive e acquisizione d'ufficio dei dati"></subsection>
-    </section>
-    <section title="Provvedimenti">
-        <subsection title="Provvedimenti organi indirizzo-politico
-        "></subsection>
-        <subsection title="Provvedimenti dirigenti"></subsection>
-    </section>
-    <section title="Bandi di gara e contratti">
-        <subsection title="Atti delle amministrazioni aggiudicatrici e degli enti aggiudicatori distintamente per ogni procedura
-        "></subsection>
-        <subsection title="Informazioni sulle singole procedure in formato tabellare"></subsection>
-    </section>
-    <section title="Sovvenzioni, contributi, sussidi, vantaggi economici">
-        <subsection title="Criteri e modalità
-        "></subsection>
-        <subsection title="Atti di concessione"></subsection>
-    </section>
+				Riferimento normativo: Decreto Legislativo 14 marzo 2013 n. 33 - art. 10 c. 8
+				lett. d - art. 15 c. 1,2,5, così come modificato e integrato dal
+				D..Lgs.97/2016
 
-    <section title="Bilanci">
-        <subsection title="Bilancio preventivo e consuntivo
-        "></subsection>
-        <subsection title="Piano degli indicatori e risultati attesi di bilancio"></subsection>
-    </section>
 
-    <section title="Beni immobili e gestione patrimonio">
-        <subsection title="Patrimonio immobiliare
-        "></subsection>
-        <subsection title="Canoni di locazione o affitto"></subsection>
-    </section>
+			</norma>
+		</subsection>
+		<subsection title="Dirigenti cessati"></subsection>
+		<subsection title="Posizioni organizzative"></subsection>
+		<subsection title="Dotazione organica"></subsection>
+		<subsection title="Personale non a tempo indeterminato">
+			<norma>Dati relativi al personale, non a tempo indeterminato, con
+				l’indicazione delle diverse tipologie e qualifiche compreso il
+				personale assegnato agli uffici di diretta collaborazione con gli
+				organi di indirizzo politico nonché l’elenco dei titolari dei
+				contratti a tempo determinato (personale non dirigente assunto a
+				tempo determinato ai sensi dell'art.90 e dell'art.110, comma 2,
+				cosiddette Alte Specializzazioni) del D.Lgs. 267/2000.
 
-    <section title="Controlli e rilievi sull'amministrazione">
-        <subsection title="Organismi indipendenti di valutazione, nuclei di valutazione o altri organismi con funzioni analoghe
-        "></subsection>
-        <subsection title="Organi di revisione amministrativa e contabile"></subsection>
-        <subsection title="Corte dei Conti"></subsection>
-    </section>
+				Riferimento normativo: Decreto Legislativo 14 marzo 2013 n. 33 - art. 17, c. 1,
+				2</norma>
+		</subsection>
+		<subsection title="Tassi di assenza"></subsection>
+		<subsection
+			title="Incarichi conferiti e autorizzati ai dipendenti (dirigenti e non dirigenti)"></subsection>
+		<subsection title="Contrattazione collettiva">
+			<norma>Art 21 dl 33/13
 
-    <section title="Servizi erogati">
-        <subsection title="Carta dei servizi e standard di qualità
-        "></subsection>
-        <subsection title="Class action"></subsection>
-        <subsection title="Costi contabilizzati"></subsection>
-        <subsection title="Servizi in rete"></subsection>
-        <subsection title="Tempi medi di erogazione dei servizi"></subsection>
-        <subsection title="Liste di attesa"></subsection>
-    </section>
+				Obblighi di pubblicazione concernente i dati sulla contrattazione collettiva</norma>
+		</subsection>
+		<subsection title="Contrattazione integrativa">
+			<norma>Art 21 dl 33/13
 
-    <section title="Pagamenti dell' amministrazione">
-        <subsection title="Dati sui pagamenti
+				Obblighi di pubblicazione concernente i dati sulla contrattazione collettiva</norma>
+		</subsection>
+		<subsection title="OIV">
+			<norma>Art 44 dl 33/13 Compiti degli organismi indipendenti di
+				valutazione e nuclei di
+				valutazione.Documentazione Nucleo di Valutazione
+			</norma>
+		</subsection>
+	</section>
+	<section title="Bandi di Concorso">
+		<subsection title="Bandi di Concorso
+        "></subsection>
+	</section>
+	<section title="Performance">
+		<subsection
+			title="Sistema di misurazione e valutazione della Performance
+        ">
+			<norma>Art 20 dl 33/13 Obblighi di pubblicazione dei dati relativi
+				alla pubblicazione della performance e alla distribuzione dei premi
+				al personale.</norma>
+		</subsection>
+		<subsection title="Piano della Performance">
+			<norma>Art 20 dl 33/13 Obblighi di pubblicazione dei dati relativi
+				alla pubblicazione della performance e alla distribuzione dei premi
+				al personale.</norma>
+		</subsection>
+		<subsection title="Relazione sulla Performance">
+			<norma>Art 20 dl 33/13 Obblighi di pubblicazione dei dati relativi
+				alla pubblicazione della performance e alla distribuzione dei premi
+				al personale.</norma>
+		</subsection>
+		<subsection
+			title="Documento dell OIV di validazione della Relazione sulla Performance">
+			<norma>
+				Le pubbliche amministrazioni pubblicano i dati relativi all'entita'
+				del premio mediamente conseguibile dal personale dirigenziale art 20
+				c.2 D.Lgs 33/13.</norma>
+		</subsection>
+		<subsection title="Ammontare complessivo dei premi">
+			<norma>Art 20 dl 33/13 Obblighi di pubblicazione dei dati relativi
+				alla pubblicazione della performance e alla distribuzione dei premi
+				al personale.</norma>
+		</subsection>
+		<subsection title="Dati relativi ai premi">
+			<norma>Art 20 dl 33/13 Obblighi di pubblicazione dei dati relativi
+				alla pubblicazione della performance e alla distribuzione dei premi
+				al personale.</norma>
+		</subsection>
+	</section>
+	<section title="Enti controllati">
+		<subsection title="Enti pubblici vigilati">
+			<norma>
+				Art 22 dl 33/13 - Obblighi di pubblicazione dei dati relativi agli enti
+				pubblici vigilati, e agli enti di diritto privato in controllo
+				pubblico, nonché alle partecipazioni in società di diritto privato.
+			</norma>
+		</subsection>
+		<subsection title="Società partecipate">
+			<norma>
+				Art. 22. Obblighi di pubblicazione dei dati relativi agli enti pubblici
+				vigilati, e agli enti di diritto privato in controllo pubblico,
+				nonché alle partecipazioni in società di diritto privato
+				(articolo così modificato dall'art. 21 del d.lgs. n. 97 del 2016)
+
+				1. Fermo restando quanto previsto dall'articolo 9-bis, ciascuna
+				amministrazione pubblica e aggiorna annualmente:
+
+				a) l'elenco degli enti pubblici, comunque denominati, istituiti,
+				vigilati o finanziati dall'amministrazione medesima nonché di quelli
+				per i quali l'amministrazione abbia il potere di nomina degli
+				amministratori dell'ente, con l'elencazione delle funzioni
+				attribuite e delle attività svolte in favore dell'amministrazione o
+				delle attività di servizio pubblico affidate.</norma>
+		</subsection>
+		<subsection title="Enti di diritto privato controllati">
+			<norma>
+				Art 22 dl 33/13 - Obblighi di pubblicazione dei dati relativi agli enti
+				pubblici vigilati, e agli enti di diritto privato in controllo
+				pubblico, nonché alle partecipazioni in società di diritto privato.
+			</norma>
+		</subsection>
+		<subsection title="Rappresentazione grafica">
+			<norma>
+				Art 22 dl 33/13 - Obblighi di pubblicazione dei dati relativi agli enti
+				pubblici vigilati, e agli enti di diritto privato in controllo
+				pubblico, nonché alle partecipazioni in società di diritto privato.
+			</norma>
+		</subsection>
+	</section>
+	<section title="Attività e procedimenti">
+		<subsection title="Tipologie di procedimento
+        "></subsection>
+		<subsection
+			title="Dichiarazioni sostitutive e acquisizione d'ufficio dei dati"></subsection>
+	</section>
+	<section title="Provvedimenti">
+		<subsection
+			title="Provvedimenti organi indirizzo-politico
+        "></subsection>
+		<subsection title="Provvedimenti dirigenti"></subsection>
+	</section>
+	<section title="Bandi di gara e contratti">
+		<subsection
+			title="Atti delle amministrazioni aggiudicatrici e degli enti aggiudicatori distintamente per ogni procedura
+        "></subsection>
+		<subsection
+			title="Informazioni sulle singole procedure in formato tabellare"></subsection>
+	</section>
+	<section
+		title="Sovvenzioni, contributi, sussidi, vantaggi economici">
+		<subsection title="Criteri e modalità
+        "></subsection>
+		<subsection title="Atti di concessione"></subsection>
+	</section>
+
+	<section title="Bilanci">
+		<subsection
+			title="Bilancio preventivo e consuntivo
+        "></subsection>
+		<subsection
+			title="Piano degli indicatori e risultati attesi di bilancio"></subsection>
+	</section>
+
+	<section title="Beni immobili e gestione patrimonio">
+		<subsection title="Patrimonio immobiliare
+        "></subsection>
+		<subsection title="Canoni di locazione o affitto"></subsection>
+	</section>
+
+	<section title="Controlli e rilievi sull'amministrazione">
+		<subsection
+			title="Organismi indipendenti di valutazione, nuclei di valutazione o altri organismi con funzioni analoghe
+        ">
+			<norma>Art 31 dl 33/13 - Obblighi di pubblicazione concernenti dati
+				relativi ai controlli sull'organizzazione e sull'attività
+				dell'amministrazione.</norma>
+		</subsection>
+		<subsection
+			title="Organi di revisione amministrativa e contabile">
+			<norma>Art 31 dl 33/13 - Obblighi di pubblicazione concernenti dati
+				relativi ai controlli sull'organizzazione e sull'attività
+				dell'amministrazione.</norma>
+		</subsection>
+		<subsection title="Corte dei Conti">
+			<norma>Art 31 dl 33/13 - Obblighi di pubblicazione concernenti dati
+				relativi ai controlli sull'organizzazione e sull'attività
+				dell'amministrazione.</norma>
+		</subsection>
+	</section>
+
+	<section title="Servizi erogati">
+		<subsection
+			title="Carta dei servizi e standard di qualità
+        "></subsection>
+		<subsection title="Class action"></subsection>
+		<subsection title="Costi contabilizzati"></subsection>
+		<subsection title="Servizi in rete"></subsection>
+		<subsection title="Tempi medi di erogazione dei servizi">
+			<norma>Art 32 dl 33/13
+
+				Obblighi di pubblicazione concernenti i servizi erogati</norma>
+		</subsection>
+		<subsection title="Liste di attesa"></subsection>
+	</section>
+
+	<section title="Pagamenti dell' amministrazione">
+		<subsection title="Dati sui pagamenti
     "></subsection>
-        <subsection title="Indicatore di tempestività dei pagamenti"></subsection>
-        <subsection title="IBAN e pagamenti informatici"></subsection>
-    </section>
+		<subsection
+			title="Indicatore di tempestività dei pagamenti"></subsection>
+		<subsection title="IBAN e pagamenti informatici"></subsection>
+	</section>
 
-    <section title="Opere pubbliche">
-        <subsection title="Nuclei di valutazione e verifica degli investimenti pubblici
+	<section title="Opere pubbliche">
+		<subsection
+			title="Nuclei di valutazione e verifica degli investimenti pubblici
         "></subsection>
-        <subsection title="Atti di programmazione delle opere pubbliche"></subsection>
-        <subsection title="Tempi costi e indicatori di realizzazione delle opere pubbliche"></subsection>
-    </section>
+		<subsection
+			title="Atti di programmazione delle opere pubbliche"></subsection>
+		<subsection
+			title="Tempi costi e indicatori di realizzazione delle opere pubbliche"></subsection>
+	</section>
 
-    <section title="Pianificazione e governo del territorio">
-        <subsection title="Pianificazione e governo del territorio
+	<section title="Pianificazione e governo del territorio">
+		<subsection
+			title="Pianificazione e governo del territorio
         "></subsection>
-    </section>
+	</section>
 
-    <section title="Informazioni ambientali">
-        <subsection title="Informazioni ambientali
+	<section title="Informazioni ambientali">
+		<subsection title="Informazioni ambientali
         "></subsection>
-    </section>
+	</section>
 
-    <section title="Strutture sanitarie private accreditate">
-        <subsection title="Strutture sanitarie private accreditate
+	<section title="Strutture sanitarie private accreditate">
+		<subsection
+			title="Strutture sanitarie private accreditate
         "></subsection>
-    </section>
+	</section>
 
-    <section title="Interventi straordinari e di emergenza">
-        <subsection title="Interventi straordinari e di emergenza
+	<section title="Interventi straordinari e di emergenza">
+		<subsection
+			title="Interventi straordinari e di emergenza
         "></subsection>
-    </section>
+	</section>
 
-    <section title="Altri contenuti">
-        <subsection title="Prevenzione della Corruzione
+	<section title="Altri contenuti">
+		<subsection title="Prevenzione della Corruzione
         "></subsection>
-        <subsection title="Accesso civico"></subsection>
-        <subsection title="Accessibilità e Catalogo di dati, metadati e banche dati"></subsection>
-        <subsection title="Dati ulteriori"></subsection>
-    </section>
+		<subsection title="Accesso civico"></subsection>
+		<subsection
+			title="Accessibilità e Catalogo di dati, metadati e banche dati"></subsection>
+		<subsection title="Dati ulteriori"></subsection>
+	</section>
 
-    <section title="Dati non più soggetti a pubblicazione obbligatoria">
-        <subsection title="Attestazioni OIV o di struttura analoga
+	<section
+		title="Dati non più soggetti a pubblicazione obbligatoria">
+		<subsection
+			title="Attestazioni OIV o di struttura analoga
         "></subsection>
-        <subsection title="Burocrazia zero"></subsection>
-        <subsection title="Benessere organizzativo"></subsection>
-        <subsection title="Dati aggregati attività amministrativa"></subsection>
-        <subsection title="Monitoraggio tempi procedimentali"></subsection>
-        <subsection title="Controlli sulle imprese"></subsection>
-    </section>
+		<subsection title="Burocrazia zero">
+			<norma>Art. 37, c. 3bis, del decreto legge n. 69/2013 convertito con
+				modificazioni dalla L. 9 agosto 2013,
+				n. 98 - Disposizioni urgenti per il rilancio dell'economia
+			</norma>
+		</subsection>
+		<subsection title="Benessere organizzativo">
+			<norma>Art. 20 , c. 3 del decreto legislativo 14 marzo 2013, n. 33 -
+				Riordino della disciplina riguardante gli obblighi di pubblicità,
+				trasparenza e diffusione di informazioni da parte delle pubbliche
+				amministrazioni.
+
+			</norma>
+		</subsection>
+		<subsection title="Dati aggregati attività amministrativa"></subsection>
+		<subsection title="Monitoraggio tempi procedimentali"></subsection>
+		<subsection title="Controlli sulle imprese">
+			<norma>Elenco delle tipologie di controllo a cui sono assoggettate le
+				imprese in ragione della dimensione e del settore di attività, con
+				l'indicazione per ciascuna di esse dei criteri e delle relative
+				modalità di svolgimento
+
+				Art. 25, c. 1 lett. a), del decreto legislativo 14 marzo 2013, n. 33 -
+				Riordino della disciplina riguardante gli obblighi di pubblicità,
+				trasparenza e diffusione di informazioni da parte delle pubbliche
+				amministrazioni.</norma>
+		</subsection>
+	</section>
 </xml>

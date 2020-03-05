@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use GuzzleHttp\Client;
@@ -26,22 +25,27 @@ use Longman\TelegramBot\TelegramLog;
  */
 class DateCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'date';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Show date/time by location';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/date <location>';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.4.1';
@@ -83,32 +87,41 @@ class DateCommand extends UserCommand
      */
     private function getCoordinates($location)
     {
-        $path  = 'geocode/json';
-        $query = ['address' => urlencode($location)];
+        $path = 'geocode/json';
+        $query = [
+            'address' => urlencode($location)
+        ];
 
         if ($this->google_api_key !== null) {
             $query['key'] = $this->google_api_key;
         }
 
         try {
-            $response = $this->client->get($path, ['query' => $query]);
+            $response = $this->client->get($path, [
+                'query' => $query
+            ]);
         } catch (RequestException $e) {
             TelegramLog::error($e->getMessage());
 
             return [];
         }
 
-        if (!($data = $this->validateResponseData($response->getBody()))) {
+        if (! ($data = $this->validateResponseData($response->getBody()))) {
             return [];
         }
 
         $result = $data['results'][0];
-        $lat    = $result['geometry']['location']['lat'];
-        $lng    = $result['geometry']['location']['lng'];
-        $acc    = $result['geometry']['location_type'];
-        $types  = $result['types'];
+        $lat = $result['geometry']['location']['lat'];
+        $lng = $result['geometry']['location']['lng'];
+        $acc = $result['geometry']['location_type'];
+        $types = $result['types'];
 
-        return [$lat, $lng, $acc, $types];
+        return [
+            $lat,
+            $lng,
+            $acc,
+            $types
+        ];
     }
 
     /**
@@ -123,12 +136,12 @@ class DateCommand extends UserCommand
     {
         $path = 'timezone/json';
 
-        $date_utc  = new \DateTimeImmutable(null, new \DateTimeZone('UTC'));
+        $date_utc = new \DateTimeImmutable(null, new \DateTimeZone('UTC'));
         $timestamp = $date_utc->format('U');
 
         $query = [
-            'location'  => urlencode($lat) . ',' . urlencode($lng),
-            'timestamp' => urlencode($timestamp),
+            'location' => urlencode($lat) . ',' . urlencode($lng),
+            'timestamp' => urlencode($timestamp)
         ];
 
         if ($this->google_api_key !== null) {
@@ -136,20 +149,25 @@ class DateCommand extends UserCommand
         }
 
         try {
-            $response = $this->client->get($path, ['query' => $query]);
+            $response = $this->client->get($path, [
+                'query' => $query
+            ]);
         } catch (RequestException $e) {
             TelegramLog::error($e->getMessage());
 
             return [];
         }
 
-        if (!($data = $this->validateResponseData($response->getBody()))) {
+        if (! ($data = $this->validateResponseData($response->getBody()))) {
             return [];
         }
 
         $local_time = $timestamp + $data['rawOffset'] + $data['dstOffset'];
 
-        return [$local_time, $data['timeZoneId']];
+        return [
+            $local_time,
+            $data['timeZoneId']
+        ];
     }
 
     /**
@@ -191,12 +209,12 @@ class DateCommand extends UserCommand
             return 'The time in nowhere is never';
         }
 
-        list($lat, $lng) = $this->getCoordinates($location);
+        list ($lat, $lng) = $this->getCoordinates($location);
         if (empty($lat) || empty($lng)) {
             return 'It seems that in "' . $location . '" they do not have a concept of time.';
         }
 
-        list($local_time, $timezone_id) = $this->getDate($lat, $lng);
+        list ($local_time, $timezone_id) = $this->getDate($lat, $lng);
 
         $date_utc = new \DateTimeImmutable(gmdate('Y-m-d H:i:s', $local_time), new \DateTimeZone($timezone_id));
 
@@ -211,15 +229,17 @@ class DateCommand extends UserCommand
      */
     public function execute()
     {
-        //First we set up the necessary member variables.
-        $this->client = new Client(['base_uri' => $this->google_api_base_uri]);
+        // First we set up the necessary member variables.
+        $this->client = new Client([
+            'base_uri' => $this->google_api_base_uri
+        ]);
         if (($this->google_api_key = trim($this->getConfig('google_api_key'))) === '') {
             $this->google_api_key = null;
         }
 
         $message = $this->getMessage();
 
-        $chat_id  = $message->getChat()->getId();
+        $chat_id = $message->getChat()->getId();
         $location = $message->getText(true);
 
         $text = 'You must specify location in format: /date <city>';
@@ -230,7 +250,7 @@ class DateCommand extends UserCommand
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => $text,
+            'text' => $text
         ];
 
         return Request::sendMessage($data);

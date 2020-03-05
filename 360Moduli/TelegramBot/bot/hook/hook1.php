@@ -12,25 +12,25 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 // Add you bot's API key and name
-$bot_api_key  = '912368249:AAFByCE2Qsz10VO9p3d5IBRHGUf7k9ATOWM';
+$bot_api_key = '912368249:AAFByCE2Qsz10VO9p3d5IBRHGUf7k9ATOWM';
 $bot_username = '@Remoteallert_bot';
 
 // Define all IDs of admin users in this array (leave as empty array if not used)
-$admin_users = [
-//    123,
+$admin_users = [ // 123,
 ];
 
 // Define all paths for your custom commands in this array (leave as empty array if not used)
 $commands_paths = [
-    __DIR__ . '/Commands/', __DIR__ . '/Personals/'
+    __DIR__ . '/Commands/',
+    __DIR__ . '/Personals/'
 ];
 
 // Enter your MySQL database credentials
 $mysql_credentials = [
-    'host'     => 'localhost',
-    'user'     => 'acquial_comune2019',
+    'host' => 'localhost',
+    'user' => 'acquial_comune2019',
     'password' => 'Com2019!!',
-    'database' => 'acquial_telegram',
+    'database' => 'acquial_telegram'
 ];
 
 try {
@@ -48,14 +48,13 @@ try {
 
     // Handle telegram webhook request
     $telegram->handle();
-
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // Silence is golden!
-    //echo $e;
+    // echo $e;
     // Log telegram errors
     Longman\TelegramBot\TelegramLog::error($e);
 } catch (Longman\TelegramBot\Exception\TelegramLogException $e) {
     // Silence is golden!
     // Uncomment this to catch log initialisation errors
-    //echo $e;
+    // echo $e;
 }

@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\Command;
@@ -21,44 +20,50 @@ use Longman\TelegramBot\Request;
  */
 class HelpCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'help';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Show bot commands help';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/help or /help <command>';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.3.0';
 
     /**
+     *
      * @inheritdoc
      */
     public function execute()
     {
-        $message     = $this->getMessage();
-        $chat_id     = $message->getChat()->getId();
+        $message = $this->getMessage();
+        $chat_id = $message->getChat()->getId();
         $command_str = trim($message->getText(true));
 
         // Admin commands shouldn't be shown in group chats
         $safe_to_show = $message->getChat()->isPrivateChat();
 
         $data = [
-            'chat_id'    => $chat_id,
-            'parse_mode' => 'markdown',
+            'chat_id' => $chat_id,
+            'parse_mode' => 'markdown'
         ];
 
-        list($all_commands, $user_commands, $admin_commands) = $this->getUserAdminCommands();
+        list ($all_commands, $user_commands, $admin_commands) = $this->getUserAdminCommands();
 
         // If no command parameter is passed, show the list.
         if ($command_str === '') {
@@ -80,17 +85,9 @@ class HelpCommand extends UserCommand
         }
 
         $command_str = str_replace('/', '', $command_str);
-        if (isset($all_commands[$command_str]) && ($safe_to_show || !$all_commands[$command_str]->isAdminCommand())) {
-            $command      = $all_commands[$command_str];
-            $data['text'] = sprintf(
-                'Command: %s (v%s)' . PHP_EOL .
-                'Description: %s' . PHP_EOL .
-                'Usage: %s',
-                $command->getName(),
-                $command->getVersion(),
-                $command->getDescription(),
-                $command->getUsage()
-            );
+        if (isset($all_commands[$command_str]) && ($safe_to_show || ! $all_commands[$command_str]->isAdminCommand())) {
+            $command = $all_commands[$command_str];
+            $data['text'] = sprintf('Command: %s (v%s)' . PHP_EOL . 'Description: %s' . PHP_EOL . 'Usage: %s', $command->getName(), $command->getVersion(), $command->getDescription(), $command->getUsage());
 
             return Request::sendMessage($data);
         }
@@ -111,7 +108,7 @@ class HelpCommand extends UserCommand
         /** @var Command[] $commands */
         $commands = array_filter($this->telegram->getCommandsList(), function ($command) {
             /** @var Command $command */
-            return !$command->isSystemCommand() && $command->showInHelp() && $command->isEnabled();
+            return ! $command->isSystemCommand() && $command->showInHelp() && $command->isEnabled();
         });
 
         $user_commands = array_filter($commands, function ($command) {
@@ -128,6 +125,10 @@ class HelpCommand extends UserCommand
         ksort($user_commands);
         ksort($admin_commands);
 
-        return [$commands, $user_commands, $admin_commands];
+        return [
+            $commands,
+            $user_commands,
+            $admin_commands
+        ];
     }
 }

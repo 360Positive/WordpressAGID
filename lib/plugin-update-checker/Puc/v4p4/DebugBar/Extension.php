@@ -1,177 +1,182 @@
 <?php
-if ( !class_exists('Puc_v4p4_DebugBar_Extension', false) ):
+if (! class_exists('Puc_v4p4_DebugBar_Extension', false)) :
 
-	class Puc_v4p4_DebugBar_Extension {
-		const RESPONSE_BODY_LENGTH_LIMIT = 4000;
+    class Puc_v4p4_DebugBar_Extension
+    {
 
-		/** @var Puc_v4p4_UpdateChecker */
-		protected $updateChecker;
-		protected $panelClass = 'Puc_v4p4_DebugBar_Panel';
+        const RESPONSE_BODY_LENGTH_LIMIT = 4000;
 
-		public function __construct($updateChecker, $panelClass = null) {
-			$this->updateChecker = $updateChecker;
-			if ( isset($panelClass) ) {
-				$this->panelClass = $panelClass;
-			}
+        /** @var Puc_v4p4_UpdateChecker */
+        protected $updateChecker;
 
-			add_filter('debug_bar_panels', array($this, 'addDebugBarPanel'));
-			add_action('debug_bar_enqueue_scripts', array($this, 'enqueuePanelDependencies'));
+        protected $panelClass = 'Puc_v4p4_DebugBar_Panel';
 
-			add_action('wp_ajax_puc_v4_debug_check_now', array($this, 'ajaxCheckNow'));
-		}
+        public function __construct($updateChecker, $panelClass = null)
+        {
+            $this->updateChecker = $updateChecker;
+            if (isset($panelClass)) {
+                $this->panelClass = $panelClass;
+            }
 
-		/**
-		 * Register the PUC Debug Bar panel.
-		 *
-		 * @param array $panels
-		 * @return array
-		 */
-		public function addDebugBarPanel($panels) {
-			if ( $this->updateChecker->userCanInstallUpdates() ) {
-				$panels[] = new $this->panelClass($this->updateChecker);
-			}
-			return $panels;
-		}
+            add_filter('debug_bar_panels', array(
+                $this,
+                'addDebugBarPanel'
+            ));
+            add_action('debug_bar_enqueue_scripts', array(
+                $this,
+                'enqueuePanelDependencies'
+            ));
 
-		/**
-		 * Enqueue our Debug Bar scripts and styles.
-		 */
-		public function enqueuePanelDependencies() {
-			wp_enqueue_style(
-				'puc-debug-bar-style-v4',
-				$this->getLibraryUrl("/css/puc-debug-bar.css"),
-				array('debug-bar'),
-				'20171124'
-			);
+            add_action('wp_ajax_puc_v4_debug_check_now', array(
+                $this,
+                'ajaxCheckNow'
+            ));
+        }
 
-			wp_enqueue_script(
-				'puc-debug-bar-js-v4',
-				$this->getLibraryUrl("/js/debug-bar.js"),
-				array('jquery'),
-				'20170516'
-			);
-		}
+        /**
+         * Register the PUC Debug Bar panel.
+         *
+         * @param array $panels
+         * @return array
+         */
+        public function addDebugBarPanel($panels)
+        {
+            if ($this->updateChecker->userCanInstallUpdates()) {
+                $panels[] = new $this->panelClass($this->updateChecker);
+            }
+            return $panels;
+        }
 
-		/**
-		 * Run an update check and output the result. Useful for making sure that
-		 * the update checking process works as expected.
-		 */
-		public function ajaxCheckNow() {
-			if ( $_POST['uid'] !== $this->updateChecker->getUniqueName('uid') ) {
-				return;
-			}
-			$this->preAjaxRequest();
-			$update = $this->updateChecker->checkForUpdates();
-			if ( $update !== null ) {
-				echo "An update is available:";
-				echo '<pre>', htmlentities(print_r($update, true)), '</pre>';
-			} else {
-				echo 'No updates found.';
-			}
+        /**
+         * Enqueue our Debug Bar scripts and styles.
+         */
+        public function enqueuePanelDependencies()
+        {
+            wp_enqueue_style('puc-debug-bar-style-v4', $this->getLibraryUrl("/css/puc-debug-bar.css"), array(
+                'debug-bar'
+            ), '20171124');
 
-			$errors = $this->updateChecker->getLastRequestApiErrors();
-			if ( !empty($errors) ) {
-				printf('<p>The update checker encountered %d API error%s.</p>', count($errors), (count($errors) > 1) ? 's' : '');
+            wp_enqueue_script('puc-debug-bar-js-v4', $this->getLibraryUrl("/js/debug-bar.js"), array(
+                'jquery'
+            ), '20170516');
+        }
 
-				foreach (array_values($errors) as $num => $item) {
-					$wpError = $item['error'];
-					/** @var WP_Error $wpError */
-					printf('<h4>%d) %s</h4>', $num + 1, esc_html($wpError->get_error_message()));
+        /**
+         * Run an update check and output the result.
+         * Useful for making sure that
+         * the update checking process works as expected.
+         */
+        public function ajaxCheckNow()
+        {
+            if ($_POST['uid'] !== $this->updateChecker->getUniqueName('uid')) {
+                return;
+            }
+            $this->preAjaxRequest();
+            $update = $this->updateChecker->checkForUpdates();
+            if ($update !== null) {
+                echo "An update is available:";
+                echo '<pre>', htmlentities(print_r($update, true)), '</pre>';
+            } else {
+                echo 'No updates found.';
+            }
 
-					echo '<dl>';
-					printf('<dt>Error code:</dt><dd><code>%s</code></dd>', esc_html($wpError->get_error_code()));
+            $errors = $this->updateChecker->getLastRequestApiErrors();
+            if (! empty($errors)) {
+                printf('<p>The update checker encountered %d API error%s.</p>', count($errors), (count($errors) > 1) ? 's' : '');
 
-					if ( isset($item['url']) ) {
-						printf('<dt>Requested URL:</dt><dd><code>%s</code></dd>', esc_html($item['url']));
-					}
+                foreach (array_values($errors) as $num => $item) {
+                    $wpError = $item['error'];
+                    /** @var WP_Error $wpError */
+                    printf('<h4>%d) %s</h4>', $num + 1, esc_html($wpError->get_error_message()));
 
-					if ( isset($item['httpResponse']) ) {
-						if ( is_wp_error($item['httpResponse']) ) {
-							$httpError = $item['httpResponse'];
-							/** @var WP_Error $httpError */
-							printf(
-								'<dt>WordPress HTTP API error:</dt><dd>%s (<code>%s</code>)</dd>',
-								esc_html($httpError->get_error_message()),
-								esc_html($httpError->get_error_code())
-							);
-						} else {
-							//Status code.
-							printf(
-								'<dt>HTTP status:</dt><dd><code>%d %s</code></dd>',
-								wp_remote_retrieve_response_code($item['httpResponse']),
-								wp_remote_retrieve_response_message($item['httpResponse'])
-							);
+                    echo '<dl>';
+                    printf('<dt>Error code:</dt><dd><code>%s</code></dd>', esc_html($wpError->get_error_code()));
 
-							//Headers.
-							echo '<dt>Response headers:</dt><dd><pre>';
-							foreach (wp_remote_retrieve_headers($item['httpResponse']) as $name => $value) {
-								printf("%s: %s\n", esc_html($name), esc_html($value));
-							}
-							echo '</pre></dd>';
+                    if (isset($item['url'])) {
+                        printf('<dt>Requested URL:</dt><dd><code>%s</code></dd>', esc_html($item['url']));
+                    }
 
-							//Body.
-							$body = wp_remote_retrieve_body($item['httpResponse']);
-							if ( $body === '' ) {
-								$body = '(Empty response.)';
-							} else if ( strlen($body) > self::RESPONSE_BODY_LENGTH_LIMIT ) {
-								$length = strlen($body);
-								$body = substr($body, 0, self::RESPONSE_BODY_LENGTH_LIMIT)
-									. sprintf("\n(Long string truncated. Total length: %d bytes.)", $length);
-							}
+                    if (isset($item['httpResponse'])) {
+                        if (is_wp_error($item['httpResponse'])) {
+                            $httpError = $item['httpResponse'];
+                            /** @var WP_Error $httpError */
+                            printf('<dt>WordPress HTTP API error:</dt><dd>%s (<code>%s</code>)</dd>', esc_html($httpError->get_error_message()), esc_html($httpError->get_error_code()));
+                        } else {
+                            // Status code.
+                            printf('<dt>HTTP status:</dt><dd><code>%d %s</code></dd>', wp_remote_retrieve_response_code($item['httpResponse']), wp_remote_retrieve_response_message($item['httpResponse']));
 
-							printf('<dt>Response body:</dt><dd><pre>%s</pre></dd>', esc_html($body));
-						}
-					}
-					echo '<dl>';
-				}
-			}
+                            // Headers.
+                            echo '<dt>Response headers:</dt><dd><pre>';
+                            foreach (wp_remote_retrieve_headers($item['httpResponse']) as $name => $value) {
+                                printf("%s: %s\n", esc_html($name), esc_html($value));
+                            }
+                            echo '</pre></dd>';
 
-			exit;
-		}
+                            // Body.
+                            $body = wp_remote_retrieve_body($item['httpResponse']);
+                            if ($body === '') {
+                                $body = '(Empty response.)';
+                            } else if (strlen($body) > self::RESPONSE_BODY_LENGTH_LIMIT) {
+                                $length = strlen($body);
+                                $body = substr($body, 0, self::RESPONSE_BODY_LENGTH_LIMIT) . sprintf("\n(Long string truncated. Total length: %d bytes.)", $length);
+                            }
 
-		/**
-		 * Check access permissions and enable error display (for debugging).
-		 */
-		protected function preAjaxRequest() {
-			if ( !$this->updateChecker->userCanInstallUpdates() ) {
-				die('Access denied');
-			}
-			check_ajax_referer('puc-ajax');
+                            printf('<dt>Response body:</dt><dd><pre>%s</pre></dd>', esc_html($body));
+                        }
+                    }
+                    echo '<dl>';
+                }
+            }
 
-			error_reporting(E_ALL);
-			@ini_set('display_errors', 'On');
-		}
+            exit();
+        }
 
-		/**
-		 * @param string $filePath
-		 * @return string
-		 */
-		private function getLibraryUrl($filePath) {
-			$absolutePath = realpath(dirname(__FILE__) . '/../../../' . ltrim($filePath, '/'));
+        /**
+         * Check access permissions and enable error display (for debugging).
+         */
+        protected function preAjaxRequest()
+        {
+            if (! $this->updateChecker->userCanInstallUpdates()) {
+                die('Access denied');
+            }
+            check_ajax_referer('puc-ajax');
 
-			//Where is the library located inside the WordPress directory structure?
-			$absolutePath = Puc_v4p4_Factory::normalizePath($absolutePath);
+            error_reporting(E_ALL);
+            @ini_set('display_errors', 'On');
+        }
 
-			$pluginDir = Puc_v4p4_Factory::normalizePath(WP_PLUGIN_DIR);
-			$muPluginDir = Puc_v4p4_Factory::normalizePath(WPMU_PLUGIN_DIR);
-			$themeDir = Puc_v4p4_Factory::normalizePath(get_theme_root());
+        /**
+         *
+         * @param string $filePath
+         * @return string
+         */
+        private function getLibraryUrl($filePath)
+        {
+            $absolutePath = realpath(dirname(__FILE__) . '/../../../' . ltrim($filePath, '/'));
 
-			if ( (strpos($absolutePath, $pluginDir) === 0) || (strpos($absolutePath, $muPluginDir) === 0) ) {
-				//It's part of a plugin.
-				return plugins_url(basename($absolutePath), $absolutePath);
-			} else if ( strpos($absolutePath, $themeDir) === 0 ) {
-				//It's part of a theme.
-				$relativePath = substr($absolutePath, strlen($themeDir) + 1);
-				$template = substr($relativePath, 0, strpos($relativePath, '/'));
-				$baseUrl = get_theme_root_uri($template);
+            // Where is the library located inside the WordPress directory structure?
+            $absolutePath = Puc_v4p4_Factory::normalizePath($absolutePath);
 
-				if ( !empty($baseUrl) && $relativePath ) {
-					return $baseUrl . '/' . $relativePath;
-				}
-			}
+            $pluginDir = Puc_v4p4_Factory::normalizePath(WP_PLUGIN_DIR);
+            $muPluginDir = Puc_v4p4_Factory::normalizePath(WPMU_PLUGIN_DIR);
+            $themeDir = Puc_v4p4_Factory::normalizePath(get_theme_root());
 
-			return '';
-		}
-	}
+            if ((strpos($absolutePath, $pluginDir) === 0) || (strpos($absolutePath, $muPluginDir) === 0)) {
+                // It's part of a plugin.
+                return plugins_url(basename($absolutePath), $absolutePath);
+            } else if (strpos($absolutePath, $themeDir) === 0) {
+                // It's part of a theme.
+                $relativePath = substr($absolutePath, strlen($themeDir) + 1);
+                $template = substr($relativePath, 0, strpos($relativePath, '/'));
+                $baseUrl = get_theme_root_uri($template);
+
+                if (! empty($baseUrl) && $relativePath) {
+                    return $baseUrl . '/' . $relativePath;
+                }
+            }
+
+            return '';
+        }
+    }
 
 endif;

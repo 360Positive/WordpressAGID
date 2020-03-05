@@ -9,7 +9,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 // Add you bot's API key and name
-$bot_api_key  = '912368249:AAFByCE2Qsz10VO9p3d5IBRHGUf7k9ATOWM';
+$bot_api_key = '912368249:AAFByCE2Qsz10VO9p3d5IBRHGUf7k9ATOWM';
 $bot_username = '@Remoteallert_bot';
 
 try {

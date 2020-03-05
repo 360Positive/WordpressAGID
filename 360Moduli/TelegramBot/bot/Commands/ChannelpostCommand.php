@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class ChannelpostCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'channelpost';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Handle channel post';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.0.0';
@@ -42,8 +45,7 @@ class ChannelpostCommand extends SystemCommand
      */
     public function execute()
     {
-        //$channel_post = $this->getUpdate()->getChannelPost();
-
+        // $channel_post = $this->getUpdate()->getChannelPost();
         return parent::execute();
     }
 }

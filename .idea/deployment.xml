@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Server Comune Acqui Terme" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Server Comune Acqui Terme" autoUploadExternalChanges="true" compareModeInSync="TIMESTAMP" showNewOnSourceInSync="false">
     <serverData>
+      <paths name="Comune Acqui Terme Turismo">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="Server Comune Acqui Terme">
         <serverdata>
           <mappings>

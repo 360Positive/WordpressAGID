@@ -45,6 +45,16 @@ get_header(); ?>
             border-color: #ffb402;
         }
 
+        .entry-title{
+            background: lightgray;
+            padding:1%;
+            display:block!important;
+            font-size:1.5rem!important;
+        }
+        ul, ul > li{
+            list-style-type: none;
+        }
+
 
     </style>
     <section class="entry-content thumbnail topimage">
@@ -60,7 +70,7 @@ get_header(); ?>
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php //get_template_part( 'entry' ); ?>
-                        <h1><?php the_title(); ?></h1>
+                        <h1  class="entry-title"><?php the_title(); ?></h1>
                         <hr>
                         <div id="introduzione"><?php the_field('introduzione'); ?></div>
                         <strong>Assessore</strong><br>
@@ -72,7 +82,7 @@ get_header(); ?>
                             echo '<i class="' . $iconuser . '"></i>' . $el . '<br>';
                         }
                         ?>
-                        <strong>Funzionari</strong><br>
+                        <strong>Funzionario</strong><br>
                         <?php
                         $iconuser = "icofont-user-alt-4";
                         $funzionari = get_field('funzionari');
@@ -109,15 +119,15 @@ get_header(); ?>
                         } else {
                             $xmi = new XMLINTERPRETER();
                             $xmi->init(get_field('xml'));
-                            echo "<div class='col-md-4'>";
+                            echo "<div class='col-md-4 text-left'>";
                             echo "<h2  class='alert alert-primary'>" . _("Sede") . '</h2>';
                             $xmi->luogoList();
                             echo "</div>";
-                            echo "<div class='col-md-4'>";
+                            echo "<div class='col-md-4 text-left'>";
                             echo "<h2  class='alert alert-primary'>" . _("Dirigente") . '</h2>';
                             $xmi->dirigenteList();
                             echo "</div>";
-                            echo "<div class='col-md-4'>";
+                            echo "<div class='col-md-4 text-left'>";
                             echo "<h2  class='alert alert-primary'>" . _("Contatti") . ":</h2>";
                             $xmi->contattiList();
                             echo "</div>";
@@ -132,23 +142,30 @@ get_header(); ?>
                         }
                         ?>
                     </div>
+                    <?php
+                    //Stampa data e informazioni di aggiornamento della pagina
+                    echo _('<br>');
+                    echo _('Ultima modifica il: ');
+                    the_modified_time('d F Y');
+                    ?>
                 </div>
 
                 <div class="col-md-3">
-                    <div class="container-fluid widget-area page-widget-area">
-                        <?php //Inclusione modulo per la gestione dei social
-                        include '360Moduli/sharesocial.php'; ?>
+                    <?php //Inclusione modulo per la gestione dei social
+                    include '360Moduli/sharesocial.php'; ?>
+                    <div id="sidenav" class="my-1">
+
                         <?php
                         $val = get_field('menusidebar');
                         if ($val) {
+                            ?>
+                            <p class="text-center ">
+                                <?= __("Naviga nella pagina, clicca sul pulsante per raggiungere la sezione dedicata.") ?>
+                            </p>
+                            <p id="menu"></p>
+                            <?php
                             wp_nav_menu(array('menu' => '"' . $val . '""'));
                         } ?>
-                    </div>
-                    <div id="sidenav">
-                        <p class="text-center py-1">
-                            <?= __("Naviga nella pagina, clicca sul pulsante per raggiungere la sezione dedicata.") ?>
-                        </p>
-                        <p id="menu"></p>
                     </div>
 
                 </div>

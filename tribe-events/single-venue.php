@@ -18,27 +18,27 @@
  *
  * @version 4.4.24
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
-if ( ! $wp_query = tribe_get_global_query_object() ) {
+if (! $wp_query = tribe_get_global_query_object()) {
     return;
 }
 
-$venue_id     = get_the_ID();
+$venue_id = get_the_ID();
 $full_address = tribe_get_full_address();
-$telephone    = tribe_get_phone();
+$telephone = tribe_get_phone();
 $website_link = tribe_get_venue_website_link();
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="tribe-events-venue">
 
-		<p class="tribe-events-back">
-			<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark">
+	<p class="tribe-events-back">
+		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"
+			rel="bookmark">
 			    <?php printf( __( '&larr; Back to %s', 'tribe-events-calendar-pro' ), tribe_get_event_label_plural() ); ?></a>
-		</p>
+	</p>
 
 	<div class="tribe-events-venue-meta tribe-clearfix">
 		<!-- Venue Title -->
@@ -48,9 +48,10 @@ $website_link = tribe_get_venue_website_link();
 
 		<?php if ( tribe_embed_google_map() && tribe_address_exists() ) : ?>
 			<!-- Venue Map -->
-			<div class="tribe-events-map-wrap">
+		<div class="tribe-events-map-wrap">
 				<?php echo tribe_get_embedded_map( $venue_id, '100%', '200px' ); ?>
-			</div><!-- .tribe-events-map-wrap -->
+			</div>
+		<!-- .tribe-events-map-wrap -->
 		<?php endif; ?>
 
 		<div class="tribe-events-event-meta">
@@ -85,11 +86,13 @@ $website_link = tribe_get_venue_website_link();
 					</span>
 				<?php endif; ?>
 
-			</div><!-- .venue-address -->
+			</div>
+			<!-- .venue-address -->
 
 			<?php do_action( 'tribe_events_single_venue_after_the_meta' ) ?>
 
-		</div><!-- .tribe-events-event-meta -->
+		</div>
+		<!-- .tribe-events-event-meta -->
 
 		<!-- Venue Description -->
 		<?php if ( get_the_content() ) : ?>
@@ -101,17 +104,20 @@ $website_link = tribe_get_venue_website_link();
 		<!-- Venue Featured Image -->
 		<?php //echo tribe_event_featured_image( null, 'full' ) ?>
 
-	</div><!-- .tribe-events-venue-meta -->
+	</div>
+	<!-- .tribe-events-venue-meta -->
 
 	<!-- Upcoming event list -->
 	<?php do_action( 'tribe_events_single_venue_before_upcoming_events' ) ?>
 
 	<?php
-	// Use the `tribe_events_single_venue_posts_per_page` to filter the number of events to get here.
-	echo tribe_venue_upcoming_events( $venue_id, $wp_query->query_vars ); ?>
+    // Use the `tribe_events_single_venue_posts_per_page` to filter the number of events to get here.
+    echo tribe_venue_upcoming_events($venue_id, $wp_query->query_vars);
+    ?>
 
 	<?php do_action( 'tribe_events_single_venue_after_upcoming_events' ) ?>
 
-</div><!-- .tribe-events-venue -->
+</div>
+<!-- .tribe-events-venue -->
 <?php
 endwhile;

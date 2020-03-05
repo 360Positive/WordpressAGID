@@ -11,17 +11,16 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 $event_id = get_the_ID();
 
 // Setup an array of venue details for use later in the template
-$venue = tribe_get_venue_single_line_address( $event_id );
+$venue = tribe_get_venue_single_line_address($event_id);
 
-do_action( 'tribe_events_embed_before_the_event_meta' );
+do_action('tribe_events_embed_before_the_event_meta');
 ?>
 <div class="tribe-events-event-meta">
 	<!-- Event Cost -->
@@ -40,4 +39,4 @@ do_action( 'tribe_events_embed_before_the_event_meta' );
 	<?php do_action( 'tribe_events_embed_after_the_event_venue' ) ?>
 </div>
 <?php
-do_action( 'tribe_events_embed_after_the_event_meta' );
+do_action('tribe_events_embed_after_the_event_meta');

@@ -11,13 +11,12 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
-if ( ! tribe_get_cost() ) {
-	return;
+if (! tribe_get_cost()) {
+    return;
 }
 ?>
 <div class="tribe-events-event-cost">

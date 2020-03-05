@@ -11,9 +11,8 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 ?>
@@ -22,12 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="wp-embed-meta">
 		<?php
-		/**
-		 * Print additional meta content in the embed template.
-		 *
-		 * @since 4.4.0
-		 */
-		do_action( 'embed_content_meta' );
-		?>
+/**
+ * Print additional meta content in the embed template.
+ *
+ * @since 4.4.0
+ */
+do_action('embed_content_meta');
+?>
 	</div>
 </div>

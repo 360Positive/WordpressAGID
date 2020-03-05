@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
@@ -20,22 +19,27 @@ use Longman\TelegramBot\Request;
  */
 class ImageCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'image';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Send Image';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/image';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -57,10 +61,10 @@ class ImageCommand extends UserCommand
         $random_image = $this->GetRandomImagePath($this->telegram->getUploadPath());
 
         $data = [
-            'chat_id' => $message->getChat()->getId(),
+            'chat_id' => $message->getChat()->getId()
         ];
 
-        if (!$random_image) {
+        if (! $random_image) {
             $data['text'] = 'No image found!';
             return Request::sendMessage($data);
         }
@@ -71,7 +75,7 @@ class ImageCommand extends UserCommand
         }
 
         $data['caption'] = $caption;
-        $data['photo']   = Request::encodeFile($random_image);
+        $data['photo'] = Request::encodeFile($random_image);
 
         return Request::sendPhoto($data);
     }
@@ -86,7 +90,10 @@ class ImageCommand extends UserCommand
     private function GetRandomImagePath($dir)
     {
         // Slice off the . and .. "directories"
-        if ($image_list = array_diff(scandir($dir), array('..', '.'))) {
+        if ($image_list = array_diff(scandir($dir), array(
+            '..',
+            '.'
+        ))) {
             shuffle($image_list);
             return $dir . '/' . $image_list[0];
         }

@@ -9,10 +9,10 @@
  * @version 4.2
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-} ?>
+if (! defined('ABSPATH')) {
+    die('-1');
+}
+?>
 
 <?php do_action( 'tribe_events_before_nav' ) ?>
 
@@ -27,7 +27,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php tribe_events_the_next_month_link(); ?>
 	</li>
 	<!-- .tribe-events-nav-next -->
-</ul><!-- .tribe-events-sub-nav -->
+</ul>
+<!-- .tribe-events-sub-nav -->
 
 <?php
-do_action( 'tribe_events_after_nav' );
+do_action('tribe_events_after_nav');

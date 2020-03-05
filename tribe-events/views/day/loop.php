@@ -9,10 +9,10 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-} ?>
+if (! defined('ABSPATH')) {
+    die('-1');
+}
+?>
 
 <?php
 
@@ -28,8 +28,11 @@ $current_timeslot = null;
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php do_action( 'tribe_events_inside_before_loop' ); ?>
 
-		<?php if ( $current_timeslot != $post->timeslot ) :
-		$current_timeslot = $post->timeslot; ?>
+		<?php
+
+if ($current_timeslot != $post->timeslot) :
+        $current_timeslot = $post->timeslot;
+        ?>
 	</div>
 	<!-- .tribe-events-day-time-slot -->
 
@@ -38,19 +41,21 @@ $current_timeslot = null;
 		<?php endif; ?>
 
 		<!-- Event  -->
-		<div id="post-<?php the_ID() ?>" class="<?php tribe_events_event_classes() ?>">
+		<div id="post-<?php the_ID() ?>"
+			class="<?php tribe_events_event_classes() ?>">
 			<?php
-			$event_type = tribe( 'tec.featured_events' )->is_featured( $post->ID ) ? 'featured' : 'event';
+    $event_type = tribe('tec.featured_events')->is_featured($post->ID) ? 'featured' : 'event';
 
-			/**
-			 * Filters the event type used when selecting a template to render
-			 *
-			 * @param $event_type
-			 */
-			$event_type = apply_filters( 'tribe_events_day_view_event_type', $event_type );
+    /**
+     * Filters the event type used when selecting a template to render
+     *
+     * @param
+     *            $event_type
+     */
+    $event_type = apply_filters('tribe_events_day_view_event_type', $event_type);
 
-			tribe_get_template_part( 'day/single', $event_type );
-			?>
+    tribe_get_template_part('day/single', $event_type);
+    ?>
 		</div>
 
 		<?php do_action( 'tribe_events_inside_after_loop' ); ?>
@@ -58,4 +63,5 @@ $current_timeslot = null;
 
 	</div>
 	<!-- .tribe-events-day-time-slot -->
-</div><!-- .tribe-events-loop -->
+</div>
+<!-- .tribe-events-loop -->

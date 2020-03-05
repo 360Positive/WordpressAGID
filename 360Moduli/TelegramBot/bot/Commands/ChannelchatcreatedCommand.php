@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class ChannelchatcreatedCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'channelchatcreated';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Channel chat created';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -42,9 +45,8 @@ class ChannelchatcreatedCommand extends SystemCommand
      */
     public function execute()
     {
-        //$message = $this->getMessage();
-        //$channel_chat_created = $message->getChannelChatCreated();
-
+        // $message = $this->getMessage();
+        // $channel_chat_created = $message->getChannelChatCreated();
         return parent::execute();
     }
 }

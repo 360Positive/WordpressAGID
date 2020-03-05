@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -18,17 +17,21 @@ use Longman\TelegramBot\Request;
  */
 class NewchatmembersCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'newchatmembers';
 
     /**
+     *
      * @var string
      */
     protected $description = 'New Chat Members';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.2.0';
@@ -48,7 +51,7 @@ class NewchatmembersCommand extends SystemCommand
 
         $text = 'Hi there!';
 
-        if (!$message->botAddedInChat()) {
+        if (! $message->botAddedInChat()) {
             $member_names = [];
             foreach ($members as $member) {
                 $member_names[] = $member->tryMention();
@@ -58,7 +61,7 @@ class NewchatmembersCommand extends SystemCommand
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => $text,
+            'text' => $text
         ];
 
         return Request::sendMessage($data);

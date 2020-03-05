@@ -8,9 +8,8 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 global $post;
@@ -22,10 +21,10 @@ global $post;
  * $post global referencing something other than the event we're interested
  * in.
  */
-$day      = tribe_events_get_current_month_day();
+$day = tribe_events_get_current_month_day();
 $event_id = "{$post->ID}-{$day['daynum']}";
-$link     = tribe_get_event_link( $post );
-$title    = get_the_title( $post );
+$link = tribe_get_event_link($post);
+$title = get_the_title($post);
 
 /**
  * How to Use the Javascript Templating System in this View
@@ -54,8 +53,8 @@ $title    = get_the_title( $post );
  *
  * Two new template tags have been introduced to power this system:
  *
- *     tribe_events_template_data()
- *     tribe_prepare_for_json().
+ * tribe_events_template_data()
+ * tribe_prepare_for_json().
  *
  * tribe_events_template_data( $post_object, $additional_data )
  * ============================================================
@@ -66,16 +65,16 @@ $title    = get_the_title( $post );
  * for use in your own javascript. The stock template tag supplies this json string (remember, the key on the left is
  * what we use in the javascript template file to call the data on the right):
  *
- *	{
- *		"eventId": POST ID,
- *		"title": "POST TITLE",
- *		"permalink": "POST PERMALINK",
- *		"startTime": "EVENT START TIME",
- *		"endTime": "EVENT END TIME (MAY NOT BE SET)",
- *		"imageSrc": "IMAGE THUMB FOR MOBILE(MAY NOT BE SET)",
- *		"imageTooltipSrc": "IMAGE THUMB FOR TOOLTIP(MAY NOT BE SET)",
- *		"excerpt": "POST EXCERPT"
- *	}
+ * {
+ * "eventId": POST ID,
+ * "title": "POST TITLE",
+ * "permalink": "POST PERMALINK",
+ * "startTime": "EVENT START TIME",
+ * "endTime": "EVENT END TIME (MAY NOT BE SET)",
+ * "imageSrc": "IMAGE THUMB FOR MOBILE(MAY NOT BE SET)",
+ * "imageTooltipSrc": "IMAGE THUMB FOR TOOLTIP(MAY NOT BE SET)",
+ * "excerpt": "POST EXCERPT"
+ * }
  *
  * tribe_prepare_for_json( $string )
  * =================================
@@ -88,10 +87,10 @@ $title    = get_the_title( $post );
  * lets say that the key name we want to use is "hello" in our js template. The following example shows how we would go
  * about adding the custom post meta and appending it to our event json string that is output in the markup.
  *
- *    $additional_data = array();
- *    $string = get_post_meta( get_the_ID(), 'hello_meta' ); // this string can be anything
- *    $additional_data['hello'] = $string;
- *    echo tribe_events_template_data( $post, $additional_data ); ?>
+ * $additional_data = array();
+ * $string = get_post_meta( get_the_ID(), 'hello_meta' ); // this string can be anything
+ * $additional_data['hello'] = $string;
+ * echo tribe_events_template_data( $post, $additional_data ); ?>
  *
  * Explanation: we create an empty array to cram our data into. We can add as much as we want, there are no limits on
  * data attribute length in the html5 spec. We want to call this data with the word "hello" in the js template, so that
@@ -107,40 +106,40 @@ $title    = get_the_title( $post );
  *
  * The template has 3 modes when parsing these.
  *
- *    [[ ]] is for executing javascript you place between the expression. Note below how we test for the presence of an
- *          end time and image thumbnail using this.
+ * [[ ]] is for executing javascript you place between the expression. Note below how we test for the presence of an
+ * end time and image thumbnail using this.
  *
- *    [[= ]] Is for a string with escaped html.
+ * [[= ]] Is for a string with escaped html.
  *
- *    [[=raw ]] Is for a string with html preserved. make sure to test for xss vulnerabilities using this method.
+ * [[=raw ]] Is for a string with html preserved. make sure to test for xss vulnerabilities using this method.
  *
  * Now lets look at the tooltip template. Compare the keys in it to the json string in section 2 above to map out whats
  * going on.
  *
  *
  *
- *	<script type="text/html" id="tribe_tmpl_tooltip">
- *		<div id="tribe-events-tooltip-[[=eventId]]" class="tribe-events-tooltip">
- *			<h4 class="tribe-event-title">[[=title]]</h4>
- *			<div class="tribe-events-event-body">
- *				<div class="tribe-event-duration">
- *					<abbr class="tribe-events-abbr tribe-event-date-start">[[=startTime]] </abbr>
- *			[[ if(endTime.length) { ]]
- *					-<abbr class="tribe-events-abbr tribe-event-date-end"> [[=endTime]]</abbr>
- *			[[ } ]]
- *				</div>
- *			[[ if(imageTooltipSrc.length) { ]]
- *				<div class="tribe-events-event-thumb">
- *					<img src="[[=imageTooltipSrc]]" alt="[[=title]]" />
- *				</div>
- *			[[ } ]]
- *			[[ if(excerpt.length) { ]]
- *				<p class="entry-summary description">[[=raw excerpt]]</p>
- *			[[ } ]]
- *				<span class="tribe-events-arrow"></span>
- *			</div>
- *		</div>
- *	</script>
+ * <script type="text/html" id="tribe_tmpl_tooltip">
+ * <div id="tribe-events-tooltip-[[=eventId]]" class="tribe-events-tooltip">
+ * <h4 class="tribe-event-title">[[=title]]</h4>
+ * <div class="tribe-events-event-body">
+ * <div class="tribe-event-duration">
+ * <abbr class="tribe-events-abbr tribe-event-date-start">[[=startTime]] </abbr>
+ * [[ if(endTime.length) { ]]
+ * -<abbr class="tribe-events-abbr tribe-event-date-end"> [[=endTime]]</abbr>
+ * [[ } ]]
+ * </div>
+ * [[ if(imageTooltipSrc.length) { ]]
+ * <div class="tribe-events-event-thumb">
+ * <img src="[[=imageTooltipSrc]]" alt="[[=title]]" />
+ * </div>
+ * [[ } ]]
+ * [[ if(excerpt.length) { ]]
+ * <p class="entry-summary description">[[=raw excerpt]]</p>
+ * [[ } ]]
+ * <span class="tribe-events-arrow"></span>
+ * </div>
+ * </div>
+ * </script>
  *
  *
  * Please note when creating your own data to feed to this that you must supply the key every time, even if the value is
@@ -155,44 +154,48 @@ $title    = get_the_title( $post );
  *
  * Plain javascript to loop over all events in grid view, get the json string, convert to object and log event title:
  *
- * 	(function (window, document) {
+ * (function (window, document) {
  *
- *		var events = document.querySelectorAll('.tribe_events');
+ * var events = document.querySelectorAll('.tribe_events');
  *
- *		for (var i=0; i < events.length; i++) {
+ * for (var i=0; i < events.length; i++) {
  *
- *			var event = events[i],
- *				data = event.getAttribute('data-tribejson'),
- *				obj = JSON.parse(data);
+ * var event = events[i],
+ * data = event.getAttribute('data-tribejson'),
+ * obj = JSON.parse(data);
  *
- *			console.log('Event title is: ' + obj.title);
- *		}
+ * console.log('Event title is: ' + obj.title);
+ * }
  *
- *	})(window, document);
+ * })(window, document);
  *
  * Same thing in jQuery:
  *
- *	(function (window, document, $) {
+ * (function (window, document, $) {
  *
- *		$(document).ready(function () {
+ * $(document).ready(function () {
  *
- *			$('.tribe_events')
- *				.each(function () {
+ * $('.tribe_events')
+ * .each(function () {
  *
- *					var obj = $(this).data('tribejson');
+ * var obj = $(this).data('tribejson');
  *
- *					console.log('Event title is: ' + obj.title);
+ * console.log('Event title is: ' + obj.title);
  *
- *				});
+ * });
  *
- *		});
+ * });
  *
- *	})(window, document, jQuery);
- *
+ * })(window, document, jQuery);
  */
 ?>
 
-<div id="tribe-events-event-<?php echo esc_attr( $event_id ); ?>" class="<?php tribe_events_event_classes() ?>" data-tribejson='<?php echo esc_attr( tribe_events_template_data( $post ) ); ?>'>
-	<h3 class="tribe-events-month-event-title"><a href="<?php echo esc_url( $link ) ?>" class="url"><?php echo $title ?></a></h3>
-</div><!-- #tribe-events-event-# -->
+<div id="tribe-events-event-<?php echo esc_attr( $event_id ); ?>"
+	class="<?php tribe_events_event_classes() ?>"
+	data-tribejson='<?php echo esc_attr( tribe_events_template_data( $post ) ); ?>'>
+	<h3 class="tribe-events-month-event-title">
+		<a href="<?php echo esc_url( $link ) ?>" class="url"><?php echo $title ?></a>
+	</h3>
+</div>
+<!-- #tribe-events-event-# -->
 

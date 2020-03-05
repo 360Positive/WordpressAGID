@@ -1,31 +1,45 @@
 <?php get_header();
+
 include "360Moduli/Trasparenza/normativa.php";
 
 $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/Trasparenza/servizi.xml');
 
 ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+<style>
+    h2.entry-title {
+        background: lightgray;
+        padding:1%;
+        display:block!important;
+        font-size:1.5rem!important;
+    }
+</style>
+<!-- Archivio archivio.php -->
     <section id="content" role="main" class="container">
         <div class="container">
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-9">
 
                     <header class="header">
-                        <h1 class="entry-title"><?php
-                            if (is_day()) {
-                                printf(__('Archivi giornalieri: %s', 'wppa'), get_the_time(get_option('date_format')));
-                            } elseif (is_month()) {
-                                printf(__('Archivi mensili: %s', 'wppa'), get_the_time('F Y'));
-                            } elseif (is_year()) {
-                                printf(__('Archivi annuali: %s', 'wppa'), get_the_time('Y'));
-                            } else {
-                                _e('Archivi', 'wppa');
-                            }
-                            ?></h1>
+<!--                        <h1>--><?php
+//                            if (is_day()) {
+//                                printf(__('Archivi giornalieri: %s', 'wppa'), get_the_time(get_option('date_format')));
+//                            } elseif (is_month()) {
+//                                printf(__('Archivi mensili: %s', 'wppa'), get_the_time('F Y'));
+//                            } elseif (is_year()) {
+//                                printf(__('Archivi annuali: %s', 'wppa'), get_the_time('Y'));
+//                            } else {
+//                                _e('Archivi', 'wppa');
+//                            }
+//                            ?><!--</h1>-->
                     </header>
+                    <h2 class="entry-title"><?= substr(get_the_archive_title(), 9);?></h2>
                     <?php
+
                     //Estrazione della normativa corrispondente.
-                    $norme = $normativa->searchin($text = substr(get_the_archive_title(), 9), "title")[0]->norma;
+//                    print_r($normativa);
+                    $norme = $normativa->searchin($text = str_replace("'",' ',substr(get_the_archive_title(), 9)), "title")[0]->norma;
                     foreach ($norme as $norma) {
                         echo '<div class="alert alert-primary" role="alert">';
                         echo $norma[0];
@@ -62,26 +76,30 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
                         <?php endwhile; endif; ?>
                         </tbody>
                     </table>
-                    <script type="text/javascript">
-                        $(document).ready(function () {
-                            $('#elencoList').DataTable({
-                                "iDisplayLength": 100,
 
-                            });
-                        });
-                    </script>
 
 
                 </div>
             </div>
-            <div class="col-sm-3 offset-sm-1">
-                <!--Da decidere cosa mettere-->
-                <!--         --><?php //get_sidebar(); ?>
+            <div class="col-sm-3 ">
+
             </div>
 
         </div>
 
 
     </section>
+    <script type="text/javascript">
 
+        jQuery.noConflict();
+        $(document).ready(function () {
+            $.noConflict();
+            $("#elencoList").DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Italian.json"
+                },
+                "pageLength": -1
+            });
+        });
+    </script>
 <?php get_footer(); ?>

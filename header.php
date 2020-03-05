@@ -81,9 +81,9 @@ Copyright - 2019
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 
     <?php /*---   Librerie javascript BOOTSTRAP   ----*/ ?>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
+<!--            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
+<!--            crossorigin="anonymous"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
@@ -91,7 +91,7 @@ Copyright - 2019
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <?php /*---   jQuery Library   ----*/ ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
 
     <?php /*---   Libreria pulsanti social   ----*/ ?>
     <script type="text/javascript"
@@ -105,7 +105,7 @@ Copyright - 2019
 
     <?php /*---   Data table   ----*/ ?>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <!--    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
 
     <?php /*---   Data table mobile   ----*/ ?>
@@ -269,15 +269,15 @@ Copyright - 2019
                                 <div class="col-md-2"></div>
                                 <div class="col-md-8">
                                     <div class="row">
-                                        <div class="col-md-4"><a href="https://turismo.comuneacqui.it/"
-                                                                 title="Apri sito esterno del Turismo di Acqui Terme">
+                                        <div class="col-md-4"><a target="_blank" href="https://turismo.comuneacqui.it/"
+                                                                 title="Apre sito esterno del Turismo di Acqui Terme">
                                                 Sito Turistico di Acqui Terme <i class="icofont-external-link"></i></a>
                                         </div>
-                                        <div class="col-md-4"><a href="https://acquistoria.it/"
-                                                                 title="Apri sito esterno del Premio Acqui Storia">
+                                        <div class="col-md-4"><a target="_blank" href="https://acquistoria.it/"
+                                                                 title="Apre sito esterno del Premio Acqui Storia">
                                                 Sito Premio Acqui Storia <i class="icofont-external-link"></i></a></div>
-                                        <div class="col-md-4"><a href="https://acquiambiente.it/"
-                                                                 title="Apri sito esterno del Premio Acqui Ambiente">
+                                        <div class="col-md-4"><a target="_blank" href="https://acquiambiente.it/"
+                                                                 title="Apre sito esterno del Premio Acqui Ambiente">
                                                 Sito Premio Acqui Ambiente <i class="icofont-external-link"></i></a>
                                         </div>
                                     </div
@@ -323,7 +323,7 @@ Copyright - 2019
 									<img class="" alt="" src="<?php header_image(); ?>">--><!-- </a> -->' ?>
 
 
-                            <div class="col-md-3"><a href="https://www.regione.piemonte.it"
+                            <div class="col-md-3"><a target="_blank" href="https://www.regione.piemonte.it"
                                                      title="Apri sito esterno della Regione Piemonte">Regione
                                     Piemonte</a></div>
                             <div class="col-md-7 text-center d-none d-md-block d-lg-block d-xl-block">
@@ -338,7 +338,7 @@ Copyright - 2019
                                         -->
                             </div>
                             <div class="col-md-1">
-                                <?php echo do_shortcode('[google-translator]'); ?>
+<!--                                --><?php //echo do_shortcode('[google-translator]'); ?>
                             </div>
                         </div>
                     </div>
@@ -376,39 +376,39 @@ Copyright - 2019
                                 </div>
                                 <div class="it-right-zone col-md-4 col-sx-12 ">
                                     <div class="row ">
-                                        <div class="it-socials col-md-12">
-                                            <div class="row ">
-                                                <div class="col-3">
-                                                    <div class="row ">
-                                                        <div class="col-md-auto d-none d-md-block d-lg-block d-xl-block"
-                                                             style="font-size:18px; word-break: break-all">Seguici su
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php /** Blocco social home page area ricerca top pagina*/ ?>
-                                                <div class="col-8" style="left:-20px;">
-                                                    <div class="row d-none d-md-block d-lg-block d-xl-block">
-                                                        <div class="col-md-12">
-                                                            <a class="icofont-linkedin social"
-                                                               title="Apre sito esterno di Linkedin"></a>
-                                                            <a class="icofont-instagram social"
-                                                               title="Apre sito esterno di Instagram"></a>
-                                                            <a class="icofont-brand-youtube social"
-                                                               title="Apre sito esterno di Youtube"></a>
-                                                            <a class="icofont-twitter social"
-                                                               title="Apre sito esterno di Twiter"></a>
-                                                            <a class="icofont-facebook social"
-                                                               title="Apre sito esterno di Facebook"></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-
-
-                                            <?php //wp_nav_menu( array( 'theme_location' => 'menu-social', 'container' => 'ul', 'menu_class' => 'nav')); ?>
-                                        </div>
+<!--                                        <div class="it-socials col-md-12">-->
+<!--                                            <div class="row ">-->
+<!--                                                <div class="col-3">-->
+<!--                                                    <div class="row ">-->
+<!--                                                        <div class="col-md-auto d-none d-md-block d-lg-block d-xl-block"-->
+<!--                                                             style="font-size:18px; word-break: break-all">Seguici su-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                --><?php ///** Blocco social home page area ricerca top pagina*/ ?>
+<!--                                                <div class="col-8" style="left:-20px;">-->
+<!--                                                    <div class="row d-none d-md-block d-lg-block d-xl-block">-->
+<!--                                                        <div class="col-md-12">-->
+<!--                                                            <a class="icofont-linkedin social"-->
+<!--                                                               title="Apre sito esterno di Linkedin"></a>-->
+<!--                                                            <a class="icofont-instagram social"-->
+<!--                                                               title="Apre sito esterno di Instagram"></a>-->
+<!--                                                            <a class="icofont-brand-youtube social"-->
+<!--                                                               title="Apre sito esterno di Youtube"></a>-->
+<!--                                                            <a class="icofont-twitter social"-->
+<!--                                                               title="Apre sito esterno di Twiter"></a>-->
+<!--                                                            <a class="icofont-facebook social"-->
+<!--                                                               title="Apre sito esterno di Facebook"></a>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!---->
+<!---->
+<!--                                            </div>-->
+<!---->
+<!---->
+<!--                                            --><?php ////wp_nav_menu( array( 'theme_location' => 'menu-social', 'container' => 'ul', 'menu_class' => 'nav')); ?>
+<!--                                        </div>-->
                                         <div class="it-search-wrapper col-md-12 pull-right">
                                             <?php get_search_form(); ?>
                                             <script>

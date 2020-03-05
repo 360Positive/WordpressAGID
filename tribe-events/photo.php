@@ -8,10 +8,10 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-} ?>
+if (! defined('ABSPATH')) {
+    die('-1');
+}
+?>
 
 <?php do_action( 'tribe_events_before_template' ); ?>
 
@@ -22,4 +22,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php tribe_get_template_part( 'pro/photo/content' ) ?>
 
 <?php
-do_action( 'tribe_events_after_template' );
+do_action('tribe_events_after_template');

@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class PinnedmessageCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'pinnedmessage';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Message was pinned';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.0.0';
@@ -42,9 +45,8 @@ class PinnedmessageCommand extends SystemCommand
      */
     public function execute()
     {
-        //$message = $this->getMessage();
-        //$pinned_message = $message->getPinnedMessage();
-
+        // $message = $this->getMessage();
+        // $pinned_message = $message->getPinnedMessage();
         return parent::execute();
     }
 }

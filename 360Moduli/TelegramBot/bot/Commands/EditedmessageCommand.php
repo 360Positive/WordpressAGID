@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class EditedmessageCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'editedmessage';
 
     /**
+     *
      * @var string
      */
     protected $description = 'User edited message';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.1';
@@ -42,8 +45,7 @@ class EditedmessageCommand extends SystemCommand
      */
     public function execute()
     {
-        //$edited_message = $this->getEditedMessage();
-
+        // $edited_message = $this->getEditedMessage();
         return parent::execute();
     }
 }

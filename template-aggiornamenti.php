@@ -82,11 +82,11 @@ presenti nella cartella afc_pro del tema
                                 $lastdate = $date;
                                 ?>
 
-<!--                            Blocco singola notizia    -->
+                                <!--                            Blocco singola notizia    -->
                                 <div class="text-justify" id="arg-<?= str_replace(' ', '', $voce['data_ora']) ?>">
-<!--Stile data notizia-->
+                                    <!--Stile data notizia-->
                                     <strong style="float:left;" class="data mr-2 px-2 py-1">Ora <?= $time ?> </strong>
-                                    <div style="font-size:1em"><?= $notizia; ?></div>
+                                    <div style="font-size:0.9em"><?= $notizia; ?></div>
 
                                     <?php
                                     //Lettura degli allegati disponibili e creazione voci
@@ -94,10 +94,10 @@ presenti nella cartella afc_pro del tema
 
                                         ?>
                                         <br>
-<!--                                        Creazione grafica pulsante allegato-->
+                                        <!-- Creazione grafica pulsante allegato-->
                                         <div class="btn btn-info"><a href="<?= $allegato['file']; ?>" target="_blank">
 											<span style="font-size:1em!important">
-<!--                                                Titolo allegato-->
+<!-- Titolo allegato-->
 												<?= $allegato['titolo']; ?>
 											</span>
                                             </a></div>
@@ -122,7 +122,7 @@ presenti nella cartella afc_pro del tema
                         <h1 class="w-103 py-3 mt-2 mx-0 px-0 text-center"
                             style="background:lightgray!important; font-size:1.25rem!important; font-weight:bold"><?= _('Date aggiornamenti'); ?></h1>
                         <?php
-//                        Creazione menu di navigazione dalle date memorizzate nella variabile $pubblication
+                        //                        Creazione menu di navigazione dalle date memorizzate nella variabile $pubblication
                         foreach ($pubblication as $data) {
                             ?>
                             <hr>

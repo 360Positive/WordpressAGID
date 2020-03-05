@@ -3,67 +3,67 @@
  * Modulo per la condivisione dei social sviluppato utilizzando la libreria
  * jsSocial che deve essere inclusa nell'header del tema
  */
-$links=get_post_permalink();
+$links = get_post_permalink();
 ?>
 <style>
-    .share-menu > div, .share-menu > div >i{
-        font-size: 1.5rem!important;
-        padding:2%;
-        cursor: pointer;
-    }
-    .icon-share{
-        background:red;
-        color: #fff!important;
-        background-color: #8e001c!important;
-        vertical-align: middle;
-        text-align:center;
-    }
-    .testo-share{
-        background:lightgrey;
-        color: #8e001c!important;
-        padding-left: 1em;
-        padding-right: 1em;
-        font-weight: 400!important;
-        font-size: 2rem!important;
-    }
+.share-menu>div, .share-menu>div>i {
+	font-size: 1.5rem !important;
+	padding: 2%;
+	cursor: pointer;
+}
 
-    div.jssocials-share > a {
-        background: #420301 !important;
-        font-size: 25.5px!important;
-    }
+.icon-share {
+	background: red;
+	color: #fff !important;
+	background-color: #8e001c !important;
+	vertical-align: middle;
+	text-align: center;
+}
 
-    .jssocials-share {
-        display: inline-block;
-        vertical-align: top;
-        margin: 0;
-    }
+.testo-share {
+	background: lightgrey;
+	color: #8e001c !important;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-weight: 400 !important;
+	font-size: 2rem !important;
+}
 
-    .share-menu > div, .share-menu > div >i {
-        font-size: 1.5rem!important;
-         width: 100%;
-        cursor: pointer;}
+div.jssocials-share>a {
+	background: #420301 !important;
+	font-size: 25.5px !important;
+}
 
-    div#links-social {
-        margin: 0px;
-        padding: 0px;
-    }
+.jssocials-share {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+}
 
+.share-menu>div, .share-menu>div>i {
+	font-size: 1.5rem !important;
+	width: 100%;
+	cursor: pointer;
+}
+
+div#links-social {
+	margin: 0px;
+	padding: 0px;
+}
 </style>
 
 <div id="front" class="row share-menu">
-    <div class="col-md-2 icon-share">
-        <i class="icofont-share align-middle icon-share"></i>
-    </div>
-    <div class="col-md-6 testo-share">
+	<div class="col-md-2 icon-share">
+		<i class="icofont-share align-middle icon-share"></i>
+	</div>
+	<div class="col-md-10 testo-share">
         <?= _('Condividi');?>
     </div>
 </div>
 
 
 <div id="links" class="row share-menu">
-    <div id="links-social" class="col-md-12">
-
-    </div>
+	<div id="links-social" class="col-md-12"></div>
 
 </div>
 <script>
@@ -109,4 +109,3 @@ $links=get_post_permalink();
     )
 
 </script>
-    

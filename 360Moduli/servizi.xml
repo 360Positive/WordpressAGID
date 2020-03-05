@@ -1,438 +1,558 @@
 <xml>
 
-    <sezione nome="ambiente">
-        <voce sezione="ambiente" nome="autorizzazioni_ambientali" data-tem="autorizzazioni_ambientali">
-            Autorizzazioni ambientali
-        </voce>
-        <voce sezione="ambiente" nome="benessere_animali" data-tem="benessere_animali">
-            Benessere animali
-        </voce>
-        <voce sezione="ambiente" nome="gestione_dei_rifiuti" data-tem="gestione_dei_rifiuti">
-            Gestione dei rifiuti
-        </voce>
-        <voce sezione="ambiente" nome="inquinamento" data-tem="inquinamento">
-            Inquinamento
-        </voce>
-        <voce sezione="ambiente" nome="verde_urbano" data-tem="verde_urbano">
-            Verde urbano
-        </voce>
-    </sezione>
-    <sezione nome="anagrafe_e_servizi_civici">
-        <voce sezione="anagrafe_e_servizi_civici" nome="albo_pretorio" data-tem="albo_pretorio">
-            Albo pretorio
-        </voce>
-        <voce sezione="anagrafe_e_servizi_civici" nome="anagrafe1" data-tem="anagrafe1">
-            Anagrafe
-        </voce>
-        <voce sezione="anagrafe_e_servizi_civici" nome="den_strade_e_att_numeri_civici"
-              data-tem="den_strade_e_att_numeri_civici">
-            Denominazione strade e numerazione
-        </voce>
-        <voce sezione="anagrafe_e_servizi_civici" nome="elezioni" data-tem="elezioni">
-            Servizi Elettorali
-        </voce>
-        <voce sezione="anagrafe_e_servizi_civici" nome="servizi_funebri_e_cimiteriali"
-              data-tem="servizi_funebri_e_cimiteriali">
-            Servizi funebri e cimiteriali
-        </voce>
-        <voce sezione="anagrafe_e_servizi_civici" nome="stato_civile" data-tem="stato_civile">
-            Stato civile
-        </voce>
-    </sezione>
-    <sezione nome="casa">
-        <voce sezione="casa" nome="assistenza_alloggiativa" data-tem="assistenza_alloggiativa">
-            Assistenza alloggiativa temporanea
-        </voce>
-        <voce sezione="casa" nome="condonoedilizio" data-tem="condonoedilizio">
-            Condono edilizio
-        </voce>
-        <voce sezione="casa" nome="contintervsostabit" data-tem="contintervsostabit">
-            Contributi e Interventi di sostegno abitativo
-        </voce>
-        <voce sezione="casa" nome="edificare_in_citt" data-tem="edificare_in_citt">
-            Edificare in città
-        </voce>
-        <voce sezione="casa" nome="edilizia_residenziale_pubblica" data-tem="edilizia_residenziale_pubblica">
-            Edilizia residenziale pubblica (E.R.P.)
-        </voce>
-        <voce sezione="casa" nome="ediliziaressociale" data-tem="ediliziaressociale">
-            Edilizia residenziale sociale
-        </voce>
-        <voce sezione="casa" nome="lacittachecambia" data-tem="lacittachecambia">
-            La città che cambia
-        </voce>
-    </sezione>
-    <sezione nome="commercio_e_impresa">
-<!--        <voce sezione="commercio_e_impresa" nome="age_affari_ex_art_115_tulps" data-tem="age_affari_ex_art_115_tulps">-->
-<!--            Agenzie d'Affari ex art. 115 T.U.L.P.S.-->
-<!--        </voce>-->
-        <voce sezione="commercio_e_impresa" nome="agricoltu" data-tem="agricoltu">
-            Agricoltura
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="albo_fornitori" data-tem="albo_fornitori">
-            Albo fornitori
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="artigianato" data-tem="artigianato">
-            Artigianato e attività varie
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="bott_stori_neg_storici_ecc" data-tem="bott_stori_neg_storici_ecc">
-            Negozi Storici e Eccellenza
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="comm_dett_sed_fisar_pubb" data-tem="comm_dett_sed_fisar_pubb">
-            Commercio al dettaglio in sede fissa
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="commercio_su_aree_pubbliche" data-tem="commercio_su_aree_pubbliche">
-            Commercio su aree pubbliche
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="com_aree_pub_forma_itin" data-tem="com_aree_pub_forma_itin">
-            Commercio su aree pubbliche in forma itinerante
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="esposizioni_pubblicitarie" data-tem="esposizioni_pubblicitarie">
-            Esposizioni Pubblicitarie
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="imp_dist_carb" data-tem="imp_dist_carb">
-            Impianti per la distribuzione di carburanti
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="impianti_produttivi" data-tem="impianti_produttivi">
-            Impianti produttivi
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="som_al_pub_alimenti_e_bevande"
-              data-tem="som_al_pub_alimenti_e_bevande">
-            Somministrazione al pubblico alimenti e bevande
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="spor_un_att_pro" data-tem="spor_un_att_pro">
-            Sportello unico attività produttive
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="tutela_del_consumatore" data-tem="tutela_del_consumatore">
-            Tutela del consumatore
-        </voce>
-        <voce sezione="commercio_e_impresa" nome="vend_quot_e_periodici_edicole"
-              data-tem="vend_quot_e_periodici_edicole">
-            Vendita di quotidiani e periodici (Edicole)
-        </voce>
-    </sezione>
-    <sezione nome="cultura">
-        <voce sezione="cultura" nome="arch_sto_cap_arch_centri_doc" data-tem="arch_sto_cap_arch_centri_doc">
-            Archivi e centri di documentazione
-        </voce>
-        <voce sezione="cultura" nome="auto_pub_spet_spet_viag" data-tem="auto_pub_spet_spet_viag">
-            Autorizzazioni pubblico spettacolo
-        </voce>
-        <voce sezione="cultura" nome="auto_riprese_cine_e_foto" data-tem="auto_riprese_cine_e_foto">
-            Autorizzazioni riprese cinetelevisive e fotografiche
-        </voce>
-        <voce sezione="cultura" nome="contributi_attivita_culturali" data-tem="contributi_attivita_culturali">
-            Contributi ad attività culturali
-        </voce>
-        <voce sezione="cultura" nome="attivita_educativa" data-tem="attivita_educativa">
-            Didattica
-        </voce>
-        <voce sezione="cultura" nome="donazioni_lasciti" data-tem="donazioni_lasciti">
-            Donazioni e lasciti
-        </voce>
-        <voce sezione="cultura" nome="facilitazioni_accesso_cultura" data-tem="facilitazioni_accesso_cultura">
-            Facilitazioni per l’accesso alla cultura
-        </voce>
-        <voce sezione="cultura" nome="attivita_formativa" data-tem="attivita_formativa">
-            Formazione
-        </voce>
-        <voce sezione="cultura" nome="biblioteche" data-tem="biblioteche">
-            Biblioteche
-        </voce>
-        <voce sezione="cultura" nome="i_luoghi_spettacolo_cultura" data-tem="i_luoghi_spettacolo_cultura">
-            Luoghi per lo spettacolo e la cultura
-        </voce>
-        <voce sezione="cultura" nome="monu_ville_parchi_storici" data-tem="monu_ville_parchi_storici">
-            Monumenti, Ville e Parchi storici
-        </voce>
-        <voce sezione="cultura" nome="musei" data-tem="musei">
-            Musei
-        </voce>
-        <voce sezione="cultura" nome="patrocini" data-tem="patrocini">
-            Patrocini
-        </voce>
-        <voce sezione="cultura" nome="iscriz_registro_artisti_strada" data-tem="iscriz_registro_artisti_strada">
-            Registro artisti di strada
-        </voce>
-        <voce sezione="cultura" nome="fotoriproduzioni" data-tem="fotoriproduzioni">
-            Riproduzioni
-        </voce>
-        <voce sezione="cultura" nome="donazioni_denaro_mece_sponsor" data-tem="donazioni_denaro_mece_sponsor">
-            Sostieni la cultura: mecenatismo, sponsorizzazioni, adozioni
-        </voce>
-        <voce sezione="cultura" nome="conc_temp_spazi_patr_cul" data-tem="conc_temp_spazi_patr_cul">
-            Uso spazi del patrimonio culturale
-        </voce>
+	<sezione nome="ambiente">
+		<voce sezione="ambiente" nome="autorizzazioni_ambientali"
+			data-tem="autorizzazioni_ambientali">
+			Autorizzazioni ambientali
+		</voce>
+		<voce sezione="ambiente" nome="benessere_animali"
+			data-tem="benessere_animali">
+			Benessere animali
+		</voce>
+		<voce sezione="ambiente" nome="gestione_dei_rifiuti"
+			data-tem="gestione_dei_rifiuti">
+			Gestione dei rifiuti
+		</voce>
+		<voce sezione="ambiente" nome="inquinamento"
+			data-tem="inquinamento">
+			Inquinamento
+		</voce>
+		<voce sezione="ambiente" nome="verde_urbano"
+			data-tem="verde_urbano">
+			Verde urbano
+		</voce>
+	</sezione>
+	<sezione nome="anagrafe_e_servizi_civici">
+		<voce sezione="anagrafe_e_servizi_civici" nome="albo_pretorio"
+			data-tem="albo_pretorio">
+			Albo pretorio
+		</voce>
+		<voce sezione="anagrafe_e_servizi_civici" nome="anagrafe1"
+			data-tem="anagrafe1">
+			Anagrafe
+		</voce>
+		<voce sezione="anagrafe_e_servizi_civici"
+			nome="den_strade_e_att_numeri_civici"
+			data-tem="den_strade_e_att_numeri_civici">
+			Denominazione strade e numerazione
+		</voce>
+		<voce sezione="anagrafe_e_servizi_civici" nome="elezioni"
+			data-tem="elezioni">
+			Servizi Elettorali
+		</voce>
+		<voce sezione="anagrafe_e_servizi_civici"
+			nome="servizi_funebri_e_cimiteriali"
+			data-tem="servizi_funebri_e_cimiteriali">
+			Servizi funebri e cimiteriali
+		</voce>
+		<voce sezione="anagrafe_e_servizi_civici" nome="stato_civile"
+			data-tem="stato_civile">
+			Stato civile
+		</voce>
+	</sezione>
+	<sezione nome="casa">
+		<voce sezione="casa" nome="assistenza_alloggiativa"
+			data-tem="assistenza_alloggiativa">
+			Assistenza alloggiativa temporanea
+		</voce>
+		<voce sezione="casa" nome="condonoedilizio"
+			data-tem="condonoedilizio">
+			Condono edilizio
+		</voce>
+		<voce sezione="casa" nome="contintervsostabit"
+			data-tem="contintervsostabit">
+			Contributi e Interventi di sostegno abitativo
+		</voce>
+		<voce sezione="casa" nome="edificare_in_citt"
+			data-tem="edificare_in_citt">
+			Edificare in città
+		</voce>
+		<voce sezione="casa" nome="edilizia_residenziale_pubblica"
+			data-tem="edilizia_residenziale_pubblica">
+			Edilizia residenziale pubblica (E.R.P.)
+		</voce>
+		<voce sezione="casa" nome="ediliziaressociale"
+			data-tem="ediliziaressociale">
+			Edilizia residenziale sociale
+		</voce>
+		<voce sezione="casa" nome="lacittachecambia"
+			data-tem="lacittachecambia">
+			La città che cambia
+		</voce>
+	</sezione>
+	<sezione nome="commercio_e_impresa">
+		<!-- <voce sezione="commercio_e_impresa" nome="age_affari_ex_art_115_tulps" 
+			data-tem="age_affari_ex_art_115_tulps"> -->
+		<!-- Agenzie d'Affari ex art. 115 T.U.L.P.S. -->
+		<!-- </voce> -->
+		<voce sezione="commercio_e_impresa" nome="agricoltu"
+			data-tem="agricoltu">
+			Agricoltura
+		</voce>
+		<voce sezione="commercio_e_impresa" nome="albo_fornitori"
+			data-tem="albo_fornitori">
+			Albo fornitori
+		</voce>
+		<voce sezione="commercio_e_impresa" nome="artigianato"
+			data-tem="artigianato">
+			Artigianato e attività varie
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="bott_stori_neg_storici_ecc"
+			data-tem="bott_stori_neg_storici_ecc">
+			Negozi Storici e Eccellenza
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="comm_dett_sed_fisar_pubb" data-tem="comm_dett_sed_fisar_pubb">
+			Commercio al dettaglio in sede fissa
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="commercio_su_aree_pubbliche"
+			data-tem="commercio_su_aree_pubbliche">
+			Commercio su aree pubbliche
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="com_aree_pub_forma_itin" data-tem="com_aree_pub_forma_itin">
+			Commercio su aree pubbliche in forma itinerante
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="esposizioni_pubblicitarie" data-tem="esposizioni_pubblicitarie">
+			Esposizioni Pubblicitarie
+		</voce>
+		<voce sezione="commercio_e_impresa" nome="imp_dist_carb"
+			data-tem="imp_dist_carb">
+			Impianti per la distribuzione di carburanti
+		</voce>
+		<voce sezione="commercio_e_impresa" nome="impianti_produttivi"
+			data-tem="impianti_produttivi">
+			Impianti produttivi
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="som_al_pub_alimenti_e_bevande"
+			data-tem="som_al_pub_alimenti_e_bevande">
+			Somministrazione al pubblico alimenti e bevande
+		</voce>
+		<voce sezione="commercio_e_impresa" nome="spor_un_att_pro"
+			data-tem="spor_un_att_pro">
+			Sportello unico attività produttive
+		</voce>
+		<voce sezione="commercio_e_impresa" nome="tutela_del_consumatore"
+			data-tem="tutela_del_consumatore">
+			Tutela del consumatore
+		</voce>
+		<voce sezione="commercio_e_impresa"
+			nome="vend_quot_e_periodici_edicole"
+			data-tem="vend_quot_e_periodici_edicole">
+			Vendita di quotidiani e periodici (Edicole)
+		</voce>
+	</sezione>
+	<sezione nome="cultura">
+		<voce sezione="cultura" nome="arch_sto_cap_arch_centri_doc"
+			data-tem="arch_sto_cap_arch_centri_doc">
+			Archivi e centri di documentazione
+		</voce>
+		<voce sezione="cultura" nome="auto_pub_spet_spet_viag"
+			data-tem="auto_pub_spet_spet_viag">
+			Autorizzazioni pubblico spettacolo
+		</voce>
+		<voce sezione="cultura" nome="auto_riprese_cine_e_foto"
+			data-tem="auto_riprese_cine_e_foto">
+			Autorizzazioni riprese cinetelevisive e fotografiche
+		</voce>
+		<voce sezione="cultura" nome="contributi_attivita_culturali"
+			data-tem="contributi_attivita_culturali">
+			Contributi ad attività culturali
+		</voce>
+		<voce sezione="cultura" nome="attivita_educativa"
+			data-tem="attivita_educativa">
+			Didattica
+		</voce>
+		<voce sezione="cultura" nome="donazioni_lasciti"
+			data-tem="donazioni_lasciti">
+			Donazioni e lasciti
+		</voce>
+		<voce sezione="cultura" nome="facilitazioni_accesso_cultura"
+			data-tem="facilitazioni_accesso_cultura">
+			Facilitazioni per l’accesso alla cultura
+		</voce>
+		<voce sezione="cultura" nome="attivita_formativa"
+			data-tem="attivita_formativa">
+			Formazione
+		</voce>
+		<voce sezione="cultura" nome="biblioteche" data-tem="biblioteche">
+			Biblioteche
+		</voce>
+		<voce sezione="cultura" nome="i_luoghi_spettacolo_cultura"
+			data-tem="i_luoghi_spettacolo_cultura">
+			Luoghi per lo spettacolo e la cultura
+		</voce>
+		<voce sezione="cultura" nome="monu_ville_parchi_storici"
+			data-tem="monu_ville_parchi_storici">
+			Monumenti, Ville e Parchi storici
+		</voce>
+		<voce sezione="cultura" nome="musei" data-tem="musei">
+			Musei
+		</voce>
+		<voce sezione="cultura" nome="patrocini" data-tem="patrocini">
+			Patrocini
+		</voce>
+		<voce sezione="cultura" nome="iscriz_registro_artisti_strada"
+			data-tem="iscriz_registro_artisti_strada">
+			Registro artisti di strada
+		</voce>
+		<voce sezione="cultura" nome="fotoriproduzioni"
+			data-tem="fotoriproduzioni">
+			Riproduzioni
+		</voce>
+		<voce sezione="cultura" nome="donazioni_denaro_mece_sponsor"
+			data-tem="donazioni_denaro_mece_sponsor">
+			Sostieni la cultura: mecenatismo, sponsorizzazioni, adozioni
+		</voce>
+		<voce sezione="cultura" nome="conc_temp_spazi_patr_cul"
+			data-tem="conc_temp_spazi_patr_cul">
+			Uso spazi del patrimonio culturale
+		</voce>
 
-    </sezione>
-    <sezione nome="diritti_e_pari_opportunita">
-        <voce sezione="diritti_e_pari_opportunita" nome="diritti_dei_cittadini1" data-tem="diritti_dei_cittadini1">
-            Diritti dei cittadini
-        </voce>
-        <voce sezione="diritti_e_pari_opportunita" nome="pari_opportunita1" data-tem="pari_opportunita1">
-            Pari opportunità
-        </voce>
-    </sezione>
-    <sezione nome="disabilita">
-        <voce sezione="disabilita" nome="assistenza_alla_persona_domici" data-tem="assistenza_alla_persona_domici">
-            Assistenza alla persona e domiciliare
-        </voce>
-        <voce sezione="disabilita" nome="centri_diurni_e_soggiorni" data-tem="centri_diurni_e_soggiorni">
-            Centri diurni e soggiorni
-        </voce>
-        <voce sezione="disabilita" nome="residenze_adulti" data-tem="residenze_adulti">
-            Residenze adulti
-        </voce>
-        <voce sezione="disabilita" nome="trasporto_e_agevolazioni" data-tem="trasporto_e_agevolazioni">
-            Trasporto e agevolazioni
-        </voce>
-    </sezione>
-    <sezione nome="formazione_e_lavoro">
-        <voce sezione="formazione_e_lavoro" nome="form_europa" data-tem="form_europa">
-            Formarsi in Europa
-        </voce>
-        <voce sezione="formazione_e_lavoro" nome="form_professionale" data-tem="form_professionale">
-            Formazione professionale
-        </voce>
-        <voce sezione="formazione_e_lavoro" nome="orient_lavoro" data-tem="orient_lavoro">
-            Orientamento al lavoro
-        </voce>
-        <voce sezione="formazione_e_lavoro" nome="scuola_arte_mest" data-tem="scuola_arte_mest">
-            Scuole d'Arte e dei Mestieri
-        </voce>
-    </sezione>
-    <sezione nome="innovazione_e_smartcity">
-        <voce sezione="innovazione_e_smartcity" nome="agenda_digitale" data-tem="agenda_digitale">
-            Agenda digitale
-        </voce>
-        <voce sezione="innovazione_e_smartcity" nome="competenze_digitali" data-tem="competenze_digitali">
-            Competenze Digitali
-        </voce>
-        <voce sezione="innovazione_e_smartcity" nome="smart_city" data-tem="smart_city">
-            Smart City
-        </voce>
-    </sezione>
-    <sezione nome="mobilità">
-        <voce sezione="mobilità" nome="mobilitàa_sostenibile" data-tem="mobilitàa_sostenibile">
-            mobilitàà Sostenibile
-        </voce>
-        <voce sezione="mobilità" nome="ncc_taxi_botticelle_fruitori" data-tem="ncc_taxi_botticelle_fruitori">
-            NCC - Taxi</voce>
-         <voce sezione="mobilità" nome="parcheggi_della_citta" data-tem="parcheggi_della_citta">
-            Parcheggi della città
-        </voce>
-        <voce sezione="mobilità" nome="trasp_pub_loc_bus_tur_gest" data-tem="trasp_pub_loc_bus_tur_gest">
-            Trasporto Pubblico Locale e Bus Turistici per i gestori
-        </voce>
-    <voce sezione="mobilità" nome="trasp_pub_loc_fruitori" data-tem="trasp_pub_loc_fruitori">
-            Trasporto Pubblico Locale per i fruitori
-        </voce>
-        <voce sezione="mobilità" nome="viabilit" data-tem="viabilit">
-            Viabilità
-        </voce>
-    </sezione>
-    <sezione nome="manutenzione_della_citta">
-        <voce sezione="manutenzione_della_citta" nome="centrale_unica_lavori_pubblici"
-              data-tem="centrale_unica_lavori_pubblici">
-            Centrale unica lavori pubblici
-        </voce>
-        <voce sezione="manutenzione_della_citta" nome="impianti_tecnologici" data-tem="impianti_tecnologici">
-            Impianti tecnologici
-        </voce>
-        <voce sezione="manutenzione_della_citta" nome="scavi_ap_pubb" data-tem="scavi_ap_pubb">
-            Scavi apertura da parte delle società di pubblici servizi
-        </voce>
-        <voce sezione="manutenzione_della_citta" nome="scavi_ap_priv" data-tem="scavi_ap_priv">
-            Scavi apertura da parte di privati o soggetti attuatori diversi dalle società di pubblici servizi -
-            allaccio/scarico in fogna
-        </voce>
-        <voce sezione="manutenzione_della_citta" nome="servizio_mon_con_ver" data-tem="servizio_mon_con_ver">
-            Servizio Monitoraggio, Controllo e Verifica sul Territorio
-        </voce>
-    </sezione>
-    <sezione nome="patrimonio">
-        <voce sezione="patrimonio" nome="conoscere_il_patrimonio" data-tem="conoscere_il_patrimonio">
-            Conoscere il Patrimonio
-        </voce>
-        <voce sezione="patrimonio" nome="patrimonio_bene_comune" data-tem="patrimonio_bene_comune">
-            Patrimonio bene comune
-        </voce>
-        <voce sezione="patrimonio" nome="utilizzare_patrimonio_erp" data-tem="utilizzare_patrimonio_erp">
-            Utilizzare il patrimonio di edilizia residenziale pubblica - ERP
-        </voce>
-        <voce sezione="patrimonio" nome="valorizzare_il_patrimonio" data-tem="valorizzare_il_patrimonio">
-            Valorizzare il patrimonio
-        </voce>
-    </sezione>
-    <sezione nome="scuola_formazione_lavoro">
-        <voce sezione="scuola_formazione_lavoro" nome="contrasto_dispersione_scol"
-              data-tem="contrasto_dispersione_scol">
-            Contrasto dispersione scolastica
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="diritto_allo_studio" data-tem="diritto_allo_studio">
-            Diritto allo studio
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="educatori" data-tem="educatori">
-            Educatrici e Educatori
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="insegnanti_1" data-tem="insegnanti_1">
-            Insegnanti
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="ludoteche" data-tem="ludoteche">
-            Ludoteche
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="asili_nido" data-tem="asili_nido">
-            Nido
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="mense_scolastiche" data-tem="mense_scolastiche">
-            Ristorazione scolastica e diete speciali
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="scuola_dellinfanzia" data-tem="scuola_dellinfanzia">
-            Scuola dell'infanzia
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="progetti" data-tem="progetti">
-            Supporto didattico
-        </voce>
-        <voce sezione="scuola_formazione_lavoro" nome="trasporto_scolastico" data-tem="trasporto_scolastico">
-            Trasporto Scolastico
-        </voce>
-    </sezione>
-    <sezione nome="sicurezza_urbana_prot_civile">
-        <voce sezione="sicurezza_urbana_prot_civile" nome="aib_anti_incendio_boschivo"
-              data-tem="aib_anti_incendio_boschivo">
-            A.I.B. - Anti Incendio Boschivo
-        </voce>
-        <voce sezione="sicurezza_urbana_prot_civile" nome="allerta_meteo" data-tem="allerta_meteo">
-            Allerta Meteo
-        </voce>
-        <voce sezione="sicurezza_urbana_prot_civile" nome="mul_accer_sist_ril_dist_vis_im"
-              data-tem="mul_accer_sist_ril_dist_vis_im">
-            Multe accertate con i sistemi di rilevazione a distanza - Visualizzazione immagini
-        </voce>
-        <voce sezione="sicurezza_urbana_prot_civile" nome="ondata_di_calore" data-tem="ondata_di_calore">
-            Ondate di calore
-        </voce>
-        <voce sezione="sicurezza_urbana_prot_civile" nome="piano_generale_di_emergenza"
-              data-tem="piano_generale_di_emergenza">
-            Piano Generale di Emergenza di Protezione Civile
-        </voce>
-        <voce sezione="sicurezza_urbana_prot_civile" nome="protezione_civile" data-tem="protezione_civile">
-            Protezione civile
-        </voce>
-<!--        <voce sezione="sicurezza_urbana_prot_civile" nome="rischi" data-tem="rischi">-->
-<!--            Rischi-->
-<!--        </voce>-->
-<!--        <voce sezione="sicurezza_urbana_prot_civile" nome="segnalazioni" data-tem="segnalazioni">-->
-<!--            Segnalazioni-->
-<!--        </voce>-->
-<!--        <voce sezione="sicurezza_urbana_prot_civile" nome="servizi_a_domanda" data-tem="servizi_a_domanda">-->
-<!--            Servizi a domanda-->
-<!--        </voce>-->
-        <voce sezione="sicurezza_urbana_prot_civile" nome="viabilit_e_traffico" data-tem="viabilit_e_traffico">
-            Viabilità e traffico
-        </voce>
-        <voce sezione="sicurezza_urbana_prot_civile" nome="volontariato" data-tem="volontariato">
-            Volontariato
-        </voce>
-    </sezione>
-    <sezione nome="sociale">
-        <voce sezione="sociale" nome="tutela_fasce_deboli" data-tem="tutela_fasce_deboli">
-            Anziani
-        </voce>
-        <voce sezione="sociale" nome="sociale1" data-tem="sociale1">
-            Attività di servizio sociale
-        </voce>
-        <voce sezione="sociale" nome="dipendenze" data-tem="dipendenze">
-            Dipendenze
-        </voce>
-        <voce sezione="sociale" nome="fam_e_persone_di_minore_eta" data-tem="fam_e_persone_di_minore_eta">
-            Famiglie e persone di minore età
-        </voce>
-        <voce sezione="sociale" nome="immig_pop_rom_sinti_caminanti" data-tem="immig_pop_rom_sinti_caminanti">
-            Immigrati e popolazioni Rom, Sinti e Caminanti
-        </voce>
-        <voce sezione="sociale" nome="multiutenza" data-tem="multiutenza">
-            Multiutenza
-        </voce>
-        <voce sezione="sociale" nome="pover_dis_adulti_sen_dimora" data-tem="pover_dis_adulti_sen_dimora">
-            Povertà, disagio adulti e senza dimora
-        </voce>
-        <voce sezione="sociale" nome="salute_" data-tem="salute_">
-            Salute, farmacia e veterinaria
-        </voce>
-    </sezione>
-    <sezione nome="sport">
-        <voce sezione="sport" nome="associazioni_sportive" data-tem="associazioni_sportive">
-            Associazioni sportive
-        </voce>
-        <voce sezione="sport" nome="centri_sportivi" data-tem="centri_sportivi">
-            Centri Sportivi Municipali
-        </voce>
-        <voce sezione="sport" nome="giovani" data-tem="giovani">
-            Giovani
-        </voce>
-        <voce sezione="sport" nome="impianti" data-tem="impianti">
-            Impianti Sportivi
-        </voce>
-        <voce sezione="sport" nome="prom_sportiva" data-tem="prom_sportiva">
-            Promozione sportiva
-        </voce>
-        <voce sezione="sport" nome="servizio_civile" data-tem="servizio_civile">
-            Servizio Civile
-        </voce>
-        <voce sezione="sport" nome="tesserini_venatori" data-tem="tesserini_venatori">
-            Tesserini Venatori
-        </voce>
-    </sezione>
-    <sezione nome="tributi_e_contravvenzioni">
-        <voce sezione="tributi_e_contravvenzioni" nome="addizionale_irpef" data-tem="addizionale_irpef">
-            Addizionale IRPEF
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="autotutela_ed_interpello" data-tem="autotutela_ed_interpello">
-            Autotutela ed interpello
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="cosap" data-tem="cosap">
-            COSAP
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="contravvenzioni" data-tem="contravvenzioni">
-            Contravvenzioni
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="contributo_di_soggiorno" data-tem="contributo_di_soggiorno">
-            Contributo di soggiorno
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="iban_e_pagamenti_informatici"
-              data-tem="iban_e_pagamenti_informatici">
-            IBAN e pagamenti informatici
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="imu_" data-tem="imu_">
-            IMU
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="iuc_imu_tari_tasi" data-tem="iuc_imu_tari_tasi">
-            IUC (IMU-TARI-TASI)
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="regolamenti_entrate" data-tem="regolamenti_entrate">
-            Regolamenti entrate
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="servizi_tributari_" data-tem="servizi_tributari_">
-            Servizi Tributari
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="pagamenti_online_" data-tem="pagamenti_online_">
-            Servizi di Pagamento
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="servizio_riscossione_reversali"
-              data-tem="servizio_riscossione_reversali">
-            Servizio Riscossione Reversali
-        </voce>
-        <voce sezione="tributi_e_contravvenzioni" nome="tributi_soppressi_" data-tem="tributi_soppressi_">
-            Tributi soppressi
-        </voce>
-    </sezione>
-    <sezione nome="turismo">
-        <voce sezione="turismo" nome="info_per_turisti" data-tem="info_per_turisti">
-            Informazioni per turisti (I.A.T.)
-        </voce>
-        <voce sezione="turismo" nome="suar" data-tem="suar">
-            Sportello Unico Attività Ricettive - S.U.A.R.
-        </voce>
-    </sezione>
+	</sezione>
+	<sezione nome="diritti_e_pari_opportunita">
+		<voce sezione="diritti_e_pari_opportunita"
+			nome="diritti_dei_cittadini1" data-tem="diritti_dei_cittadini1">
+			Diritti dei cittadini
+		</voce>
+		<voce sezione="diritti_e_pari_opportunita"
+			nome="pari_opportunita1" data-tem="pari_opportunita1">
+			Pari opportunità
+		</voce>
+	</sezione>
+	<sezione nome="disabilita">
+		<voce sezione="disabilita" nome="assistenza_alla_persona_domici"
+			data-tem="assistenza_alla_persona_domici">
+			Assistenza alla persona e domiciliare
+		</voce>
+		<voce sezione="disabilita" nome="centri_diurni_e_soggiorni"
+			data-tem="centri_diurni_e_soggiorni">
+			Centri diurni e soggiorni
+		</voce>
+		<voce sezione="disabilita" nome="residenze_adulti"
+			data-tem="residenze_adulti">
+			Residenze adulti
+		</voce>
+		<voce sezione="disabilita" nome="trasporto_e_agevolazioni"
+			data-tem="trasporto_e_agevolazioni">
+			Trasporto e agevolazioni
+		</voce>
+	</sezione>
+	<sezione nome="formazione_e_lavoro">
+		<voce sezione="formazione_e_lavoro" nome="form_europa"
+			data-tem="form_europa">
+			Formarsi in Europa
+		</voce>
+		<voce sezione="formazione_e_lavoro" nome="form_professionale"
+			data-tem="form_professionale">
+			Formazione professionale
+		</voce>
+		<voce sezione="formazione_e_lavoro" nome="orient_lavoro"
+			data-tem="orient_lavoro">
+			Orientamento al lavoro
+		</voce>
+		<voce sezione="formazione_e_lavoro" nome="scuola_arte_mest"
+			data-tem="scuola_arte_mest">
+			Scuole d'Arte e dei Mestieri
+		</voce>
+	</sezione>
+	<sezione nome="innovazione_e_smartcity">
+		<voce sezione="innovazione_e_smartcity" nome="agenda_digitale"
+			data-tem="agenda_digitale">
+			Agenda digitale
+		</voce>
+		<voce sezione="innovazione_e_smartcity"
+			nome="competenze_digitali" data-tem="competenze_digitali">
+			Competenze Digitali
+		</voce>
+		<voce sezione="innovazione_e_smartcity" nome="smart_city"
+			data-tem="smart_city">
+			Smart City
+		</voce>
+	</sezione>
+	<sezione nome="mobilità">
+		<voce sezione="mobilità" nome="mobilitàa_sostenibile"
+			data-tem="mobilitàa_sostenibile">
+			mobilitàà Sostenibile
+		</voce>
+		<voce sezione="mobilità" nome="ncc_taxi_botticelle_fruitori"
+			data-tem="ncc_taxi_botticelle_fruitori">
+			NCC - Taxi</voce>
+		<voce sezione="mobilità" nome="parcheggi_della_citta"
+			data-tem="parcheggi_della_citta">
+			Parcheggi della città
+		</voce>
+		<voce sezione="mobilità" nome="trasp_pub_loc_bus_tur_gest"
+			data-tem="trasp_pub_loc_bus_tur_gest">
+			Trasporto Pubblico Locale e Bus Turistici per i gestori
+		</voce>
+		<voce sezione="mobilità" nome="trasp_pub_loc_fruitori"
+			data-tem="trasp_pub_loc_fruitori">
+			Trasporto Pubblico Locale per i fruitori
+		</voce>
+		<voce sezione="mobilità" nome="viabilit" data-tem="viabilit">
+			Viabilità
+		</voce>
+	</sezione>
+	<sezione nome="manutenzione_della_citta">
+		<voce sezione="manutenzione_della_citta"
+			nome="centrale_unica_lavori_pubblici"
+			data-tem="centrale_unica_lavori_pubblici">
+			Centrale unica lavori pubblici
+		</voce>
+		<voce sezione="manutenzione_della_citta"
+			nome="impianti_tecnologici" data-tem="impianti_tecnologici">
+			Impianti tecnologici
+		</voce>
+		<voce sezione="manutenzione_della_citta" nome="scavi_ap_pubb"
+			data-tem="scavi_ap_pubb">
+			Scavi apertura da parte delle società di pubblici servizi
+		</voce>
+		<voce sezione="manutenzione_della_citta" nome="scavi_ap_priv"
+			data-tem="scavi_ap_priv">
+			Scavi apertura da parte di privati o soggetti attuatori diversi dalle
+			società di pubblici servizi -
+			allaccio/scarico in fogna
+		</voce>
+		<voce sezione="manutenzione_della_citta"
+			nome="servizio_mon_con_ver" data-tem="servizio_mon_con_ver">
+			Servizio Monitoraggio, Controllo e Verifica sul Territorio
+		</voce>
+	</sezione>
+	<sezione nome="patrimonio">
+		<voce sezione="patrimonio" nome="conoscere_il_patrimonio"
+			data-tem="conoscere_il_patrimonio">
+			Conoscere il Patrimonio
+		</voce>
+		<voce sezione="patrimonio" nome="patrimonio_bene_comune"
+			data-tem="patrimonio_bene_comune">
+			Patrimonio bene comune
+		</voce>
+		<voce sezione="patrimonio" nome="utilizzare_patrimonio_erp"
+			data-tem="utilizzare_patrimonio_erp">
+			Utilizzare il patrimonio di edilizia residenziale pubblica - ERP
+		</voce>
+		<voce sezione="patrimonio" nome="valorizzare_il_patrimonio"
+			data-tem="valorizzare_il_patrimonio">
+			Valorizzare il patrimonio
+		</voce>
+	</sezione>
+	<sezione nome="scuola_formazione_lavoro">
+		<voce sezione="scuola_formazione_lavoro"
+			nome="contrasto_dispersione_scol"
+			data-tem="contrasto_dispersione_scol">
+			Contrasto dispersione scolastica
+		</voce>
+		<voce sezione="scuola_formazione_lavoro"
+			nome="diritto_allo_studio" data-tem="diritto_allo_studio">
+			Diritto allo studio
+		</voce>
+		<voce sezione="scuola_formazione_lavoro" nome="educatori"
+			data-tem="educatori">
+			Educatrici e Educatori
+		</voce>
+		<voce sezione="scuola_formazione_lavoro" nome="insegnanti_1"
+			data-tem="insegnanti_1">
+			Insegnanti
+		</voce>
+		<voce sezione="scuola_formazione_lavoro" nome="ludoteche"
+			data-tem="ludoteche">
+			Ludoteche
+		</voce>
+		<voce sezione="scuola_formazione_lavoro" nome="asili_nido"
+			data-tem="asili_nido">
+			Nido
+		</voce>
+		<voce sezione="scuola_formazione_lavoro" nome="mense_scolastiche"
+			data-tem="mense_scolastiche">
+			Ristorazione scolastica e diete speciali
+		</voce>
+		<voce sezione="scuola_formazione_lavoro"
+			nome="scuola_dellinfanzia" data-tem="scuola_dellinfanzia">
+			Scuola dell'infanzia
+		</voce>
+		<voce sezione="scuola_formazione_lavoro" nome="progetti"
+			data-tem="progetti">
+			Supporto didattico
+		</voce>
+		<voce sezione="scuola_formazione_lavoro"
+			nome="trasporto_scolastico" data-tem="trasporto_scolastico">
+			Trasporto Scolastico
+		</voce>
+	</sezione>
+	<sezione nome="sicurezza_urbana_prot_civile">
+		<voce sezione="sicurezza_urbana_prot_civile"
+			nome="aib_anti_incendio_boschivo"
+			data-tem="aib_anti_incendio_boschivo">
+			A.I.B. - Anti Incendio Boschivo
+		</voce>
+		<voce sezione="sicurezza_urbana_prot_civile" nome="allerta_meteo"
+			data-tem="allerta_meteo">
+			Allerta Meteo
+		</voce>
+		<voce sezione="sicurezza_urbana_prot_civile"
+			nome="mul_accer_sist_ril_dist_vis_im"
+			data-tem="mul_accer_sist_ril_dist_vis_im">
+			Multe accertate con i sistemi di rilevazione a distanza - Visualizzazione
+			immagini
+		</voce>
+		<voce sezione="sicurezza_urbana_prot_civile"
+			nome="ondata_di_calore" data-tem="ondata_di_calore">
+			Ondate di calore
+		</voce>
+		<voce sezione="sicurezza_urbana_prot_civile"
+			nome="piano_generale_di_emergenza"
+			data-tem="piano_generale_di_emergenza">
+			Piano Generale di Emergenza di Protezione Civile
+		</voce>
+		<voce sezione="sicurezza_urbana_prot_civile"
+			nome="protezione_civile" data-tem="protezione_civile">
+			Protezione civile
+		</voce>
+		<!-- <voce sezione="sicurezza_urbana_prot_civile" nome="rischi" data-tem="rischi"> -->
+		<!-- Rischi -->
+		<!-- </voce> -->
+		<!-- <voce sezione="sicurezza_urbana_prot_civile" nome="segnalazioni" data-tem="segnalazioni"> -->
+		<!-- Segnalazioni -->
+		<!-- </voce> -->
+		<!-- <voce sezione="sicurezza_urbana_prot_civile" nome="servizi_a_domanda" 
+			data-tem="servizi_a_domanda"> -->
+		<!-- Servizi a domanda -->
+		<!-- </voce> -->
+		<voce sezione="sicurezza_urbana_prot_civile"
+			nome="viabilit_e_traffico" data-tem="viabilit_e_traffico">
+			Viabilità e traffico
+		</voce>
+		<voce sezione="sicurezza_urbana_prot_civile" nome="volontariato"
+			data-tem="volontariato">
+			Volontariato
+		</voce>
+	</sezione>
+	<sezione nome="sociale">
+		<voce sezione="sociale" nome="tutela_fasce_deboli"
+			data-tem="tutela_fasce_deboli">
+			Anziani
+		</voce>
+		<voce sezione="sociale" nome="sociale1" data-tem="sociale1">
+			Attività di servizio sociale
+		</voce>
+		<voce sezione="sociale" nome="dipendenze" data-tem="dipendenze">
+			Dipendenze
+		</voce>
+		<voce sezione="sociale" nome="fam_e_persone_di_minore_eta"
+			data-tem="fam_e_persone_di_minore_eta">
+			Famiglie e persone di minore età
+		</voce>
+		<voce sezione="sociale" nome="immig_pop_rom_sinti_caminanti"
+			data-tem="immig_pop_rom_sinti_caminanti">
+			Immigrati e popolazioni Rom, Sinti e Caminanti
+		</voce>
+		<voce sezione="sociale" nome="multiutenza" data-tem="multiutenza">
+			Multiutenza
+		</voce>
+		<voce sezione="sociale" nome="pover_dis_adulti_sen_dimora"
+			data-tem="pover_dis_adulti_sen_dimora">
+			Povertà, disagio adulti e senza dimora
+		</voce>
+		<voce sezione="sociale" nome="salute_" data-tem="salute_">
+			Salute, farmacia e veterinaria
+		</voce>
+	</sezione>
+	<sezione nome="sport">
+		<voce sezione="sport" nome="associazioni_sportive"
+			data-tem="associazioni_sportive">
+			Associazioni sportive
+		</voce>
+		<voce sezione="sport" nome="centri_sportivi"
+			data-tem="centri_sportivi">
+			Centri Sportivi Municipali
+		</voce>
+		<voce sezione="sport" nome="giovani" data-tem="giovani">
+			Giovani
+		</voce>
+		<voce sezione="sport" nome="impianti" data-tem="impianti">
+			Impianti Sportivi
+		</voce>
+		<voce sezione="sport" nome="prom_sportiva"
+			data-tem="prom_sportiva">
+			Promozione sportiva
+		</voce>
+		<voce sezione="sport" nome="servizio_civile"
+			data-tem="servizio_civile">
+			Servizio Civile
+		</voce>
+		<voce sezione="sport" nome="tesserini_venatori"
+			data-tem="tesserini_venatori">
+			Tesserini Venatori
+		</voce>
+	</sezione>
+	<sezione nome="tributi_e_contravvenzioni">
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="addizionale_irpef" data-tem="addizionale_irpef">
+			Addizionale IRPEF
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="autotutela_ed_interpello" data-tem="autotutela_ed_interpello">
+			Autotutela ed interpello
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni" nome="cosap"
+			data-tem="cosap">
+			COSAP
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni" nome="contravvenzioni"
+			data-tem="contravvenzioni">
+			Contravvenzioni
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="contributo_di_soggiorno" data-tem="contributo_di_soggiorno">
+			Contributo di soggiorno
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="iban_e_pagamenti_informatici"
+			data-tem="iban_e_pagamenti_informatici">
+			IBAN e pagamenti informatici
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni" nome="imu_"
+			data-tem="imu_">
+			IMU
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="iuc_imu_tari_tasi" data-tem="iuc_imu_tari_tasi">
+			IUC (IMU-TARI-TASI)
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="regolamenti_entrate" data-tem="regolamenti_entrate">
+			Regolamenti entrate
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="servizi_tributari_" data-tem="servizi_tributari_">
+			Servizi Tributari
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="pagamenti_online_" data-tem="pagamenti_online_">
+			Servizi di Pagamento
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="servizio_riscossione_reversali"
+			data-tem="servizio_riscossione_reversali">
+			Servizio Riscossione Reversali
+		</voce>
+		<voce sezione="tributi_e_contravvenzioni"
+			nome="tributi_soppressi_" data-tem="tributi_soppressi_">
+			Tributi soppressi
+		</voce>
+	</sezione>
+	<sezione nome="turismo">
+		<voce sezione="turismo" nome="info_per_turisti"
+			data-tem="info_per_turisti">
+			Informazioni per turisti (I.A.T.)
+		</voce>
+		<voce sezione="turismo" nome="suar" data-tem="suar">
+			Sportello Unico Attività Ricettive - S.U.A.R.
+		</voce>
+	</sezione>
 </xml>

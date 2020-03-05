@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
@@ -24,27 +23,33 @@ use Longman\TelegramBot\Request;
  */
 class CancelCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'cancel';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Cancel the currently active conversation';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/cancel';
 
     /**
+     *
      * @var string
      */
     protected $version = '0.2.1';
 
     /**
+     *
      * @var bool
      */
     protected $need_mysql = true;
@@ -59,11 +64,12 @@ class CancelCommand extends UserCommand
     {
         $text = 'No active conversation!';
 
-        //Cancel current conversation if any
-        $conversation = new Conversation(
-            $this->getMessage()->getFrom()->getId(),
-            $this->getMessage()->getChat()->getId()
-        );
+        // Cancel current conversation if any
+        $conversation = new Conversation($this->getMessage()
+            ->getFrom()
+            ->getId(), $this->getMessage()
+            ->getChat()
+            ->getId());
 
         if ($conversation_command = $conversation->getCommand()) {
             $conversation->cancel();
@@ -84,9 +90,13 @@ class CancelCommand extends UserCommand
     private function removeKeyboard($text)
     {
         return Request::sendMessage([
-            'reply_markup' => Keyboard::remove(['selective' => true]),
-            'chat_id'      => $this->getMessage()->getChat()->getId(),
-            'text'         => $text,
+            'reply_markup' => Keyboard::remove([
+                'selective' => true
+            ]),
+            'chat_id' => $this->getMessage()
+                ->getChat()
+                ->getId(),
+            'text' => $text
         ]);
     }
 

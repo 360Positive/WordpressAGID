@@ -1,6 +1,7 @@
 .wp-block-categories.wp-block-categories-list {
 	padding: 0 15px;
 }
+
 .wp-block-categories.wp-block-categories-list li {
 	position: relative;
 	list-style: none;
@@ -15,23 +16,27 @@
 	letter-spacing: .5px;
 	line-height: 1rem;
 }
-.wp-block-categories.wp-block-categories-list li ul, 
-.wp-block-categories.wp-block-categories-list li li {
+
+.wp-block-categories.wp-block-categories-list li ul,
+	.wp-block-categories.wp-block-categories-list li li {
 	padding: 0;
 	border: none;
 	margin: 10px 0 0 5px;
 }
+
 .wp-block-categories.wp-block-categories-list li:hover {
 	border-bottom-color: #fff;
-	box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+	box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .1);
 	background-color: #fff;
 	color: #207bd6;
 	text-decoration: none;
 	z-index: 1;
 }
+
 .wp-block-categories.wp-block-categories-list li li:hover {
 	box-shadow: none;
 }
+
 .wp-block-categories.wp-block-categories-list li a {
 	float: left;
 	text-align: right;
@@ -40,13 +45,14 @@
 	display: block;
 }
 
-.wp-block-categories .wp-block-categories__dropdown, 
-.wp-block-categories.wp-block-categories-dropdown {
+.wp-block-categories .wp-block-categories__dropdown,
+	.wp-block-categories.wp-block-categories-dropdown {
 	position: relative;
 	padding-top: 20px;
 }
-.wp-block-categories .wp-block-categories__dropdown:after, 
-.wp-block-categories.wp-block-categories-dropdown:after {
+
+.wp-block-categories .wp-block-categories__dropdown:after,
+	.wp-block-categories.wp-block-categories-dropdown:after {
 	content: "";
 	position: absolute;
 	left: 15px;
@@ -74,34 +80,33 @@
   clip-path: none;
   z-index: 1;
 } */
-
-.wp-block-categories .wp-block-categories__dropdown, 
-.wp-block-categories.wp-block-categories-dropdown select {
+.wp-block-categories .wp-block-categories__dropdown,
+	.wp-block-categories.wp-block-categories-dropdown select {
 	cursor: pointer;
 	min-height: 45px;
 	width: auto;
-  padding: 8px 8px 8px 40px;
-  font-size: 18px;
+	padding: 8px 8px 8px 40px;
+	font-size: 18px;
 	color: #435a70;
 	border: none;
-  border-radius: 0;
-  box-shadow: 0px 1px 0px 0px;
-  background-color: #ffffff;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+	border-radius: 0;
+	box-shadow: 0px 1px 0px 0px;
+	background-color: #ffffff;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 /* CAUTION: IE hackery ahead */
-.wp-block-categories .wp-block-categories__dropdown::-ms-expand, 
-.wp-block-categories.wp-block-categories-dropdown select::-ms-expand { 
-  display: none; /* remove default arrow in IE 10 and 11 */
+.wp-block-categories .wp-block-categories__dropdown::-ms-expand,
+	.wp-block-categories.wp-block-categories-dropdown select::-ms-expand {
+	display: none; /* remove default arrow in IE 10 and 11 */
 }
 /* target Internet Explorer 9 to undo the custom arrow */
 @media screen and (min-width:0\0) {
-	.wp-block-categories .wp-block-categories__dropdown, 
-	.wp-block-categories.wp-block-categories-dropdown select {
-		background:none\9;
+	.wp-block-categories .wp-block-categories__dropdown,
+		.wp-block-categories.wp-block-categories-dropdown select {
+		background: none\9;
 		padding: 5px\9;
 	}
 }

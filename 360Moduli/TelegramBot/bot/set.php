@@ -9,11 +9,11 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 // Add you bot's API key and name
-$bot_api_key  = '912368249:AAFByCE2Qsz10VO9p3d5IBRHGUf7k9ATOWM';
+$bot_api_key = '912368249:AAFByCE2Qsz10VO9p3d5IBRHGUf7k9ATOWM';
 $bot_username = '@Remoteallert_bot';
 
 // Define the URL to your hook1.php file
-$hook_url     = 'https://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/TelegramBot/bot/hook1.php';
+$hook_url = 'https://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/TelegramBot/bot/hook1.php';
 
 try {
     // Create Telegram API object
@@ -23,7 +23,7 @@ try {
     $result = $telegram->setWebhook($hook_url);
 
     // To use a self-signed certificate, use this line instead
-    //$result = $telegram->setWebhook($hook_url, ['certificate' => $certificate_path]);
+    // $result = $telegram->setWebhook($hook_url, ['certificate' => $certificate_path]);
 
     if ($result->isOk()) {
         echo $result->getDescription();

@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
@@ -20,22 +19,27 @@ use Longman\TelegramBot\Request;
  */
 class EditmessageCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'editmessage';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Edit message';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/editmessage';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -48,16 +52,16 @@ class EditmessageCommand extends UserCommand
      */
     public function execute()
     {
-        $message          = $this->getMessage();
-        $chat_id          = $message->getChat()->getId();
+        $message = $this->getMessage();
+        $chat_id = $message->getChat()->getId();
         $reply_to_message = $message->getReplyToMessage();
-        $text             = $message->getText(true);
+        $text = $message->getText(true);
 
         if ($reply_to_message && $message_to_edit = $reply_to_message->getMessageId()) {
             $data_edit = [
-                'chat_id'    => $chat_id,
+                'chat_id' => $chat_id,
                 'message_id' => $message_to_edit,
-                'text'       => $text ?: 'Edited message',
+                'text' => $text ?: 'Edited message'
             ];
 
             // Try to edit selected message.
@@ -66,8 +70,8 @@ class EditmessageCommand extends UserCommand
             if ($result->isOk()) {
                 // Delete this editing reply message.
                 Request::deleteMessage([
-                    'chat_id'    => $chat_id,
-                    'message_id' => $message->getMessageId(),
+                    'chat_id' => $chat_id,
+                    'message_id' => $message->getMessageId()
                 ]);
             }
 
@@ -76,7 +80,7 @@ class EditmessageCommand extends UserCommand
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => sprintf("Reply to any bots' message and use /%s <your text> to edit it.", $this->name),
+            'text' => sprintf("Reply to any bots' message and use /%s <your text> to edit it.", $this->name)
         ];
 
         return Request::sendMessage($data);

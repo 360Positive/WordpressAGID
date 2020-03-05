@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class MigratefromchatidCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'migratefromchatid';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Migrate from chat id';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -42,9 +45,8 @@ class MigratefromchatidCommand extends SystemCommand
      */
     public function execute()
     {
-        //$message = $this->getMessage();
-        //$migrate_from_chat_id = $message->getMigrateFromChatId();
-
+        // $message = $this->getMessage();
+        // $migrate_from_chat_id = $message->getMigrateFromChatId();
         return parent::execute();
     }
 }

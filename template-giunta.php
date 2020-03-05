@@ -54,7 +54,12 @@ get_header(); ?>
     .row{
         margin-bottom: 10px;
     }
-
+    .entry-title{
+        background: lightgray;
+        padding:1%;
+        display:block!important;
+        font-size:1.5rem!important;
+    }
 
 </style>
 <section class="entry-content thumbnail topimage">

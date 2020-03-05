@@ -59,9 +59,9 @@
                                    href="<?= get_site_url() ?>/amministrazione-trasparente"> <?= _('Amministrazione trasparente') ?> </a>
 
                             </li>
-                            <li>
-                                Whistleblowing
-                            </li>
+<!--                            <li>-->
+<!--                                Whistleblowing-->
+<!--                            </li>-->
                             <li>
 
                                 <a title="<?= _('Apre la pagina interna Open data') ?>"
@@ -94,13 +94,13 @@
                         </ul>
                     </div>
                     <div class="col-sm-3">
-                        <h2 class="footer">Seguici su</h2>
-                        <hr>
-                        <i class="icofont-linkedin social"></i>
-                        <i class="icofont-instagram social"></i>
-                        <i class="icofont-brand-youtube social"></i>
-                        <i class="icofont-twitter social"></i>
-                        <i class="icofont-facebook social"></i>
+<!--                        <h2 class="footer">Seguici su</h2>-->
+<!--                        <hr>-->
+<!--                        <i class="icofont-linkedin social"></i>-->
+<!--                        <i class="icofont-instagram social"></i>-->
+<!--                        <i class="icofont-brand-youtube social"></i>-->
+<!--                        <i class="icofont-twitter social"></i>-->
+<!--                        <i class="icofont-facebook social"></i>-->
                     </div>
 
                     <div class="col-sm-7">

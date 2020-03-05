@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -20,27 +19,33 @@ use Longman\TelegramBot\Request;
  */
 class StartCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'start';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Start command';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/start';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
 
     /**
+     *
      * @var bool
      */
     protected $private_only = true;
@@ -56,11 +61,11 @@ class StartCommand extends SystemCommand
         $message = $this->getMessage();
 
         $chat_id = $message->getChat()->getId();
-        $text    = 'Hi there!' . PHP_EOL . 'Type /help to see all commands!';
+        $text = 'Hi there!' . PHP_EOL . 'Type /help to see all commands!';
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => $text,
+            'text' => $text
         ];
 
         return Request::sendMessage($data);

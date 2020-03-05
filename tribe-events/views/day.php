@@ -8,12 +8,11 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
-do_action( 'tribe_events_before_template' );
+do_action('tribe_events_before_template');
 ?>
 
 <!-- Tribe Bar -->
@@ -25,4 +24,4 @@ do_action( 'tribe_events_before_template' );
 <div class="tribe-clear"></div>
 
 <?php
-do_action( 'tribe_events_after_template' );
+do_action('tribe_events_after_template');

@@ -63,22 +63,18 @@
         <div class="gradient">
             <div class="titolo-over">
                 <p class="title"><?php _("Prossimi Eventi");?></p>
-            </div>
-        </div>
+</div>
+</div>
 
-    </div>
-    
-if ( ! defined( 'ABSPATH' ) ) {
-    die( '-1' );
-}
+</div>
 
-do_action( 'tribe_events_before_template' );
-?>
+if ( ! defined( 'ABSPATH' ) ) { die( '-1' ); } do_action(
+'tribe_events_before_template' ); ?>
 
-    <div class="row">
+<div class="row">
 
-        <div class="col-sm-12">
-            <!-- Tribe Bar -->
+	<div class="col-sm-12">
+		<!-- Tribe Bar -->
             <?php
             tribe_get_template_part( 'modules/bar' ); ?>
 
@@ -86,7 +82,7 @@ do_action( 'tribe_events_before_template' );
             <?php tribe_get_template_part( 'list/content' ); ?>
 
             <div class="tribe-clear"></div>
-        </div>
+	</div>
         <?php get_sidebar()?>
     </div>
 

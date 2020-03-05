@@ -18,24 +18,24 @@
  *
  * @version 4.3
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 $organizer_id = get_the_ID();
 ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-	<div class="tribe-events-organizer">
-			<p class="tribe-events-back">
-				<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( __( '&larr; Back to %s', 'tribe-events-calendar-pro' ), tribe_get_event_label_plural() ); ?></a>
-			</p>
+<div class="tribe-events-organizer">
+	<p class="tribe-events-back">
+		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"
+			rel="bookmark"><?php printf( __( '&larr; Back to %s', 'tribe-events-calendar-pro' ), tribe_get_event_label_plural() ); ?></a>
+	</p>
 
 		<?php do_action( 'tribe_events_single_organizer_before_organizer' ) ?>
 		<div class="tribe-events-organizer-meta tribe-clearfix">
 
-				<!-- Organizer Title -->
+		<!-- Organizer Title -->
 				<?php do_action( 'tribe_events_single_organizer_before_title' ) ?>
 				<h2 class="tribe-organizer-name"><?php echo tribe_get_organizer( $organizer_id ); ?></h2>
 				<?php do_action( 'tribe_events_single_organizer_after_title' ) ?>
@@ -56,19 +56,22 @@ $organizer_id = get_the_ID();
 				<?php } ?>
 
 			</div>
-			<!-- .tribe-events-organizer-meta -->
+	<!-- .tribe-events-organizer-meta -->
 		<?php do_action( 'tribe_events_single_organizer_after_organizer' ) ?>
 
 		<!-- Upcoming event list -->
 		<?php do_action( 'tribe_events_single_organizer_before_upcoming_events' ) ?>
 
 		<?php
-		// Use the tribe_events_single_organizer_posts_per_page to filter the number of events to get here.
-		echo tribe_organizer_upcoming_events( $organizer_id ); ?>
+    // Use the tribe_events_single_organizer_posts_per_page to filter the number of events to get here.
+    echo tribe_organizer_upcoming_events($organizer_id);
+    ?>
 
 		<?php do_action( 'tribe_events_single_organizer_after_upcoming_events' ) ?>
 
-	</div><!-- .tribe-events-organizer -->
-	<?php
-	do_action( 'tribe_events_single_organizer_after_template' );
-endwhile;
+	</div>
+<!-- .tribe-events-organizer -->
+<?php
+    do_action('tribe_events_single_organizer_after_template');
+endwhile
+;

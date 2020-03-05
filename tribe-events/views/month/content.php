@@ -9,10 +9,10 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
-} ?>
+if (! defined('ABSPATH')) {
+    die('-1');
+}
+?>
 
 <div id="tribe-events-content" class="tribe-events-month">
 
@@ -26,7 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<!-- Month Header -->
 	<?php do_action( 'tribe_events_before_header' ) ?>
-	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
+	<div id="tribe-events-header"
+		<?php tribe_events_the_header_attributes() ?>>
 
 		<!-- Header Navigation -->
 		<?php tribe_get_template_part( 'month/nav' ); ?>
@@ -54,4 +55,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php tribe_get_template_part( 'month/mobile' ); ?>
 	<?php tribe_get_template_part( 'month/tooltip' ); ?>
 
-</div><!-- #tribe-events-content -->
+</div>
+<!-- #tribe-events-content -->

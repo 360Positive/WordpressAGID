@@ -11,9 +11,8 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 ?>
@@ -26,4 +25,4 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 4.4.0
  */
-do_action( 'embed_content' );
+do_action('embed_content');

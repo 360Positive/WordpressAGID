@@ -8,9 +8,8 @@
  * @package TribeEventsCalendar
  *
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '-1' );
+if (! defined('ABSPATH')) {
+    die('-1');
 }
 
 $events_label_plural = tribe_get_event_label_plural();
@@ -21,14 +20,12 @@ $events_label_plural = tribe_get_event_label_plural();
 <ul class="tribe-events-sub-nav">
 	<!-- Display Previous Page Navigation -->
 	<?php if ( tribe_has_previous_event() ) : ?>
-		<li class="tribe-events-nav-previous">
-			<a href="#" class="tribe_paged"><?php printf( __( '<span>&laquo;</span> Previous %s', 'tribe-events-calendar-pro' ), $events_label_plural ); ?></a>
-		</li>
+		<li class="tribe-events-nav-previous"><a href="#" class="tribe_paged"><?php printf( __( '<span>&laquo;</span> Previous %s', 'tribe-events-calendar-pro' ), $events_label_plural ); ?></a>
+	</li>
 	<?php endif; ?>
 	<!-- Display Next Page Navigation -->
 	<?php if ( tribe_has_next_event() ) : ?>
-		<li class="tribe-events-nav-next">
-			<a href="#" class="tribe_paged"><?php printf( __( 'Next %s <span>&raquo;</span>', 'tribe-events-calendar-pro' ), $events_label_plural ); ?></a>
-		</li>
+		<li class="tribe-events-nav-next"><a href="#" class="tribe_paged"><?php printf( __( 'Next %s <span>&raquo;</span>', 'tribe-events-calendar-pro' ), $events_label_plural ); ?></a>
+	</li>
 	<?php endif; ?>
 </ul>

@@ -12,92 +12,80 @@
  *
  * @package TribeEventsCalendarPro
  */
-
 $mini_cal_event_atts = tribe_events_get_widget_event_atts();
 
 $post_date = tribe_events_get_widget_event_post_date();
-$post_id   = get_the_ID();
+$post_id = get_the_ID();
 
 $organizer_ids = tribe_get_organizer_ids();
-$multiple_organizers = count( $organizer_ids ) > 1;
+$multiple_organizers = count($organizer_ids) > 1;
 
-$city_name   = ! empty( $city ) ? tribe_get_city() : '';
-$region_name = ! empty( $region ) ? tribe_get_region() : '';
-$zip_text    = ! empty( $zip ) ? tribe_get_zip() : '';
+$city_name = ! empty($city) ? tribe_get_city() : '';
+$region_name = ! empty($region) ? tribe_get_region() : '';
+$zip_text = ! empty($zip) ? tribe_get_zip() : '';
 
-$has_address_details = ! empty( $city_name ) || ! empty( $region_name ) || ! empty( $zip_text );
+$has_address_details = ! empty($city_name) || ! empty($region_name) || ! empty($zip_text);
 ?>
 
-<div class="tribe-mini-calendar-event event-<?php esc_attr_e( $mini_cal_event_atts['current_post'] ); ?> <?php esc_attr_e( $mini_cal_event_atts['class'] ); ?>">
+<div
+	class="tribe-mini-calendar-event event-<?php esc_attr_e( $mini_cal_event_atts['current_post'] ); ?> <?php esc_attr_e( $mini_cal_event_atts['class'] ); ?>">
 	<?php
-	if (
-		tribe( 'tec.featured_events' )->is_featured( $post_id )
-		&& get_post_thumbnail_id( $post_id )
-	) {
-		/**
-		 * Fire an action before the list widget featured image
-		 */
-		do_action( 'tribe_events_list_widget_before_the_event_image' );
+if (tribe('tec.featured_events')->is_featured($post_id) && get_post_thumbnail_id($post_id)) {
+    /**
+     * Fire an action before the list widget featured image
+     */
+    do_action('tribe_events_list_widget_before_the_event_image');
 
-		/**
-		 * Allow the default post thumbnail size to be filtered
-		 *
-		 * @param $size
-		 */
-		$thumbnail_size = apply_filters( 'tribe_events_list_widget_thumbnail_size', 'post-thumbnail' );
-		?>
+    /**
+     * Allow the default post thumbnail size to be filtered
+     *
+     * @param
+     *            $size
+     */
+    $thumbnail_size = apply_filters('tribe_events_list_widget_thumbnail_size', 'post-thumbnail');
+    ?>
 		<div class="tribe-event-image">
 			<?php the_post_thumbnail( $thumbnail_size ); ?>
 		</div>
 		<?php
 
-		/**
-		 * Fire an action after the list widget featured image
-		 */
-		do_action( 'tribe_events_list_widget_before_the_event_image' );
-	}
-	?>
+    /**
+     * Fire an action after the list widget featured image
+     */
+    do_action('tribe_events_list_widget_before_the_event_image');
+}
+?>
 
 
 	<div class="list-date">
 		<?php
-		if (
-			isset( $instance['tribe_is_list_widget'] )
-			&& date( 'm', $post_date ) != date( 'm', current_time( 'timestamp' ) )
-		) :
-			?>
+if (isset($instance['tribe_is_list_widget']) && date('m', $post_date) != date('m', current_time('timestamp'))) :
+    ?>
 			<span class="list-dayname">
 				<?php
-				echo apply_filters(
-					'tribe-mini_helper_tribe_events_ajax_list_dayname',
-					date_i18n( 'M', $post_date ),
-					$post_date,
-					$mini_cal_event_atts['class']
-				);
-				?>
+    echo apply_filters('tribe-mini_helper_tribe_events_ajax_list_dayname', date_i18n('M', $post_date), $post_date, $mini_cal_event_atts['class']);
+    ?>
 			</span>
 		<?php else: ?>
 			<span class="list-dayname">
 				<?php
-				echo apply_filters(
-					'tribe-mini_helper_tribe_events_ajax_list_dayname',
-					date_i18n( 'D', $post_date ),
-					$post_date,
-					$mini_cal_event_atts['class']
-				);
-				?>
+    echo apply_filters('tribe-mini_helper_tribe_events_ajax_list_dayname', date_i18n('D', $post_date), $post_date, $mini_cal_event_atts['class']);
+    ?>
 			</span>
 		<?php endif; ?>
 
-		<span class="list-daynumber"><?php echo apply_filters( 'tribe-mini_helper_tribe_events_ajax_list_daynumber',
-			date_i18n( 'd', $post_date ), $post_date, $mini_cal_event_atts['class'] ); ?></span>
-		</div>
+		<span class="list-daynumber"><?php
 
-		<div class="list-info">
+echo apply_filters('tribe-mini_helper_tribe_events_ajax_list_daynumber', date_i18n('d', $post_date), $post_date, $mini_cal_event_atts['class']);
+?></span>
+	</div>
+
+	<div class="list-info">
 			<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
 			<h2 class="tribe-events-title">
-					<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h2>
+			<a href="<?php echo esc_url( tribe_get_event_link() ); ?>"
+				rel="bookmark"><?php the_title(); ?></a>
+		</h2>
 			<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
 
 			<?php do_action( 'tribe_events_list_widget_before_the_meta' ) ?>
@@ -108,7 +96,7 @@ $has_address_details = ! empty( $city_name ) || ! empty( $region_name ) || ! emp
 
 			<?php if ( isset( $cost ) && $cost && tribe_get_cost() != '' ) : ?>
 				<span class="tribe-events-divider">|</span>
-				<div class="tribe-events-event-cost">
+		<div class="tribe-events-event-cost">
 					<?php echo tribe_get_cost( null, true ); ?>
 				</div>
 			<?php endif ?>
@@ -124,7 +112,8 @@ $has_address_details = ! empty( $city_name ) || ! empty( $region_name ) || ! emp
 			<?php endif ?>
 
 			<?php
-			if ( $has_address_details ) : ?>
+if ($has_address_details) :
+    ?>
 				<div>
 					<?php if ( ! empty( $city_name ) ) : ?>
 						<span class="tribe-events-locality"><?php echo esc_html( $city_name ); ?></span>
@@ -159,35 +148,35 @@ $has_address_details = ! empty( $city_name ) || ! empty( $region_name ) || ! emp
 				<span class="tribe-events-organizer">
 					<?php echo tribe_get_organizer_label( ! $multiple_organizers ); ?>:
 					<?php
-					$organizer_links = array();
-					foreach ( $organizer_ids as $organizer_id ) {
-						if ( ! $organizer_id ) {
-							continue;
-						}
+    $organizer_links = array();
+    foreach ($organizer_ids as $organizer_id) {
+        if (! $organizer_id) {
+            continue;
+        }
 
-						$organizer_link = tribe_get_organizer_link( $organizer_id, true );
+        $organizer_link = tribe_get_organizer_link($organizer_id, true);
 
-						$organizer_phone = tribe_get_organizer_phone( $organizer_id );
-						if ( ! empty( $organizer_phone ) ) {
-							$organizer_link .= '<div class="tribe-events-tel">' . $organizer_phone . '</div>';
-						}
+        $organizer_phone = tribe_get_organizer_phone($organizer_id);
+        if (! empty($organizer_phone)) {
+            $organizer_link .= '<div class="tribe-events-tel">' . $organizer_phone . '</div>';
+        }
 
-						$organizer_links[] = $organizer_link;
-					}// end foreach
+        $organizer_links[] = $organizer_link;
+    } // end foreach
 
-					$and = _x( 'and', 'list separator for final two elements', 'tribe-events-calendar-pro' );
-					if ( 1 == count( $organizer_links ) ) {
-						echo $organizer_links[0];
-					} elseif ( 2 == count( $organizer_links ) ) {
-						echo $organizer_links[0] . ' ' . esc_html( $and ) . ' ' . $organizer_links[1];
-					} else {
-						$last_organizer = array_pop( $organizer_links );
+    $and = _x('and', 'list separator for final two elements', 'tribe-events-calendar-pro');
+    if (1 == count($organizer_links)) {
+        echo $organizer_links[0];
+    } elseif (2 == count($organizer_links)) {
+        echo $organizer_links[0] . ' ' . esc_html($and) . ' ' . $organizer_links[1];
+    } else {
+        $last_organizer = array_pop($organizer_links);
 
-						echo implode( ', ', $organizer_links );
-						echo esc_html( ', ' . $and . ' ' );
-						echo $last_organizer;
-					}// end else
-					?>
+        echo implode(', ', $organizer_links);
+        echo esc_html(', ' . $and . ' ');
+        echo $last_organizer;
+    } // end else
+    ?>
 				</span>
 			<?php endif ?>
 			<?php if ( $organizers = trim( ob_get_clean() ) ) : ?>
@@ -197,4 +186,5 @@ $has_address_details = ! empty( $city_name ) || ! empty( $region_name ) || ! emp
 			<?php endif; ?>
 		</div>
 	<?php do_action( 'tribe_events_list_widget_after_the_meta' ) ?>
-</div> <!-- .list-info -->
+</div>
+<!-- .list-info -->

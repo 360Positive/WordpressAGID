@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use Longman\TelegramBot\Commands\UserCommand;
@@ -20,22 +19,27 @@ use Longman\TelegramBot\Request;
  */
 class SlapCommand extends UserCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'slap';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Slap someone with their username';
 
     /**
+     *
      * @var string
      */
     protected $usage = '/slap <@user>';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -51,11 +55,11 @@ class SlapCommand extends UserCommand
         $message = $this->getMessage();
 
         $chat_id = $message->getChat()->getId();
-        $text    = $message->getText(true);
+        $text = $message->getText(true);
 
         $sender = '@' . $message->getFrom()->getUsername();
 
-        //username validation
+        // username validation
         $test = preg_match('/@[\w_]{5,}/', $text);
         if ($test === 0) {
             $text = $sender . ' sorry no one to slap around..';
@@ -65,7 +69,7 @@ class SlapCommand extends UserCommand
 
         $data = [
             'chat_id' => $chat_id,
-            'text'    => $text,
+            'text' => $text
         ];
 
         return Request::sendMessage($data);

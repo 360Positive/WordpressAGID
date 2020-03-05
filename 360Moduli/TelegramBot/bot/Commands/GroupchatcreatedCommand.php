@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
 use Longman\TelegramBot\Commands\SystemCommand;
@@ -19,17 +18,21 @@ use Longman\TelegramBot\Commands\SystemCommand;
  */
 class GroupchatcreatedCommand extends SystemCommand
 {
+
     /**
+     *
      * @var string
      */
     protected $name = 'groupchatcreated';
 
     /**
+     *
      * @var string
      */
     protected $description = 'Group chat created';
 
     /**
+     *
      * @var string
      */
     protected $version = '1.1.0';
@@ -42,9 +45,8 @@ class GroupchatcreatedCommand extends SystemCommand
      */
     public function execute()
     {
-        //$message = $this->getMessage();
-        //$group_chat_created = $message->getGroupChatCreated();
-
+        // $message = $this->getMessage();
+        // $group_chat_created = $message->getGroupChatCreated();
         return parent::execute();
     }
 }
