@@ -47,6 +47,7 @@ presenti nella cartella afc_pro del tema
 
     //Setting lingua locale per la visualizzazione delle date - def:Italiano
     setlocale(LC_ALL, 'it_IT.UTF-8');
+    //Variabile per la memorizzazione dei giorni delle notizie
     $pubblication = array();
     ?>
 
@@ -121,7 +122,7 @@ presenti nella cartella afc_pro del tema
                         <h1 class="w-103 py-3 mt-2 mx-0 px-0 text-center"
                             style="background:lightgray!important; font-size:1.25rem!important; font-weight:bold"><?= _('Date aggiornamenti'); ?></h1>
                         <?php
-                        /*Date aggiornamenti */
+//                        Creazione menu di navigazione dalle date memorizzate nella variabile $pubblication
                         foreach ($pubblication as $data) {
                             ?>
                             <hr>
