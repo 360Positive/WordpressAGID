@@ -1,136 +1,194 @@
 <?php
-/*
- * Gestione lettura elenco bandi da portale dedicato del comune
- * Scraping delle informazioni dal codice HTML della pagina
- */
+/*Gestione lettura elenco bandi da portale dedicato del comune
+    Scraping delle informazioni dal codice HTML della pagina
+*/
 ?>
-<style>
-div.container-fluid.bandi {
-	background: #eeeeee;
-	padding-bottom: 2%;
-	padding-top: 2%;
+<script>
+    $('<link/>', {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/css/bandi.css'//css da includere
+    }).appendTo('head');
+</script>
+
+<?php
+/**
+ * Sezione
+ */
+
+
+function sortByParam($a, $b, $termine)
+{ /*Funzione per l'ordinamento in base a un termine dell'array*/
+    $a = $a[$termine];
+    $b = $b[$termine];
+    if (empty($a) or empty($b)) {
+        return 0;
+    }
+    if ($a == $b) return 0;
+    return ($a < $b) ? -1 : 1;
 }
 
-h1.bandi {
-	font-size: 2.5rem !important;
-	color: black;
-	padding: 15px;
-	font-weight: 700 !important;
+function getBandi(){
+    global $post;
+    $args = array(  'category' => 88,
+        'posts_per_page' => -1); //Recupera tutti i post che soddisfano i parametri
+    $entries = [];
+
+//Estrazione dei post in base ai parametri che identificano i bandi (category=88)
+    $myposts = get_posts($args);
+
+//Verifica che il post non sia in bozza o eliminato
+    if ($myposts->post_status != 'pending') {
+
+        foreach ($myposts as $post) {
+            setup_postdata($post);
+
+            $a = ['title' => get_the_title(),
+                'rif' => get_field('riferimento'),
+                'tipo' => get_field('tipologia'),
+                'termin' => get_field('termine'),
+                'inizio' => get_field('inizio'),
+                'excerpt' => substr(get_the_content(), 0, 200),
+                'link' => get_post_permalink(),
+                'exlink' => get_field('link_diretto')];
+
+            //Aggiunta nell'array delle voci presenti
+            array_push($entries, $a);
+            //Scorrimento dei post per il caricamento
+            wp_reset_postdata();
+        }
+        //Ordinamento bandi in base alla data di scadenza
+        usort($entries, 'sortByParam', 'termin');
+    }
+    return $entries;
 }
 
-div.col-md-3>div.servizi {
-	border-radius: 3px;
-	background: white;
-	padding: 3%;
-	margin: 10px;
-	-webkit-box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
-	-moz-box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
-	box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
-}
+function getTable($entries,$titles){
+    /**
+     * Array titles deve avere il numero corretto delle voci
+     */
+    //PARAMETRI LOCALI
+    $id_table='tab_id_001';
+    $date_now = strtotime('now');
+    //-------------
 
-a>h2.bandi {
-	color: black !important;
-	font-size: 1.2rem !important;
-	padding: 17px;
-	font-weight: 800 !important;
-}
+    echo '<table id="'.$id_table.'" class="table table-striped">';
+    echo '<thead><tr>';
+    foreach ($titles as $title){
+        echo '<th>'.$title.'</th>';
+    }
+    echo '</tr></thead>';
 
-tipo {
-	color: red;
-	text-transform: capitalize;
-}
+    //Body del blocco della tabella
 
-label {
-	font-weight: 700;
-}
+    echo '<tbody>';
+    foreach ($entries as $entry) {
+        $term = explode('/', $entry['termin']);
+        array_reverse($term);
+        $term = implode('-', $term);
 
-titolo {
-	font-size: 1.2rem !important;
+        //Verifica remine della data
+        if (empty($entry['termin']) or strtotime($term) > $date_now) {
+            $l = str_replace(' ', '-', str_replace('\'', '', $entry['tipo']));
+            echo '<tr>';
+            echo '<td> <span class="tipo"><a href="'.site_url() . '/' . $l.'">';
+            echo  $entry['tipo'];
+            echo '</a></span></td>';
+
+            echo '<td> <span class="tipo">';
+            echo  $entry['termin'];
+            echo '</span></td>';
+
+            $link=!empty($entry['exlink']) ? $entry['exlink'] : $entry['link'];
+            echo '<td> <span class="tipo"><a href="'.$link .'">';
+            echo  $entry['title'];
+            echo '</a></span></td>';
+            echo '</tr>';
+        }
+
+    }
+
+    echo '</tbody></table>';
+
+    return $id_table;
+
 }
-</style>
+function getBootTable($entries,$titles){
+    /**
+     * Array titles deve avere il numero corretto delle voci
+     */
+    //PARAMETRI LOCALI
+    $id_table='tab_id_001';
+    $date_now = strtotime('now');
+    //-------------
+
+
+
+    //Body del blocco della tabella
+    foreach ($entries as $entry) {
+        $term = explode('/', $entry['termin']);
+        array_reverse($term);
+        $term = implode('-', $term);
+
+
+        //Verifica remine della data
+        if (empty($entry['termin']) or strtotime($term) > $date_now) {
+            $class='warning';
+
+            echo '<div class="shadow p-2 m-2 '.$class.'" >';
+            echo '<div class="row" >';
+            $l = str_replace(' ', '-', str_replace('\'', '', $entry['tipo']));
+
+            echo '<div class="col-md-2 text-wrap">';
+            echo '<span class="sezione"><a href="'.site_url() . '/' . $l.'">';
+            echo  $entry['tipo'];
+            echo '</span></div>';
+
+            echo '<div class="col-md-2 text-wrap"><span class="tipo">';
+            echo  $entry['termin'];
+            echo '</span></div>';
+
+            $link=!empty($entry['exlink']) ? $entry['exlink'] : $entry['link'];
+            echo '<div class="col-md-8 text-wrap text-justify">';
+            echo '<span class="titolo"><a href="'.$link .'">';
+            echo  $entry['title'];
+            echo '</a></span>';
+            echo '</div>';
+
+            echo '</div>';
+            echo '</div>';
+        }
+
+    }
+
+
+
+    return $id_table;
+
+}
+?>
+
+<?php $titles=['Tipologia','Termine','Descrizione'];?>
+
 
 <div class="container bandi">
 
-	<h1 class="bandi">Ultimi bandi, avvisi e concorsi</h1>
-	<div class="col-md-12">
-		<div class="row">
-       
-                
-				<?php
+    <h1 class="bandi">Ultimi bandi, avvisi, concorsi</h1>
+    <p class="px-3">Clicca sulla voce per visualizzare il contenuto.</p>
+    <?php
+    //Genera la tabella e restituisce l'id della medesima
+//    $tba=getTable(getBandi(),$titles);
+    $tba=getBootTable(getBandi(),$titles);
+    ?>
 
-    function sortByParam($a, $b)
-    {
-        // print_r($a);
-        $termine = 'termin';
-        $a = $a[$termine];
-        $b = $b[$termine];
-
-        if ($a == $b)
-            return 0;
-        return ($a < $b) ? - 1 : 1;
-    }
-
-    global $post;
-    $args = array(
-        'category' => 88
-    ); /* Categroria associata ai bandi */
-    $entries = [];
-
-    $myposts = get_posts($args);
-
-    foreach ($myposts as $post) {
-
-        setup_postdata($post);
-
-        $a = [
-            'title' => get_the_title(),
-            'rif' => get_field('riferimento'),
-            'tipo' => get_field('tipologia'),
-            'termin' => get_field('termine'),
-            'inizio' => get_field('inizio'),
-            'excerpt' => substr(get_the_content(), 0, 200),
-            'link' => get_post_permalink()
-        ];
-        array_push($entries, $a);
-
-        /*
-         * echo the_title();
-         * echo get_field('riferimento');
-         * echo get_field('tipologia');
-         * echo get_field('termine');
-         * echo get_field('inizio');
-         */
-
-        wp_reset_postdata();
-    }
-
-    usort($entries, 'sortByParam'); // Ordinamento bandi in base alla data di scadenza
-
-    echo '<br>';
-    foreach ($entries as $entry) {
-        ?>
-	
-			<?php /*Struttura grafica dei record*/?>
-			<div class="col-md-12">
-
-				<p>
-					<label>rif:</label>
-					<tipo><?=$entry['rif']?></tipo>
-					<label>Tipologia:</label>
-					<tipo><?=$entry['tipo']?></tipo> - <?=$entry['termin']?> - 
-			        <a href="<?=$entry['link']?>" target="_blank"> <titolo> <?=$entry['title']?> </titolo></a><br>
-					<!--			        -->
-					<?//=$entry['excerpt']?>
-			        </p>
-				<hr>
-
-			</div>
-			<?php }?>
-		
-		</div>
-	</div>
-	<a href="<?= get_site_url();?>/bandi-avvisi-concorsi/"
-		title="Bandi, avvisi e concorsi"><h2 class="bandi"
-			style="text-align: right;">Tutti i bandi, avvisi e concorsi</h2></a>
+    <a href="<?= get_site_url(); ?>/bandi-avvisi-concorsi/" title="Bandi, avvisi e concorsi"><h2 class="bandi"
+                                                                                                 style="text-align: right;">
+            Tutti i bandi, avvisi e concorsi</h2></a>
 
 </div>
+<script>
+    // $.noConflict();
+    // $(document).load(function () {
+        //$('#<?//= $tba; ?>//').DataTable();
+    // });
+</script>
