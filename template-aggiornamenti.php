@@ -10,6 +10,8 @@ get_header();
 
 
 ?>
+<script type="text/javascript"
+        src="<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/js/utils.js"></script>
 <script type="text/javascript">
     $('<link/>', {
         rel: 'stylesheet',
@@ -176,42 +178,6 @@ presenti nella cartella afc_pro del tema
                         ?>
                     </div>
                 </div>
-
-<!--                <div class="col-md-3">-->
-<!--                    --><?php ////Inclusione modulo per la gestione dei social
-//                    include '360Moduli/sharesocial.php'; ?>
-<!--                    <div class="my-0 widget-area w-100">-->
-<!--                        --><?php
-//                        $val = get_field('menusidebar');
-//                        if ($val) {
-//                            wp_nav_menu(array('menu' => '"' . $val . '""',
-//                            'container' => 'div',
-//                            'menu_class' => 'navside',));
-//                        } ?>
-<!--                        -->
-<!--                        <h1 class="w-103 py-3 mt-2 mx-0 px-0 text-center"-->
-<!--                            style="background:lightgray!important; font-size:1.25rem!important; font-weight:bold">--><?//= _('Date aggiornamenti'); ?><!--</h1>-->
-<!--                        --><?php
-//                        //                        Creazione menu di navigazione dalle date memorizzate nella variabile $pubblication
-//                        foreach ($pubblication as $data) {
-//                            ?>
-<!--                            <hr>-->
-<!--                            <div class="btn btn-info btn-block"><a href="#day--><?//= $data[0]; ?><!--">-->
-<!--											<span style="font-size:1em!important">-->
-<!--												--><?//= $data[1]; ?>
-<!--											</span>-->
-<!--                                </a></div>-->
-<!---->
-<!--                            --><?php
-//
-//                        }
-//                        ?>
-<!---->
-<!--                        -->
-<!---->
-<!--                    </div>-->
-<!---->
-<!--                </div>-->
             </div>
         </div>
     </section>
@@ -270,6 +236,8 @@ presenti nella cartella afc_pro del tema
                 }
             })
         })
+
+        linkIcon();
     </script>
 </article>
 
