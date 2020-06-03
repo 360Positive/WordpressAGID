@@ -1,0 +1,24 @@
+.data{
+    background: rgb(122,184,2);
+    background: linear-gradient(90deg, rgba(122,184,2,1) 0%, rgba(122,184,2,0) 100%);
+   
+
+}
+
+.datagiorno{
+    background: rgb(208,229,246);
+    background: linear-gradient(90deg, rgba(208,229,246,1) 0%, rgba(208,229,246,0) 100%);
+    padding:2%;
+    font-size:1.25rem; 
+    text-transform:uppercase;
+}
+
+
+.widget-area li, .widget li {
+    list-style: none;
+    border-bottom: solid 17px #fff;
+    padding: 2%!important;
+    background: #ffb421;
+    text-align:center;
+    margin-bottom:5px!important;
+}
