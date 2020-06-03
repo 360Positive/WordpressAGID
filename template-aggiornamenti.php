@@ -4,6 +4,8 @@
     * Template Post Type: post,page, product
 */
 
+require_once '360Moduli/XML/localfunc.php';
+require_once '360Moduli/php_utils/utils.php';
 get_header();
 
 
@@ -23,6 +25,15 @@ get_header();
 /*Per il funzionamento del template deve essere attivata la struttura di campi personalizzati da associare al template
 presenti nella cartella afc_pro del tema
  * */
+ $cloghi=get_template_directory_uri()."-child/360Moduli/css/loghi/";
+ $loghi=['comune'=> $cloghi.'logo_acqui_terme.png',
+ 'regione'=> $cloghi.'logo_regione_piemonte.png',
+ 'nazionale'=> $cloghi.'logo_ministero.png'
+ ];
+ $ltesto=['comune'=> 'Acqui Terme',
+ 'regione'=> 'Piemonte',
+ 'nazionale'=>'Italia'
+ ];
 
 ?>
 
@@ -49,6 +60,7 @@ presenti nella cartella afc_pro del tema
     setlocale(LC_ALL, 'it_IT.UTF-8');
     //Variabile per la memorizzazione dei giorni delle notizie
     $pubblication = array();
+
     ?>
 
     <section id="articolo-dettaglio-testo">
@@ -76,17 +88,55 @@ presenti nella cartella afc_pro del tema
                                 if (strcmp($lastdate, $date) !== 0) {
                                     echo '<h2 class="datagiorno" id="day' . $dprint->format('Y-m-d') . '">' . $pdate . '</h2>';
                                     //Memorizzazione data per creazione menu di navigazione
-                                    array_push($pubblication, [$dprint->format('Y-m-d'), $pdate]);
+                                    array_push($pubblication, $dprint->format('Y-m-d'));
                                 }
                                 //Aggiornamento varibile controllo data
                                 $lastdate = $date;
+                                //Bollettino
+                                $bollettino=$voce['grafica_bollettino'];
+                                $css="";
+                                
+                                if(!empty($bollettino)){
+                                   $css= 'databollettino';
+                                   $cssnot='bollettino';
+                                   $mex="Bollettino";
+                                }
+                                else{
+                                    $css= 'data';
+                                    $cssnot='';
+                                    $mex="";
+                                }
+                                //Origine
+                                $origine=$voce['origine'];
+                                $orig="";
+                                $tlogo="";
+                                
+                                if(!empty($origine)){
+                                   $orig= $loghi[$origine];
+                                   $tlogo= $origine;
+                                }
+                               
+                                
+                                
                                 ?>
 
                                 <!--                            Blocco singola notizia    -->
+                               
                                 <div class="text-justify" id="arg-<?= str_replace(' ', '', $voce['data_ora']) ?>">
                                     <!--Stile data notizia-->
-                                    <strong style="float:left;" class="data mr-2 px-2 py-1">Ora <?= $time ?> </strong>
-                                    <div style="font-size:0.9em"><?= $notizia; ?></div>
+                                    
+                                    <div class="<?= $css ?> mr-2 px-2 py-1">
+                                        <strong class="p-1">
+                                        Ora <?= $time ?> - 
+                                        <img src="<?=  $orig ?>" style='max-width:30px;'>
+                                        <?= $ltesto[$tlogo] ?> 
+                                        </strong>
+                                        <?php if(!empty($mex)){?>
+                                        <strong class="p-1" style="background:white; color:#C70039; text-transform:uppercase;" ><?= $mex ?></strong>
+                                        <?php }?>
+                                    </div>
+                                    <hr>
+                                    <div style="font-size:0.9em" class="<?= $cssnot ?>"><?= $notizia; ?></div>
 
                                     <?php
                                     //Lettura degli allegati disponibili e creazione voci
@@ -114,38 +164,54 @@ presenti nella cartella afc_pro del tema
                         </div>
                     <?php } ?>
                 </div>
-
                 <div class="col-md-3">
                     <?php //Inclusione modulo per la gestione dei social
                     include '360Moduli/sharesocial.php'; ?>
-                    <div class="my-0 widget-area w-100">
-                        <h1 class="w-103 py-3 mt-2 mx-0 px-0 text-center"
-                            style="background:lightgray!important; font-size:1.25rem!important; font-weight:bold"><?= _('Date aggiornamenti'); ?></h1>
+                    <div class="widget-area w-100 mt-0 py-0">
                         <?php
-                        //                        Creazione menu di navigazione dalle date memorizzate nella variabile $pubblication
-                        foreach ($pubblication as $data) {
-                            ?>
-                            <hr>
-                            <div class="btn btn-info btn-block"><a href="#day<?= $data[0]; ?>">
-											<span style="font-size:1em!important">
-												<?= $data[1]; ?>
-											</span>
-                                </a></div>
 
-                            <?php
-
-                        }
+                        $men = new MenuSide();
+                        $men->sidebarMenuStructure();
+                        $men->sideMenuPubblication($pubblication);
                         ?>
-
-                        <?php
-                        $val = get_field('menusidebar');
-                        if ($val) {
-                            wp_nav_menu(array('menu' => '"' . $val . '""'));
-                        } ?>
-
                     </div>
-
                 </div>
+
+<!--                <div class="col-md-3">-->
+<!--                    --><?php ////Inclusione modulo per la gestione dei social
+//                    include '360Moduli/sharesocial.php'; ?>
+<!--                    <div class="my-0 widget-area w-100">-->
+<!--                        --><?php
+//                        $val = get_field('menusidebar');
+//                        if ($val) {
+//                            wp_nav_menu(array('menu' => '"' . $val . '""',
+//                            'container' => 'div',
+//                            'menu_class' => 'navside',));
+//                        } ?>
+<!--                        -->
+<!--                        <h1 class="w-103 py-3 mt-2 mx-0 px-0 text-center"-->
+<!--                            style="background:lightgray!important; font-size:1.25rem!important; font-weight:bold">--><?//= _('Date aggiornamenti'); ?><!--</h1>-->
+<!--                        --><?php
+//                        //                        Creazione menu di navigazione dalle date memorizzate nella variabile $pubblication
+//                        foreach ($pubblication as $data) {
+//                            ?>
+<!--                            <hr>-->
+<!--                            <div class="btn btn-info btn-block"><a href="#day--><?//= $data[0]; ?><!--">-->
+<!--											<span style="font-size:1em!important">-->
+<!--												--><?//= $data[1]; ?>
+<!--											</span>-->
+<!--                                </a></div>-->
+<!---->
+<!--                            --><?php
+//
+//                        }
+//                        ?>
+<!---->
+<!--                        -->
+<!---->
+<!--                    </div>-->
+<!---->
+<!--                </div>-->
             </div>
         </div>
     </section>
