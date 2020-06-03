@@ -6,6 +6,10 @@ class MenuSide
     function styleMenu()
     {
         echo '<style>
+                :root{
+                --side-font:1.2rem;
+                }
+                
                 @media (min-width: 768px) {
                     .collapse.dont-collapse-sm {
                         display: block;
@@ -13,6 +17,7 @@ class MenuSide
                         visibility: visible;
                     }
                 }
+                
                 a.collegamenti.btn{
                 cursor: pointer;
                 background: #a66300!important;
@@ -37,12 +42,17 @@ class MenuSide
                 margin-bottom: 10px;
                 font-size:1.25rem!important; 
                 }
-                
-               
-                
                 div.menu > li {
                     font-size: 1.2em!important;
                 }
+                .widget-area a {
+                font-weight: 600;
+                font-size:var(--side-font);
+                }
+                [id$="dettaglio-testo"] .widget-area li a {
+                font-size:var(--side-font);
+}
+                
         </style>';
     }
 
@@ -87,10 +97,10 @@ class MenuSide
          */
         //Deve essere indicato lo slug del menu da utilizzare e deve essere presente la variabile
         $obj_id = get_queried_object_id();
-        $url = get_permalink( $obj_id );
+        $url = get_permalink($obj_id);
 
         //Verifica se è pagina della trasparenza
-        if (strpos($url,'amm-trasparente')){
+        if (strpos($url, 'amm-trasparente')) {
 
             echo '<a class="title btn btn-warning btn-lg btn-block mb-2" data-toggle="collapse" href="#collapseMenuTrasparenza" role="button" aria-expanded="false" aria-controls="collapseMenuTrasparenza">
         ' . __('Trasparenza', '360Positive') . '</a>';
