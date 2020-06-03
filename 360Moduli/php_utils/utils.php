@@ -67,25 +67,29 @@ class MenuSide
         console . log('Eliminazione');
     }
 
-    function sidebarMenuStructure()
+    function sidebarMenuStructure($val='')
     {
         /**
          * Gestione della struttura del menu laterale di navigazione
          */
 
         //Deve essere indicato lo slug del menu da utilizzare e deve essere presente la variabile
-        $val = get_field('menusidebar');
-        if (!empty($val)) {
 
-            echo '<a class="collegamenti btn btn-warning btn-lg btn-block " data-toggle="collapse" href="#collapseMenuSide" role="button" aria-expanded="false" aria-controls="collapseMenuSide">
+       if (empty($val)) {
+           $val = get_field('menusidebar');
+       }
+
+       if (!empty($val)) {
+
+               echo '<a class="collegamenti btn btn-warning btn-lg btn-block " data-toggle="collapse" href="#collapseMenuSide" role="button" aria-expanded="false" aria-controls="collapseMenuSide">
         ' . __('Collegamenti utili', '360Positive') . '</a>';
 
 //          echo '<div class="collapse dont-collapse-sm" id="collapseMenuSide">';
-            echo '<div class="collapse" id="collapseMenuSide">';
+               echo '<div class="collapse" id="collapseMenuSide">';
 
-            wp_nav_menu(array('menu' => '"' . $val . '""'), '<a>');
-            echo '</div>';
-        }
+               wp_nav_menu(array('menu' => '"' . $val . '""'), '<a>');
+               echo '</div>';
+           }
 
 
     }
