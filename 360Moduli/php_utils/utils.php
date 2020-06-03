@@ -86,14 +86,21 @@ class MenuSide
          * Gestione della struttura del menu laterale di navigazione menu della trasparenza
          */
         //Deve essere indicato lo slug del menu da utilizzare e deve essere presente la variabile
+        $obj_id = get_queried_object_id();
+        $url = get_permalink( $obj_id );
 
+        //Verifica se è pagina della trasparenza
+        if (strpos($url,'amm-trasparente')){
 
-        echo '<a class="title btn btn-warning btn-lg btn-block mb-2" data-toggle="collapse" href="#collapseMenuTrasparenza" role="button" aria-expanded="false" aria-controls="collapseMenuTrasparenza">
+            echo '<a class="title btn btn-warning btn-lg btn-block mb-2" data-toggle="collapse" href="#collapseMenuTrasparenza" role="button" aria-expanded="false" aria-controls="collapseMenuTrasparenza">
         ' . __('Trasparenza', '360Positive') . '</a>';
 
-        echo '<div class="collapse" id="collapseMenuTrasparenza">';
-        echo do_shortcode('[at-head-collapse]');
-        echo '</div>';
+            echo '<div class="collapse" id="collapseMenuTrasparenza">';
+            echo do_shortcode('[at-head-collapse]');
+            echo '</div>';
+        }
+
+
     }
 
     function sideMenuPubblication($pub_id)
