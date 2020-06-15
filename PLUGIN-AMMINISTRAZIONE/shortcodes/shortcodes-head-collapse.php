@@ -1,3 +1,8 @@
+<style>
+    button.btn.btn-link.w-100.text-left:hover {
+        text-decoration: none;
+    }
+</style>
 <?php
 
 extract(shortcode_atts(array('col' => '1', 'bar' => '0', 'con' => '0'), $atts));
