@@ -31,10 +31,12 @@ $numeri = [
                         <?php
 
                         foreach ($numeri as $voce){
-                        $immagine = $voce[0];
+                        $immagine = urlencode($voce[0]);
                         $url = urlencode($voce[1]);
-                        $titolo = $voce[2];
+                        $titolo = addslashes($voce[2]);
                         $type = $voce[3];
+
+
                         ?>
 
                         <div class="align-center col-md-4 my-3 ">
