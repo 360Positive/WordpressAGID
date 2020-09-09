@@ -68,14 +68,18 @@ pa360_breadcrumb(); ?>
                         <? foreach ($voci as $voce): ?>
                             <tr>
                                 <? foreach ($keys as $key): ?>
+                                    <? if (!empty($urls)): ?>
                                     <? if (!in_array($key,$urls)): ?>
                                         <td><?= $voce[$key] ?></td>
                                     <? else: ?>
                                         <td>
-                                            <a href="<?= $voce[$key] ?>" target="_blank">
-                                                <i class="icofont-attachment"></i> Scarica il file
+                                            <a href="<?= $voce[$key] ?>" target="_blank" title="Scarica <?= $key ?>">
+                                                <i class="icofont-attachment"></i><br> <small>Scarica il file</small>
                                             </a>
                                         </td>
+                                    <? endif ?>
+                                    <? else: ?>
+
                                     <? endif ?>
                                 <? endforeach; ?>
                             </tr>
