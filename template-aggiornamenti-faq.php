@@ -91,7 +91,7 @@ presenti nella cartella afc_pro del tema
                                         ?><!--Stile data notizia-->
                                     <div class="data mr-2 my-1 px-2 py-1" style="cursor:pointer" data-toggle="collapse" data-target="#collapse-<?=$sec?>-<?=$i?>" aria-expanded="true" aria-controls="collapse-<?=$sec?>-<?=$i?>">
                                           <strong><?=$faq['domanda'] ?></strong></div>
-                                             <div id="collapse-<?=$sec?>-<?=$i?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-<?= str_replace(' ', '', $titolo) ?>">
+                                             <div id="collapse-<?=$sec?>-<?=$i?>" class="collapse"  data-parent="#accordion-<?= str_replace(' ', '', $titolo) ?>">
                                             <div style="font-size:0.9em" class="px-2 py-1 mb-1"><?= $faq['risposta'] ?> </div>
                                             </div>
                                         
