@@ -24,6 +24,8 @@ get_header();
 /*Per il funzionamento del template deve essere attivata la struttura di campi personalizzati da associare al template
 presenti nella cartella afc_pro del tema
  * */
+$isadmin = current_user_can('administrator');
+
 function isaimage($file){
     $file=substr($file,-5);
         $ext = explode('.',$file)[1];
@@ -83,8 +85,13 @@ function isaimage($file){
                             <div class="col-md-1"></div>
                     </div>
                     
-                    <?php foreach ($sezioni as $sezione) {
+                    <?php 
+					foreach ($sezioni as $sezione) {
                         //Estrazione del contenuto della notizia
+                        // print_r($sezione);
+                        
+					if ($sezione['in_archivio']==0){
+														
                         $titolo = $sezione['intestazione'];
                         ?>
                         <!-- Creazione struttura grafica della notizia -->
@@ -129,7 +136,64 @@ function isaimage($file){
                             </div>
                             <div class="col-md-1"></div>
                         </div>
-                    <?php } ?>
+                    <?php
+						}
+						else {
+							if ($isadmin) {
+								
+							
+                        $titolo = $sezione['intestazione'];
+                        ?>
+                        <!-- Creazione struttura grafica della notizia -->
+					<div class="text-danger int-allegati">
+                        <div class="row ">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <?php
+                               
+                                //Controllo cambiamento data e inserimento menu
+                                if (strcmp($lastsez, $titolo) !== 0) {
+                                    echo '<h2 class="intestazione" id="day' . str_replace(' ', '', $titolo) . '">' . $titolo . '</h2>';
+                                    //Memorizzazione data per creazione menu di navigazione
+                                    array_push($pubblication, $titolo);
+                                }
+                                //Aggiornamento varibile controllo data
+                                $lastsez = $titolo;
+                                ?>
+
+                                <!-- Blocco materiale multimediale   -->
+                                <div class="row row-eq-height mx-0" id="arg-<?= str_replace(' ', '', $titolo) ?>">
+                                    <?php
+                                    //Lettura degli allegati disponibili e creazione voci
+                                    foreach ($sezione['files'] as $file) {
+
+                                        ?><!--Documento da scaricare-->
+                                        <? ($titolo== 'Materiale social')?$col=2:$col=6;?>
+                                    <div class="align-middle  col-<?=$col?> px-2 py-1 h-100">
+                                       
+                                            <strong><?= $file['titolo'] ?></strong>
+                                            <?php if(isaimage($file['file'])){?><img class="w-100" src="<?= $file['file'] ?>" alt="<?= $file['titolo'] ?>"><?php }?>
+                                            <br>
+                                            <a style="color:chocolate; font-size:0.9rem;" href="<?= $file['file'] ?>" target="_blank" title="<?= $file['titolo'] ?>">Clicca per scaricare</a>
+                                        </div>
+                                        
+                                        <?php
+
+                                    }
+                                    ?>
+                                </div>
+
+                                <hr>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+					</div>
+                    <?php
+							}
+							else{}
+						}
+						
+					}?>
                 </div>
 
                 <div class="col-md-3">

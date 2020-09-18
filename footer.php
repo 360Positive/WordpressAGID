@@ -1,110 +1,95 @@
-<div class="clear"></div>
 </div>
+<?php /*
+ Personalizzazione del footer
+ */
+//['nomelink','link',1 interno -0 esterno]
 
-<footer id="footer" class="it-footer" role="contentinfo">
-    <div class="it-footer-main">
-        <div class="container">
-            <section>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="it-brand-wrapper">
-                            <a href="<?php echo esc_url(home_url('/')); ?>"
-                               title="<?php echo esc_html(get_bloginfo('name')); ?>" rel="home">
-                                <?php
-                                $custom_logo_id = get_theme_mod('custom_logo');
-                                $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+$menu2 = [
+    ['Accesso civico', "/amm-trasparente/accesso-civico/", 1],
+    ['Amministrazione trasparente', '/amministrazione-trasparente/', 1],
+    ['Albo Pretorio', 'http://93.62.191.250/cmsacquiterme/portale/albopretorio/albopretorioconsultazione.aspx?IDNODE=2112', 0],
+    ['Whistleblowing', '/amm-trasparente/whistleblowing', 1],
+	['Privacy','https://privacy.nelcomune.it/comune.acquiterme.al.it']
+];
 
-                                if (has_custom_logo()) {
-                                    /*---   Impostazione del logo FISSO - Problema di cropping bassa risoluzione   ----*/
-                                    $path = "http://comune.acquiterme.al.it/sviluppo/wp-content/uploads/2019/09/logo_acqui_terme_-2.png";
-                                    echo '<img src="' . $path . '" alt="logo-comune-acqui" >';
-                                    // echo '<img src="' . esc_url($logo[0]) . '" alt="' . esc_html(get_bloginfo('name')) . '">';
-                                } else {
-                                    echo '<img class="icon" src="' . get_template_directory_uri() . '/img/custom-logo.png' . '" alt="logo-comune-acqui' . esc_html(get_bloginfo('name')) . '">';
-                                } ?>
-
-                                <?php /*<div class="it-brand-text">
-                                        <h2 class="no_toc"><?php echo esc_html(get_bloginfo('name')); ?></h2>
-                                        <h3 class="no_toc d-none d-md-block"><?php bloginfo('description'); ?></h3>
-                                        
-                                    </div>*/ ?>
+$menu3 = [
+    ['Sportello unico attività produttive', "http://www.impresainungiorno.gov.it/web/guest/comune?codCatastale=A052", 0],
+    ['Centrale unica di committenza', '/cuc/', 1],
+    ['Ufficio relazioni pubblico', '/ufficio-relazioni-con-il-pubblico-urp', 1]
+];
+$list_point="icofont-arrow-right"
+?>
 
 
-                            </a>
+<footer id="footer" class="it-footer mt-5">
+    <div class="it-footer-main mb-4 pb-4">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="mt-4 mb-3">
+                        <?php
+                        $custom_logo_id = get_theme_mod('custom_logo');
+                        $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+                        $logo_alt = "logo-" . esc_html(get_bloginfo('name'));
 
-
-                        </div>
+                        if (has_custom_logo()) {
+                            /*---   Impostazione del logo FISSO - Problema di cropping bassa risoluzione   ----*/
+                            $path = "http://comune.acquiterme.al.it/wp-content/uploads/2019/09/logo_acqui_terme_-2.png";
+                        } else {
+                            $path = get_template_directory_uri() . '/img/custom-logo.png';
+                        }
+                        ?>
+                        <img class="icon" style="width:100%; height:auto; min-width:300px;" src="<?= $path ?>" alt="<?= $logo_alt ?>">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h2 class="footer">Contatti</h2>
-                        <hr>
-                        <i class="icofont-bank-alt"></i> Piazza Levi, 12 - 15011 - Acqui Terme - AL - Italia.<br>
-                        <i class="icofont-ui-dial-phone"></i> Centralino 01447701<br>
-                        <i class="icofont-ui-contact-list"></i> Tutti i contatti
-                    </div>
-                    <div class="col-sm-3">
-                        <h2 class="footer">Trasparenza</h2>
-                        <hr>
-                        <ul>
-                            <li>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2 class="footer"><?= __("Contatti"); ?></h2>
 
-                                <a title="<?= _('Apre la pagina interna Accesso civico') ?>"
-                                   href="<?= get_site_url() ?>/amm-trasparente/accesso-civico/"> <?= _('Accesso civico') ?> </a>
+                    <i class="icofont-bank-alt"></i> Piazza Levi, 12 - 15011 - Acqui Terme - AL - Italia<br>
+                    <i class="icofont-ui-dial-phone"></i> Centralino <a href="tel:+3901447701">+39 01447701</a><br>
+                    <i class="icofont-ui-contact-list"></i> <a href="/rubrica/">Tutti i contatti</a><br>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="footer"><?= __("Trasparenza")?></h2>
 
-                            </li>
-                            <li>
-                                <a title="<?= _('Apre la pagina interna Amministrazione trasparente') ?>"
-                                   href="<?= get_site_url() ?>/amministrazione-trasparente"> <?= _('Amministrazione trasparente') ?> </a>
+                    <?php foreach ($menu2 as $entry_menu2) {
+                        ?>
+                        <i class="<?= $list_point ?>"></i>
+                        <a target="_blank"
+                           title="<?= _('Apre la pagina' . $entry_menu2[0]) ?>"
+                           href="<?= $entry_menu2[2] == 1 ? get_site_url() . $entry_menu2[1] : $entry_menu2[1] ?>"> <?= _($entry_menu2[0]) ?> </a>
+                        <br>
+                        <?php
+                    } ?>
 
-                            </li>
-<!--                            <li>-->
-<!--                                Whistleblowing-->
-<!--                            </li>-->
-                            <li>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="footer"><?= __("Sportelli");?></h2>
 
-                                <a title="<?= _('Apre la pagina interna Open data') ?>"
-                                   href="<?= get_site_url() ?>/open-data"> <?= _('Open data') ?> </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-                        <h2 class="footer">Sportelli</h2>
-                        <hr>
-                        <ul>
-                            <li class="sportelli">
-                                <a target="_blank"
-                                   title="<?= _('Apre la pagina esterna Sportello unico attività produttive') ?>"
-                                   href="http://www.impresainungiorno.gov.it/web/guest/comune?codCatastale=A052"> <?= _('Sportello unico attività produttive') ?> </a>
-                            </li>
-                            <li class="sportelli">Sportello unico edilizia</li>
-                            <li class="sportelli">
-                                <a target="_blank"
-                                   title="<?= _('Apre la pagina esterna Centrale unica di committenza') ?>"
-                                   href="https://appalti-acquese.maggiolicloud.it/PortaleAppalti/it/homepage.wp"> <?= _('Centrale unica di committenza') ?> </a>
-                            </li>
-                            <li class="sportelli">
-                                <a target="_blank"
-                                   title="<?= _('Apre la pagina interna Ufficio relazioni pubblico') ?>"
-                                   href="<?= get_site_url() ?>/ufficio-relazioni-con-il-pubblico-urp"> <?= _('Ufficio relazioni pubblico') ?> </a>
+                    <?php foreach ($menu3 as $entry_menu3) {
+                        ?>
+                        <i class="<?= $list_point ?>"></i>
+                        <a target="_blank"
+                           title="<?= _('Apre la pagina' . $entry_menu3[0]) ?>"
+                           href="<?= $entry_menu3[2] == 1 ? get_site_url() . $entry_menu3[1] : $entry_menu3[1] ?>"> <?= _($entry_menu3[0]) ?> </a>
+                        <br>
+                        <?php
+                    } ?>
+                </div>
+                <!--<div class="col-sm-2">-->
+                <!--                        <h2 class="footer">Seguici su</h2>-->
+                <!--                        <hr>-->
+                <!--                        <i class="icofont-linkedin social"></i>-->
+                <!--                        <i class="icofont-instagram social"></i>-->
+                <!--                        <i class="icofont-brand-youtube social"></i>-->
+                <!--                        <i class="icofont-twitter social"></i>-->
+                <!--                        <i class="icofont-facebook social"></i>-->
+                <!--</div>-->
 
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="col-sm-3">
-<!--                        <h2 class="footer">Seguici su</h2>-->
-<!--                        <hr>-->
-<!--                        <i class="icofont-linkedin social"></i>-->
-<!--                        <i class="icofont-instagram social"></i>-->
-<!--                        <i class="icofont-brand-youtube social"></i>-->
-<!--                        <i class="icofont-twitter social"></i>-->
-<!--                        <i class="icofont-facebook social"></i>-->
-                    </div>
-
-                    <div class="col-sm-7">
-                        <?php if (is_active_sidebar('footer-widget-area')) : ?>
+                <div class="col-sm-7">
+                    <?php if (is_active_sidebar('footer-widget-area')) : ?>
                         <div class="row">
                             <div class="container-fluid widget-area">
                                 <div class="row">
@@ -112,13 +97,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
+            </div>
 
 
-            </section>
-
-            <?php endif; ?>
             <?php if (is_active_sidebar('footer-sub-widget-area')) : ?>
                 <section class="py-4 border-white border-top">
                     <div class="row">
@@ -133,25 +116,31 @@
 
         </div>
     </div>
-    <div class="">
-        <hr>
-        <div class="container-fluid">
+    <div class="w-100">
 
-            <div class="row" style="padding-bottom:1rem;!important;">
-                <div class=".col-md-4">
+        <div class="container-fluid pt-2">
+
+            <div class="row" style="padding-bottom:1rem;!important; word-wrap: break-word;">
+                <div class="col-md-12 text-center">
+                    <strong><i class="icofont-mail"></i> PEC:</strong>
+                    <a title="<?= _('Apre indrizzo di posta certificata') ?>"
+                       href="mailto:acqui.terme@cert.ruparpiemonte.it">acqui.terme@cert.ruparpiemonte.it</a><br>
                     <a title="<?= _('Apre la pagina interna Mappa del sito') ?>"
                        href="<?= get_site_url() ?>/sitemap"> <?= _('Mappa del sito') ?> </a>-
                     <a title="<?= _('Apre la pagina interna Accessibilità') ?>"
                        href="<?= get_site_url() ?>/accessibilita"> <?= _('Accessibilità') ?> </a>-
                     <a title=" <?= _('Apre la pagina sul sito esterno della Privacy e dei cookie') ?>" target="_blank"
                        href="https://privacy.nelcomune.it/comune.acquiterme.al.it">  <?= _('Privacy e cookie') ?> </a>-
-                    <?= _('Note Legali') ?> -
+                    <?php
+                    // _('Note Legali')
+                    ?>
                     <a title="<?= _('Apre la pagina interna Social media policy') ?>"
                        href="<?= get_site_url() ?>/social-media-policy"> <?= _('Social media policy') ?> </a>-
 
-                    <small>P.IVA 00430560060 </small>
-
-                    <?php echo sprintf(__('%1$s %2$s %3$s', 'wppa'), '&copy;', date('Y'), esc_html(get_bloginfo('name'))); ?> </small>
+                    <span>P.IVA 00430560060 - Fatturazione Elettronica: UFBD6F</span>
+<br>
+                    <?php echo sprintf(__('%1$s %2$s %3$s', 'wppa'), '&copy;', date('Y'), esc_html(get_bloginfo('name'))); ?>
+                    - Sviluppato da <a href="https://360positive.it"><strong>360 Positive</strong></a>
                 </div>
             </div>
         </div>
@@ -159,89 +148,23 @@
 </footer>
 
 
-</div>
 <?php wp_footer(); ?>
-<style>
-    <?php /*Stile pagina*/ ?>
-
-    .it-footer-main {
-        color: white !important;
-        background: #30373d !important;
-    }
-
-
-    .haswithe {
-    }
-
-    .it-footer-main .it-brand-wrapper {
-        padding-top: 30px;
-    }
-
-    h2.footer {
-        font-size: 1.5rem !important;
-        letter-spacing: .007em !important;
-        padding-bottom: 0.8rem !important;
-        padding-top: 20px;
-
-    }
-
-
-    li.sportelli > small.text-muted {
-        display: none;
-    }
-
-    li.sportelli:hover > small.text-muted {
-        display: block;
-    }
-
-    i[class^="icofont-"].social.footer {
-        display: inline-block;
-        border-radius: 60px;
-        padding: 0.4em;
-        background: white;
-        color: #420101 !important;
-        float: none;
-        margin-right: 10px;
-</style>
 
 <?php /*Scroll pulsante per la naviagazione in top*/ ?>
-<a href="#" id="back-to-top" title="Torna all'inizio del contenuto."><i
-            class="icofont-rounded-up" title="up"></i></a>
-<style>
+<script>
+    $('<link/>', {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/css/footer.css'//css da includere
+    }).appendTo('head');
 
-    #back-to-top {
-        position: fixed;
-        bottom: 40px;
-        right: 40px;
-        z-index: 9999;
-        width: 3em;
-        height: 3em;
-        text-align: center;
-        line-height: 3em;
 
-        background: #ffb401;
-        color: #444;
-        cursor: pointer;
-        border: 0;
-        border-radius: 2px;
-        text-decoration: none;
-        transition: opacity 0.2s ease-out;
-        opacity: 0;
+</script>
 
-    }
 
-    #back-to-top:hover {
-        background: #e9ebec;
-    }
+<div id="back-to-top" title="Torna all'inizio del contenuto.">
+    <i class="icofont-rounded-up" title="up"></i></div>
 
-    #back-to-top.show {
-        opacity: 1;
-    }
-
-    #back-to-top > i {
-        font-size: 1.25em !important;
-    }
-</style>
 <script>
     if ($('#back-to-top').length) {
         var scrollTrigger = 100, // px
@@ -265,12 +188,33 @@
         });
     }
 </script>
-<script
-        src="https://code.jquery.com/jquery-3.4.1.js"
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script>
+    /*Ottimizzazioni caricamento
+    var testo=$('.breadcrumb-item > a:text').each(
+    function(e){
+    })
+    */
+
+    let mainstyle = $('style#mainstyle');
+    $('style').not('#mainstyle').each(function (index) {
+        //console.log(this);
+        mainstyle.append(this.innerHTML);
+        this.remove();
+    });
+
+
+</script>
 
 </body>
 

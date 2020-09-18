@@ -6,7 +6,7 @@
  
  get_header(); ?>
 
-
+<?php pa360_breadcrumb(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	

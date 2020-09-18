@@ -50,7 +50,7 @@ presenti nella cartella afc_pro del tema
     <section id="articolo-dettaglio-testo">
         <div class="container">
             <div class="row">
-                <div class="col-md-9" id='mainblock'>
+                <div class="col-md-9 mainblock" id='mainblock'>
                     <?php foreach ($news as $new) {
                         //Estrazione del contenuto della notizia
                         $titolo = $new['titolo'];

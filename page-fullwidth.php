@@ -2,8 +2,17 @@
    /* Template Name: Pagina full-width */
    get_header(); 
 ?>
-<?php wppa_breadcrumb(); ?>
-<section id="content" role="main" class="container">
+<?php pa360_breadcrumb(); ?>
+ <script type="text/javascript">
+			$('<link/>', {
+				rel: 'stylesheet',
+				type: 'text/css',
+				href: '<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/css/templates/pagesidebar.css'
+			}).appendTo('head');
+            
+			
+		</script> 
+<div id="content" role="main" class="container">
    <div class="container">
       <div class="row">
 
@@ -26,6 +35,6 @@
       
       </div>
    </div>
-</section>
+</div>
 
 <?php get_footer(); ?>

@@ -47,7 +47,15 @@ presenti nella cartella afc_pro del tema
         <div class="container">
             <div class="row">
                 <div class="col-md-9" id='mainblock'>
-                    <?php foreach ($sezioni as $sezione) {
+                    <div class="row mb-2">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10"><?php the_content(); ?></div>
+                            <div class="col-md-1"></div>
+                    </div>
+                    
+                    <?php 
+                    $sec=0;
+                    foreach ($sezioni as $sezione) {
                         //Estrazione del contenuto della notizia
                         $titolo = $sezione['titolo'];
                         ?>
@@ -55,39 +63,51 @@ presenti nella cartella afc_pro del tema
                         <div class="row ">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
+                                <span id="arg-<?= str_replace(' ', '', $titolo) ?>"></span>
+                                <div id="accordion-<?= str_replace(' ', '', $titolo) ?>">
+       
                                 <?php
                                
                                 //Controllo cambiamento data e inserimento menu
                                 if (strcmp($lastsez, $titolo) !== 0) {
-                                    echo '<h2 class="datagiorno" id="day' . str_replace(' ', '', $titolo). '">' . $titolo . '</h2>';
+                                    echo '<h2 class="datagiorno" id="day' . $titolo. '">' . $titolo . '
+                                    <span class="badge badge-primary">'.count($sezione['domande_frequenti']).'</span>
+                                    </h2>';
                                     //Memorizzazione data per creazione menu di navigazione
-                                    array_push($pubblication, str_replace(' ', '', $titolo));
+                                    array_push($pubblication, [$titolo,count($sezione['domande_frequenti'])]);
                                 }
                                 //Aggiornamento varibile controllo data
                                 $lastsez = $titolo;
                                 ?>
 
                                 <!--                            Blocco singola notizia    -->
-                                <div class="text-justify" id="arg-<?= str_replace(' ', '', $titolo) ?>">
+                                
+                                <div class="text-justify">
                                     <?php
                                     //Lettura degli allegati disponibili e creazione voci
+                                    $i=0; //elementi sezione iteratore
                                     foreach ($sezione['domande_frequenti'] as $faq) {
 
                                         ?><!--Stile data notizia-->
-                                    <div class="data mr-2 px-2 py-1"><strong><?= $faq['domanda'] ?></strong> </div>
-                                    <div style="font-size:0.9em"><?= $faq['risposta'] ?> </div>
-                                        <br>
+                                    <div class="data mr-2 my-1 px-2 py-1" style="cursor:pointer" data-toggle="collapse" data-target="#collapse-<?=$sec?>-<?=$i?>" aria-expanded="true" aria-controls="collapse-<?=$sec?>-<?=$i?>">
+                                          <strong><?=$faq['domanda'] ?></strong></div>
+                                             <div id="collapse-<?=$sec?>-<?=$i?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-<?= str_replace(' ', '', $titolo) ?>">
+                                            <div style="font-size:0.9em" class="px-2 py-1 mb-1"><?= $faq['risposta'] ?> </div>
+                                            </div>
+                                        
                                         <?php
 
-                                    }
+                                   $i++; }
                                     ?>
+                                </div>
                                 </div>
 
                                 <hr>
                             </div>
                             <div class="col-md-1"></div>
                         </div>
-                    <?php } ?>
+                    <?php 
+                    $sec++;} ?>
                 </div>
 
                 <div class="col-md-3">
@@ -106,10 +126,12 @@ presenti nella cartella afc_pro del tema
                         foreach ($pubblication as $data) {
                             ?>
                             <hr>
-                            <div class="btn btn-info btn-block"><a href="#day<?= $data; ?>">
+                            <div class="btn btn-info btn-block text-left"><a href="#arg-<?= str_replace(' ', '', $data[0])?>">
+											<span class="badge badge-primary"><?= $data[1];?></span>
 											<span style="font-size:1em!important">
-												<?= $data; ?>
+												<?= $data[0]; ?>
 											</span>
+											
                                 </a></div>
 
                             <?php

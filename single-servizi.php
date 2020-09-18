@@ -51,7 +51,7 @@ get_header(); ?>
         <p class="dida"><?php the_post_thumbnail_caption() ?></p>
     </section>
 
-<?php wppa_breadcrumb(); ?>
+<?php pa360_breadcrumb(); ?>
     <div class="container">
     <div class="row">
         <section id="content" role="main" class="container">

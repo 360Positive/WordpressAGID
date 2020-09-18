@@ -50,9 +50,9 @@ get_header(); ?>
 						
 					?>
                     <div id="uffici" >
-                        <?php //Contenuto della pagina ?>
-						<?php $val = get_field('menusidebar'); //Memorizzazione nome menu laterale se presente?>
-                        <?php the_content(); //Contenuto pagina?> 
+                        <?php //Contenuto della pagina
+
+                        the_content(); //Contenuto pagina?>
                         
                         
                         <?php
@@ -90,25 +90,25 @@ get_header(); ?>
 					?>					
 				</div>
 				
-				<div class="col-md-3">
-					<?php //Inclusione modulo per la gestione dei social
-					include '360Moduli/sharesocial.php'; ?>
-                    <div class="widget-area w-100 mt-0 py-0">
-                        <?php  if (!empty($val)) { 
-							wp_nav_menu(array('menu' => '"' . $val . '""'),'<a>');
-						} ?>
-					</div>
-					
-				</div>
+<!--				<div class="col-md-3">-->
+<!--					--><?php ////Inclusione modulo per la gestione dei social
+//					include '360Moduli/sharesocial.php'; ?>
+<!--                    <div class="widget-area w-100 mt-0 py-0">-->
+<!--                        --><?php // if (!empty($val)) {
+//							wp_nav_menu(array('menu' => '"' . $val . '""'),'<a>');
+//						} ?>
+<!--					</div>-->
+<!--					-->
+<!--				</div>-->
 
                 <div class="col-md-3">
                     <?php //Inclusione modulo per la gestione dei social
                     include '360Moduli/sharesocial.php'; ?>
                     <div class="widget-area w-100 mt-0 py-0">
                         <?php
-
+                        $side ='sidebar-organizzazione';
                         $men = new MenuSide();
-                        $men->sidebarMenuStructure();
+                        $men->sidebarMenuStructure($side);
                         $men->sidebarMenuTrasparenza();
 
                         ?>

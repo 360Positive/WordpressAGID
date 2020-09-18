@@ -37,7 +37,7 @@ get_header(); ?>
 	<section class="entry-content thumbnail topimage">
 		<p class="dida"><?php the_post_thumbnail_caption() ?></p>
 	</section>
-	<?php wppa_breadcrumb(); ?>
+<?php pa360_breadcrumb(); ?>
 	
 	<section id="content" role="main" class="container">
 

@@ -2,13 +2,12 @@
 /*
     * Template Name: Pagina - Articolo Aggiornamenti - template-aggiornamenti.php
     * Template Post Type: post,page, product
+    * Gestione degli aggiornamenti e della navigazione nelle voci
 */
 
 require_once '360Moduli/XML/localfunc.php';
 require_once '360Moduli/php_utils/utils.php';
 get_header();
-
-
 ?>
 <script type="text/javascript"
         src="<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/js/utils.js"></script>
@@ -22,20 +21,30 @@ get_header();
 </script>
 <?php pa360_breadcrumb(); ?>
 
-
 <?php
 /*Per il funzionamento del template deve essere attivata la struttura di campi personalizzati da associare al template
 presenti nella cartella afc_pro del tema
  * */
- $cloghi=get_template_directory_uri()."-child/360Moduli/css/loghi/";
- $loghi=['comune'=> $cloghi.'logo_acqui_terme.png',
- 'regione'=> $cloghi.'logo_regione_piemonte.png',
- 'nazionale'=> $cloghi.'logo_ministero.png'
- ];
- $ltesto=['comune'=> 'Acqui Terme',
- 'regione'=> 'Piemonte',
- 'nazionale'=>'Italia'
- ];
+//Cartella del tema dove prendere i loghi da inserire
+$cloghi = get_template_directory_uri() . "-child/360Moduli/css/loghi/";
+
+//Configurazioni
+$loghi = [
+    'comune' => $cloghi . 'logo_acqui_terme.png',
+    'regione' => $cloghi . 'logo_regione_piemonte.png',
+    'nazionale' => $cloghi . 'logo_ministero.png'
+];
+$ltesto = [
+    'comune' => 'Acqui Terme',
+    'regione' => 'Piemonte',
+    'nazionale' => 'Italia'
+];
+//Tipologie di file e icone corrispondenti
+$ext = ['doc' => '<i class="icofont-file-document"></i>',
+    'pdf' => '<i class="icofont-file-document"></i>',
+    'xml' => '<i class="icofont-file-document"></i>',
+    'jpg' => '<i class="icofont-image"></i>'
+];
 
 ?>
 
@@ -43,11 +52,7 @@ presenti nella cartella afc_pro del tema
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php
     the_post();
-    $ext = ['doc' => '<i class="icofont-file-document"></i>',
-        'pdf' => '<i class="icofont-file-document"></i>',
-        'xml' => '<i class="icofont-file-document"></i>',
-        'jpg' => '<i class="icofont-image"></i>'
-    ];
+
     //Lettura delle voci
     $aggiornamenti = get_field('informazioni');
 
@@ -57,9 +62,9 @@ presenti nella cartella afc_pro del tema
     });
     //Variabile per la verifica della variazione della giornata
     $lastdate = "";
-
     //Setting lingua locale per la visualizzazione delle date - def:Italiano
     setlocale(LC_ALL, 'it_IT.UTF-8');
+
     //Variabile per la memorizzazione dei giorni delle notizie
     $pubblication = array();
 
@@ -68,7 +73,7 @@ presenti nella cartella afc_pro del tema
     <section id="articolo-dettaglio-testo">
         <div class="container">
             <div class="row">
-                <div class="col-md-9" id='mainblock'>
+                <div class="col-md-9 mainblock" id='mainblock'>
                     <?php foreach ($aggiornamenti as $voce) {
                         //Estrazione della data e dell'ora
                         $dateora = explode(' ', $voce['data_ora']);
@@ -117,16 +122,13 @@ presenti nella cartella afc_pro del tema
                                    $orig= $loghi[$origine];
                                    $tlogo= $origine;
                                 }
-                               
-                                
-                                
                                 ?>
 
-                                <!--                            Blocco singola notizia    -->
-                               
-                                <div class="text-justify" id="arg-<?= str_replace(' ', '', $voce['data_ora']) ?>">
+                                <!--  Blocco singola notizia    -->
+                               <?php $id_date=str_replace(' ', '', $voce['data_ora']);
+                               echo $id_date;?>
+                                <div class="text-justify" id="arg-<?= $id_date ?>">
                                     <!--Stile data notizia-->
-                                    
                                     <div class="<?= $css ?> mr-2 px-2 py-1">
                                         <strong class="p-1">
                                         Ora <?= $time ?> - 
@@ -186,58 +188,8 @@ presenti nella cartella afc_pro del tema
          * Script per l'inserimento delle icone dei collegamenti ai file esterni ed interni della pagina
          * @type {jQuery|HTMLElement -> single.php}
          */
-        $(window).on('load', function () {
-            var content = $('#mainblock');
-            $('a', content).each(function (key, value) {
-                var file = $(this).attr('href');
-                // console.log(file)
-                var ext = file.split('.').pop();
-                switch (ext) {
-                    case 'jpg':
-                        typefile = 'icofont-file-image';
-                        title = "Apre un file immagine"
-                        break;
-                    case 'png':
-                        typefile = 'icofont-file-image';
-                        title = "Apre un file immagine"
-                        break;
-                    case 'gif':
-                        typefile = 'icofont-file-image';
-                        title = "Apre un file immagine";
-                        break;
-                    case 'doc':
-                        typefile = 'icofont-file-document';
-                        title = "Apre un file documneto";
-                        break;
-                    case 'docx':
-                        typefile = 'icofont-file-document';
-                        title = "Apre un file documneto";
-                        break;
-                    case 'xls':
-                        typefile = 'icofont-file-excel';
-                        title = "Apre un file foglio di calcolo";
-                        break;
-                    case 'pdf':
-                        typefile = 'icofont-file-pdf';
-                        title = "Apre un file pdf";
-                        break;
-                    default:
-                        typefile = 'icofont-link';
-                        title = "Apre un link";
-                        break;
-                }
-
-                $(this).before('<i class="' + typefile + '"></i> ')
-                var hastitle = $(this).attr('title');
-                // console.log(hastitle);
-
-                if (!hastitle) {
-                    $(this).attr({'title': title});
-                }
-            })
-        })
-
         linkIcon();
+
     </script>
 </article>
 

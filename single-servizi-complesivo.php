@@ -39,8 +39,8 @@ get_header(); ?>
 </style>
 <script type="text/javascript">
     function insertSecondMenu(tag) {
-        var htmltext = $(tag).html();
-        $("#secondNavigation").html(htmltext);
+        var htmltext = $('#sec-'+tag).html();
+        $("#secondNav"+tag).html(htmltext);
     }
     function scrolltoElement(tag){
 
@@ -138,7 +138,7 @@ foreach ($posts as $post) {
 //    echo '<hr>';
 //    print_r($post);
 //    echo '<br>';
-//    echo get_field('servizi', $post->ID) . '  <br>';;
+//    echo get_field('servizi', $post->ID) . '  <br>';
 //    echo $post->ID . '<br>';
 
     $value = get_field('servizi', $post->ID);
@@ -155,7 +155,7 @@ foreach ($posts as $post) {
 //print_r($art);
 
 ?>
-
+<?php pa360_breadcrumb(); ?>
 <div class="container">
     <div class="row">
         <section id="content" role="main" class="container">
@@ -166,22 +166,20 @@ foreach ($posts as $post) {
                     the_content();
                     ?>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <?php
                             //Elenco sezioni
                             foreach ($servizi as $sez) { ?>
-                                <a href='#sec-<?= $sez[0][0]; ?>' id="<?= $sez[0][0]; ?>"
+                                <a href='#secondNav<?= $sez[0][0]; ?>' id="<?= $sez[0][0]; ?>"
                                    class="navigation btn btn-warning btn-block text-left"
-                                   onclick="insertSecondMenu('#sec-<?= $sez[0][0]; ?>')">
-                                    <h2 class="main" style="text-transform: uppercase"> <i class="icofont-arrow-right"></i> <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
+                                   onclick="insertSecondMenu('<?= $sez[0][0]; ?>')">
+                                    <h2 class="main" style="text-transform: uppercase"> 
+                                    <i class="icofont-arrow-right"></i> <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
                                 </a>
-
-
+                                <div class="" id="secondNav<?= $sez[0][0]; ?>"></div>
                             <?php } ?>
                         </div>
-                        <div class="col-md-8">
-                            <div class="" id="secondNavigation"></div>
-                        </div>
+                        
                         </div>
                     <?php
                     //Spampa data e informazioni di aggiornamento della pagina
@@ -200,7 +198,7 @@ foreach ($posts as $post) {
                 <h2  class="headersub"style="text-transform: uppercase">
                     <i class="icofont-info-square"></i>
                     <?= str_replace('_', ' ', $sez[0][0]) ?> </h2>
-                <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                <div class="accordion md-accordion" id="accordionEx<?= $sez[0][0] ?>" role="tablist" aria-multiselectable="true">
                     <?php
                     $i=0;
                     foreach ($sez[1] as $voce) {
@@ -212,7 +210,7 @@ foreach ($posts as $post) {
 
                         ?>
                             <div class="card-header" role="tab" id="heading<?= $field ?>">
-                                <a class="submenu collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                <a class="submenu collapsed" data-toggle="collapse" data-parent="#accordionEx<?= $sez[0][0] ?>"
                                    href="#collapse<?= $field ?>" aria-expanded="true"
                                    aria-controls="collapse<?= $field ?>"
                                    style="text-transform: uppercase; ">
@@ -227,7 +225,7 @@ foreach ($posts as $post) {
 
                             <!-- Card body -->
                             <div id="collapse<?= $field ?>" class="collapse <?= $i==0? 'show':'' ?>" role="tabpanel"
-                                 aria-labelledby="heading<?= $field ?>" data-parent="#accordionEx">
+                                 aria-labelledby="heading<?= $field ?>" data-parent="#accordionEx<?= $sez[0][0] ?>">
                                 <div class="card-body">
                                     <?php
                                     //INTEGRAZIONE ARTICOLI

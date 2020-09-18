@@ -37,8 +37,10 @@ $category_query = new WP_Query($category_query_args);
     <section id="articolo-dettaglio-testo">
         <div class="container">
             <div class="row my-2">
-                <div class="col-md-12">
-                    <table id="tablecreate" class="table table-striped" width="100%">
+                <div class="col-md-12"><br>
+                    Utilizza la lo spazio per la ricerca per filtrare le voci che ti interessano.<br>
+                    Per visualizzare più contenuti, aumenta il numero di elementi da visualizzare. I primi elementi sono voci ancora aperte e alle quali si può partecipare. 
+                    <table id="tablecreate" class="table table-striped w-100">
                         <thead>
                         <tr>
                             <th>Scadenza</th>

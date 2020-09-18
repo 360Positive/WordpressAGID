@@ -1,8 +1,8 @@
-# Design Italia
+# 360 Positive
 
-Contributors: Marco Gargano
+Contributors: 360Positive, Riccardo Testa e Kerwin Macias
 
-Requires at least: WordPress 4.1
+Requires at least: WordPress 5.4
 
 Tested up to: WordPress 5.0-trunk
 
@@ -15,15 +15,15 @@ Tags: one-column, two-columns, right-sidebar, custom-header, custom-colors, cust
 
 ## Description
 
-Design Italia è un tema di WordPress utilizzabile per i siti internet della Pubblica Amministrazione italiana.
+WordpressAGID è un tema di WordPress utilizzabile per i siti internet della Pubblica Amministrazione italiana.
 
-Design Italia rispetta le nuove linee guida di design dell’Agenzia per l’Italia digitale rilasciare dal Team per la Trasformazione Digitale e le caratteristiche per i servizi web della Pubblica Amministrazione contenute nel Piano triennale per l’informatica nella Pubblica Amministrazione 2017/2019.
+WordpressAGID rispetta le nuove linee guida di design dell’Agenzia per l’Italia digitale rilasciare dal Team per la Trasformazione Digitale e le caratteristiche per i servizi web della Pubblica Amministrazione contenute nel Piano triennale per l’informatica nella Pubblica Amministrazione 2017/2019.
 
 Nel tema vengono integrate le componenti di Bootstrap Italia.
 
-Design Italia è sviluppato per WordPress 5 (CMS open-source), su framework Bootstrap 4.
+WordpressAGID è sviluppato per WordPress 5 (CMS open-source), su framework Bootstrap 4.
 
-Design Italia propone una soluzione open-source e gratuita, ideale per comuni, istituti e piccoli enti pubblici in genere che hanno scelto di utilizzare WordPress per il proprio sito intenet.
+WordpressAGID propone una soluzione open-source e gratuita, ideale per comuni, istituti e piccoli enti pubblici in genere che hanno scelto di utilizzare WordPress per il proprio sito intenet.
 
 * Responsive Layout
 * Custom Colors
@@ -31,7 +31,7 @@ Design Italia propone una soluzione open-source e gratuita, ideale per comuni, i
 * Cutom Menu
 * The AGPL-3.0 or later license. :) Use it to make something cool.
 
-For more information about Design Italia please go to https://github.com/italia/design-wordpress-theme
+For more information about WordpressAGID please go to https://github.com/360positive/wordpressagid2020
 
 
 ## Installation
@@ -63,51 +63,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 ## Changelog
-
-* 0.23 - Paginazione nei post, aggiunta area widget nel footer, fix around
-
-* 0.22 - Bootstrap Italia in locale, aggiunto template post senza sidebar, fix around
-
-* 0.21 - Aggiunto template post Design Italia Comuni, fix nav, fix around
-
-* 0.20 - Supporto all'editor Gutenberg, aggiornato widget DesignItalia - Articoli a griglia, fix around
-
-* 0.19 - Fix nav e fix around
-
-* 0.18 - Aggiornato widget DesignItalia - Articoli a griglia, fix around
-
-* 0.17 - Migrazione a Bootstrap 1.0.0, fix around
-
-* 0.16 - Aggiornamento Bootstrap, fix around
-
-* 0.15 - Aggiunto custom widget articoli in orizzontale, fix around
-
-* 0.14 - Fix around
-
-* 0.13 - Fix js
-
-* 0.12 - Passaggio a cdn
-
-* 0.11 - Agginuto pager, fix around
-
-* 0.10 - Fix custom widget
-
-* 0.9 - Aggiunto custom widget per categoria, ottimizzato widget ultimi post, fix around
-
-* 0.8 - Fix home-page, fix nav, fix around
-
-* 0.7 - Aggiunti template di pagina e post, dipendenza plugin SiteOrigin, stilizzazione widget SiteOrigin, fix around
-
-* 0.6 - Aggiunta librerie js Bootstrap Italia, fix around
-
-* 0.5 - Aggiunta widget area per sidebar page, stilizzazione widget, fix child theme
-
-* 0.4 - Aggiunta pagina template con sidebar, aggiornamento personalizzazione del tema, aggiunta libreria js Design Italia, fix around
-
-* 0.3 - Wordpress Store fix
-
-* 0.2 - Wordpress Store fix
-
-* 0.1 - Wordpress Store fix
-
 Initial release

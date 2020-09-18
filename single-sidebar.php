@@ -5,7 +5,7 @@
  */
  
  get_header(); ?>
-<?php wppa_breadcrumb(); ?>
+<?php pa360_breadcrumb(); ?>
 <section id="content" role="main" class="container">
 
    <div class="container">

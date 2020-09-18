@@ -3,6 +3,7 @@
 include "360Moduli/Trasparenza/normativa.php";
 
 $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/themes/design-italia-child/360Moduli/Trasparenza/servizi.xml');
+$post_slug = get_post_field( 'post_name', get_post() );
 
 ?>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>   
@@ -41,6 +42,9 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
 
                     //Estrazione della normativa corrispondente.
                     $text = str_replace("'", ' ', substr(get_the_archive_title(), 9));
+                    // $text = substr(get_the_archive_title(), 9);
+                
+                    
                     $subsect = $normativa->searchin($text, "title")[0];
                     if(!empty($subsect->subsect)){$subsect=$subsect->subsect;}
 
@@ -48,7 +52,12 @@ $normativa = new Normativa('http://comune.acquiterme.al.it/sviluppo/wp-content/t
                     $links = $subsect->links->link;
 
                     ?>
-                    <script> console.log("<?= print_r($normativa);?>");</script>
+                    <script> 
+                    console.log("<?= print_r($text);?>");
+                    console.log("<?= print_r($subsect);?>");
+                     console.log("<?= print_r($links);?>");
+                    </script>
+                    
                     <?php
                     echo '<br>';
                     echo '<h3 style="font-variant: small-caps;letter-spacing: 1px; font-size: 1.5rem">Riferimenti normativi</h3><hr>';
@@ -87,7 +96,7 @@ Oltre che la ricerca nel sito è possibile effettaure la ricerca localmente util
                             <tr>
                                 <td>
                                     <h3 class="big-heading">
-                                        <a href="<?= get_post()->guid; ?>" title="Apre pagina <?= get_the_title(); ?> " target="_blank">
+                                        <a href="<?= get_post()->guid; ?>?page=<?= $post_slug ?>" title="Apre pagina <?= get_the_title(); ?> " target="_blank">
                                             <i class="icofont-link"></i> <?= get_the_title(); ?></a>
 											
                                         </h3>

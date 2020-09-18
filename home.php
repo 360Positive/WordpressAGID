@@ -5,23 +5,30 @@
  **/
 get_header(); ?>
 
-    <div class="container">
-<?php //Inclusione modulo per la gestione dei bandi
-include '360Moduli/main.php';
-?>
+<div class="w-100 mx-0 px-0">
 <?php
 //Inclusione modulo per la gestione degli alert
 include '360Moduli/alertsystem.php';
 ?>
+</div>
+<div class="container">
+
+<?php //Inclusione modulo per la gestione dei bandi
+include '360Moduli/main.php';
+?>
+
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header class="header">
                         <?php // if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
                         <?php if (!is_search()) get_template_part('entry-footer'); ?>
                         <?php if (!is_search()) get_template_part('entry', 'meta'); ?>
-                        <h4 class="entry-title"><a href="<?php the_permalink(); ?>"
-                                                   title="<?php the_title_attribute(); ?>"
-                                                   rel="bookmark"><?php the_title(); ?></a></h4>
+                        <!--<h4 class="entry-title">-->
+                            <!--<a href="<?php the_permalink(); ?>"-->
+                            <!--title="<?php the_title_attribute(); ?>"-->
+                            <!--rel="bookmark"><?php the_title(); ?>-->
+                            <!--</a>-->
+                            <!--</h4>-->
                     </header>
                     <section class="entry-content">
                         <?php edit_post_link(); ?>
@@ -40,15 +47,29 @@ include '360Moduli/alertsystem.php';
 
 <?php //Inclusione modulo per la gestione dei slider
 include '360Moduli/slider.php'; ?>
+
 <?php //Inclusione modulo per la gestione ultime notizie
 include '360Moduli/lastnews.php'; ?>
+
+<?php //Inclusione modulo numeri utili
+include '360Moduli/numeri_utili.php'; ?>
+
+<?php //Inclusione modulo per la gestione notizie dal sindaco
+include '360Moduli/dalsindaco.php'; ?>
+
 <?php //Inclusione modulo per la gestione dei servizi
-include '360Moduli/servizi.php'; ?>
+// include '360Moduli/servizi.php'; 
+?>
 <?php //Inclusione modulo per la struttura del blocco ammisitrativo
 include '360Moduli/amministrazione.php';
 ?>
-<?php //Inclusione modulo per la gestione degli alert
-include '360Moduli/featuredevents.php'; ?>
+ <?php //Inclusione modulo per la gestione degli alert
+include '360Moduli/featuredevents.php'; 
+?>
+<?php //Inclusione modulo per la gestione dei siti tematici
+include '360Moduli/sititematici.php'; 
+?>
+
 <?php //Inclusione modulo per la gestione dei bandi
 include '360Moduli/bandi.php'; ?>
 

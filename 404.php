@@ -9,7 +9,10 @@
 			         <h1 class="entry-title"><?php _e( '404 Pagina non trovata', 'wppa' ); ?></h1>
 			      </header>
 			      <section class="entry-content">
-			         <p><?php _e( 'La pagina che stavi cercando non esiste. Utilizza in Cerca oppure torna in homepage.', 'wppa' ); ?></p>
+			         <p class="text-center">
+			         <?= __( 'La pagina che stavi cercando potrebbe non esiste più o potresti aver usato un vecchio collegamento alla pagina o al contenuto.');?>
+			         <br><?= __('Effettua una ricerca oppure torna in Homepage.'); ?>
+			         </p>
 			         <?php get_search_form(); ?>
 			      </section>
 			   </article>
