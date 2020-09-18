@@ -57,21 +57,22 @@ $links = get_post_permalink();
     });
 
     jsSocials.shares.email.logo = "icofont-mail";
-    jsSocials.shares.email.label = "";
-    jsSocials.shares.twitter.logo = "icofont-twitter";
-    jsSocials.shares.twitter.label = "";
+    jsSocials.shares.email.label = "Email";
     jsSocials.shares.facebook.logo = "icofont-facebook";
-    jsSocials.shares.facebook.label = "";
+    jsSocials.shares.facebook.label = "Facebook";
+    jsSocials.shares.twitter.logo = "icofont-twitter";
+    jsSocials.shares.twitter.label = "Twitter";
     jsSocials.shares.whatsapp.logo = "icofont-whatsapp";
-    jsSocials.shares.whatsapp.label = "";
+    jsSocials.shares.whatsapp.label = "Whatsapp";
 
 
     $("#links").jsSocials({
-        shares: ["email", "twitter", "facebook", "whatsapp"],
+        shares: ["email",  "facebook","twitter", "whatsapp"],
         url: "<?= $links ?>",
-        showLabel: false,
+        showLabel: true,
         showCount: false,
-        shareIn: "popup"
+        shareIn: "popup",
+        css: "w-100"
     });
 
     $('.jssocials-shares').append(
