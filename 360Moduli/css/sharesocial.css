@@ -1,0 +1,78 @@
+:root{
+	--share-primary:#420401;
+	--share-height:55px;
+    --font-size:1.25rem;
+}
+.share-menu > div, .share-menu > div >i{
+	font-size: 2rem!important;
+	padding:2%;
+	cursor: pointer;
+}
+.icon-share{
+	background:var(--share-primary);
+	color: #fff!important;
+	background-color: var(--share-primary);
+	vertical-align: middle;
+	text-align:center;
+	min-width: 50px;
+    font-size: var(--font-size);
+
+}
+.text-share{
+	background:lightgrey!important;
+	color: var(--share-primary);
+	padding-left: 1em;
+	padding-right: 1em;
+	font-weight: 400!important;
+	font-size: var(--font-size);
+	width: fit-content;
+	text-align: center;
+
+}
+
+div#front{
+	height:var(--share-height)!important;
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	cursor: pointer;
+}
+div#links{
+	height:var(--share-height)!important;
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+div.jssocials-shares  {
+	background-color: var(--share-primary);
+	/*height: var(--share-height);*/
+	color:white;
+	margin:0px;
+}
+
+div.jssocials-share>a  {
+	background-color: var(--share-primary);
+	margin:0px;
+	padding:0px;
+	font-size:  var(--font-size);
+}
+div.jssocials-share {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0.3em 0em 0.3em 0em;
+	font-size:  var(--font-size);
+}
+
+i.jssocials-share-logo {
+	width: 1em;
+	vertical-align: middle;
+	color: white;
+	padding-left: 10px;
+}
+
+span.jssocials-share-label {
+	color: whitesmoke!important;
+}
+
