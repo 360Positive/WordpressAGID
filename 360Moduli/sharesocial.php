@@ -5,106 +5,78 @@
  */
 $links = get_post_permalink();
 ?>
-<style>
-.share-menu>div, .share-menu>div>i {
-	font-size: 1.5rem !important;
-	padding: 2%;
-	cursor: pointer;
-}
+<script type="text/javascript"
+        src="<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/js/utils.js"></script>
 
-.icon-share {
-	background: red;
-	color: #fff !important;
-	background-color: #8e001c !important;
-	vertical-align: middle;
-	text-align: center;
-}
+<script>
+    $local = '<?= get_site_url() ?>';
+    $path_share = $local + "/wp-content/themes/design-italia-child/360Moduli/css/sharesocial.css";
+    addHeader($path_share);
+    $path_jsocial = $local + "/wp-content/themes/design-italia-child/360Moduli/jssocial/jssocials.css";
+    addHeader($path_jsocial);
+    $path_flat = $local + "/wp-content/themes/design-italia-child/360Moduli/jssocial/jssocials-theme-minima.css";
+    addHeader($path_flat);
+</script>
 
-.testo-share {
-	background: lightgrey;
-	color: #8e001c !important;
-	padding-left: 1em;
-	padding-right: 1em;
-	font-weight: 400 !important;
-	font-size: 2rem !important;
-}
+<?php /*---   Libreria pulsanti social   ----*/ ?>
+<script src="<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/jssocial/jssocials.min.js"></script>
+<?php /*---  END --- Libreria pulsanti social   ----*/ ?>
 
-div.jssocials-share>a {
-	background: #420301 !important;
-	font-size: 25.5px !important;
-}
 
-.jssocials-share {
-	display: inline-block;
-	vertical-align: top;
-	margin: 0;
-}
-
-.share-menu>div, .share-menu>div>i {
-	font-size: 1.5rem !important;
-	width: 100%;
-	cursor: pointer;
-}
-
-div#links-social {
-	margin: 0px;
-	padding: 0px;
-}
-</style>
-
-<div id="front" class="row share-menu">
-	<div class="col-md-2 icon-share">
-		<i class="icofont-share align-middle icon-share"></i>
-	</div>
-	<div class="col-md-10 testo-share">
-        <?= _('Condividi');?>
+<div class="mb-3">
+    <div  id="front" class="d-flex flex-row align-items-center ">
+        <div class="icon-share p-2"><i class="icofont-share"></i></div>
+        <div class="text-share p-2 w-100 text-center"><?= _('Condividi'); ?></div>
     </div>
-</div>
-
-
-<div id="links" class="row share-menu">
-	<div id="links-social" class="col-md-12"></div>
-
+    <div id="links" class="d-none flex-fill justify-content-start align-items-center ">
+    </div>
 </div>
 <script>
 
     $('#links').hide();
 
     $(document).ready(function () {
-        $('#front').on('click', function () {
-            $('#links').show();
-            $('#front').hide();
+        $('div#front').on('click', function () {
+
+            $('#links').addClass('d-flex');
+            $('#links').removeClass('d-none');
+
+            $('#front').addClass('d-none');
+            $('#front').removeClass('d-flex');
         });
+
         $('#exit').on('click', function () {
-            $('#links').hide();
-            $('#front').show();
+
+            $('#links').addClass('d-none');
+            $('#links').removeClass('d-flex');
+
+            $('#front').addClass('d-flex');
+            $('#front').removeClass('d-none');
         });
 
     });
 
-    jsSocials.shares.email.logo="icofont-mail";
-    jsSocials.shares.email.label="";
-    jsSocials.shares.twitter.logo="icofont-twitter";
-    jsSocials.shares.twitter.label="";
-    jsSocials.shares.facebook.logo="icofont-facebook";
-    jsSocials.shares.facebook.label="";
-    jsSocials.shares.whatsapp.logo="icofont-whatsapp";
-    jsSocials.shares.whatsapp.label="";
+    jsSocials.shares.email.logo = "icofont-mail";
+    jsSocials.shares.email.label = "";
+    jsSocials.shares.twitter.logo = "icofont-twitter";
+    jsSocials.shares.twitter.label = "";
+    jsSocials.shares.facebook.logo = "icofont-facebook";
+    jsSocials.shares.facebook.label = "";
+    jsSocials.shares.whatsapp.logo = "icofont-whatsapp";
+    jsSocials.shares.whatsapp.label = "";
 
 
-
-
-    $("#links-social").jsSocials({
+    $("#links").jsSocials({
         shares: ["email", "twitter", "facebook", "whatsapp"],
         url: "<?= $links ?>",
-        showLabel: true,
-        showCount: true,
+        showLabel: false,
+        showCount: false,
         shareIn: "popup"
     });
 
     $('.jssocials-shares').append(
-        "<div id=\"exit\"class=\"icon-share jssocials-share \">\n" +
-        "        <a class=\"jssocials-share-link\"><i class=\"icofont-ui-close\"></i></a>\n" +
+        "<div id=\"exit\"class=\"icon-share jssocials-share \">" +
+        "        <a class=\"jssocials-share-link\"><i class=\"icofont-ui-close\"></i></a>" +
         "    </div>"
     )
 

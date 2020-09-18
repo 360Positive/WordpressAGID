@@ -5,9 +5,9 @@
 $cartella = 'numeri/';
 $path = get_site_url() . '/wp-content/themes/design-italia-child/360Moduli/images/' . $cartella;
 $numeri = [
-    ['numeri 1.png', '/numeri-supporto-psicologico', 'Supporto psicologico', 1],
-    ['numeri 2.png', '/numero-di-pubblica-utilita', 'Numero Emergenza' ,1],
-    ['numeri 3.png', '/numeri-utili-covid', 'Numeri Regionali' ,1],
+    ['numeri1.png', '/numeri-supporto-psicologico', 'Supporto psicologico', 1],
+    ['numeri2.png', '/numero-di-pubblica-utilita', 'Numero Emergenza' ,1],
+    ['numeri3.png', '/numeri-utili-covid', 'Numeri Regionali' ,1],
 
 ];
 
@@ -32,7 +32,7 @@ $numeri = [
 
                         foreach ($numeri as $voce){
                         $immagine = urlencode($voce[0]);
-                        $url = urlencode($voce[1]);
+                        $url = $voce[1];
                         $titolo = addslashes($voce[2]);
                         $type = $voce[3];
 
@@ -41,8 +41,9 @@ $numeri = [
 
                         <div class="align-center col-md-4 my-3 ">
 
-                            <div class="card siti text-center h-100" width="90%">
-                                <a href="<?= $type==1 ? get_site_url().$url : $url ?>"><img class="card-img-top " src="<?= urlencode($path.$immagine) ?>"
+                            <div class="card siti text-center h-100 w-90">
+                                <a href="<?= $type==1 ? get_site_url().$url : $url ?>">
+                                    <img class="card-img-top " src="<?= $path.$immagine ?>"
                                      alt="Immagine <?= addslashes($titolo) ?>" style="max-height:30rem"></a>
 
                             </div>

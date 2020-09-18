@@ -92,11 +92,11 @@ function getTable($entries,$titles){
             $l = str_replace(' ', '-', str_replace('\'', '', $entry['tipo']));
             echo '<tr>';
             echo '<td> <span class="tipo"><a href="'.site_url() . '/' . $l.'">';
-            echo  $entry['tipo'];
+            echo  $entry['tipo'] ? !empty($entry['tipo']): ' - ';
             echo '</a></span></td>';
 
             echo '<td> <span class="tipo">';
-            echo  $entry['termin'];
+            echo  $entry['termin'] ? !empty($entry['termin']): ' - ';
             echo '</span></td>';
 
             $link=!empty($entry['exlink']) ? $entry['exlink'] : $entry['link'];
@@ -134,25 +134,29 @@ function getBootTable($entries,$titles){
         //Verifica remine della data
         if (empty($entry['termin']) or strtotime($term) > $date_now) {
             $class='warning';
+            $tipo=$entry['tipo'];
+            $termine=$entry['termin'];
+            $titolo=$entry['title'];
 
             echo '<div class="shadow p-2 m-2 '.$class.'" >';
             echo '<div class="row" >';
             $l = str_replace(' ', '-', str_replace('\'', '', $entry['tipo']));
 
             echo '<div class="col-md-2 text-wrap">';
-            echo '<span class="sezione"><a href="'.site_url() . '/' . $l.'">';
-            echo  $entry['tipo'];
-            echo '</span></div>';
+            echo '<a href="'.site_url() . '/' . $l.'" title="Tipologia '.$tipo.'"><span class="sezione">';
+            echo  !empty($tipo) ? $tipo : ' - ';
+            echo '</span></a></div>';
 
-            echo '<div class="col-md-2 text-wrap"><span class="tipo">';
-            echo  $entry['termin'];
+            echo '<div class="col-md-2 text-wrap">';
+            echo '<span class="tipo">';
+            echo  !empty($termine ) ? $termine : ' - ';
             echo '</span></div>';
 
             $link=!empty($entry['exlink']) ? $entry['exlink'] : $entry['link'];
             echo '<div class="col-md-8 text-wrap text-justify">';
-            echo '<span class="titolo"><a href="'.$link .'">';
-            echo  $entry['title'];
-            echo '</a></span>';
+            echo '<a href="'.$link .'"><span class="titolo">';
+            echo  !empty($titolo) ? $titolo : ' - ';
+            echo '</span></a>';
             echo '</div>';
 
             echo '</div>';

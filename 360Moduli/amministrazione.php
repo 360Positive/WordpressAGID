@@ -1,119 +1,60 @@
 <?php
-/**
- * Sistema di blocchi amministrativi
- * Deve essere impostato nel file l'id della categoria al quale associare i post
- */
+	/**
+		* Sistema di blocchi amministrativi
+		* Deve essere impostato nel file l'id della categoria al quale associare i post
+	*/
 ?>
-<style>
-.amministrazione>a {
-	font-size: 13px !important;
-	font-weight: bold;
-	color: #420101
-}
-
-h1.amministrazione {
-	font-size: 40px !important;
-	color: black;
-	padding: 15px;
-	font-weight: 700 !important;
-}
-
-div.container-fluid.amministrazione {
-	background: #30373d !important;
-}
-
-.card-body.amministrazione {
-	background: #ffb401;
-	pading: 1%;
-}
-
-.card-body {
-	margin-bottom: 0px !important;
-	line-height: 95%;
-	padding-bottom: 0px !important;
-}
-
-div.card:after {
-	display: none !important;
-}
-
-small.date-card {
-	font-size: 0.8em !important;
-}
-
-small.categroy-card {
-	color: #be880b;
-	font-weight: bolder;
-}
-
-a>h2.amministrazione {
-	font-size: 1.2rem !important;
-	color: black;
-	padding: 17px;
-	font-weight: 800 !important;
-}
-
-.card.amministrazione {
-	box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
-	display: block !important;
-	width: auto !important;
-	height: fit-content;
-}
-
-h5.card-title.align-middle {
-	margin-top: 2%;
-	margin-bottom: 0%;
-}
-
-.card.amministrazione>div.card-body {
-	margin-bottom: 1em !important;
-}
-</style>
+<script>
+	$('<link/>', {
+		rel: 'stylesheet',
+		type: 'text/css',
+		href: '<?= get_site_url() ?>/wp-content/themes/design-italia-child/360Moduli/css/amministrazione.css'//css da includere
+	}).appendTo('head');
+	
+	
+</script> 
 <div class="light">
-	<div class="container">
-		<h1 class="amministrazione"><?= _('Dall\'amministrazione') ?></h1>
-		<div class="card-deck ">
-            <?php
-            /**
-             * Estrazione degli articoli associati alle nuove notizie
-             */
-            $pages = [];
-            $ids = array(
-                523,
-                538,
-                2762,
-                2494
-            );
-
-            // Carciamento delle pagine da visualizzare
-            foreach ($ids as $page_id) {
-                array_push($pages, get_page($page_id));
-            }
-
-            foreach ($pages as $post) :
-                setup_postdata($post);
-                ?>
-                <div class="card amministrazione text-center">
-				<img class="card-img-top h-75"
-					src="<?= get_the_post_thumbnail_url() ?>"
-					alt="<?php the_title(); ?>">
-				<div class="card-body my-3">
-
-					<h5 class="card-title ">
-						<a href="<?= $post->guid; ?>" title="<?php the_title(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-					</h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+				<h1 class="amministrazione"><?= _('Dall\'amministrazione') ?></h1>
+				<div class="card-deck ">
+					<div class="row row-eq-height w-100">
+						<?php
+							/**
+								* Estrazione degli articoli associati alle nuove notizie
+							*/
+							$pages=[];
+							$ids= array(523, 538, 2762, 2494);
+							
+							//Carciamento delle pagine da visualizzare
+							foreach ($ids as $page_id){
+								array_push($pages,get_page( $page_id ));
+							}
+							
+							foreach ($pages as $post) : setup_postdata($post);
+						?>
+						<div class="col-sm-12 col-md-3 col-lg-3 mb-3"><!-- wrap every 2 on sm-->
+							<div class="card amministrazione text-center h-100">
+								<img class="card-img-top " src="<?= get_the_post_thumbnail_url() ?>"
+								alt="<?php the_title(); ?>" style="max-height:30rem" >
+								<div class="card-body my-3">
+									
+									<h5 class="card-title ">
+										<a href="<?= $post->guid; ?>"
+										title="<?php the_title(); ?>">
+											<?php the_title(); ?>
+										</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+						<?php endforeach;
+						?>
+						<?php wp_reset_postdata(); ?>
+					</div>
 				</div>
 			</div>
-            <?php
-
-endforeach
-            ;
-            ?>
-            <?php wp_reset_postdata(); ?>
-        </div>
-
-	</div>
-
+		</div>
+	</div>	
 </div>

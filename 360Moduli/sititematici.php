@@ -14,33 +14,7 @@
 	
 	
 </script> 
-<style>
-     h1.sititematici {
-    font-size: 2rem!important;
-    padding: 15px;
-    font-weight: 700!important;
-    color:black;
-    }
-    
-	
-	
-a > h2.sititematici {
-        font-size: 1.2rem !important;
-      
-        padding: 17px;
-        font-weight: 800 !important;
-    }
-    
-    div.sito{
-        background:white!important;
-    }
-    .card.siti {
-        box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
-        display: block!important;
-        width: auto!important;
-        height: fit-content;
-    }
-</style>
+
 <div class="light">
     <div class="container sititematici">
         <div class="row py-3">
@@ -52,14 +26,14 @@ a > h2.sititematici {
 							
 							foreach ($voci_siti as $voce){
 							    if(!$voce['nascondi']){
-							$immagine=urlencode($voce['immagine']);
-							$titolo=addslashes($voce['titolo']);
+							$immagine=$voce['immagine'];
+							$titolo=addslashes(str_replace('\"','',$voce['titolo']));
 							$url=urlencode($voce['url']);
 						?>
 						
                         <div class="align-center col-md-2 col-lg-2 my-3 ">
                             
-                            <div class="card siti text-center h-100" width="90%">
+                            <div class="card siti text-center h-100 w-90">
 								<img class="card-img-top " src="<?= $immagine?>"
 								alt="Immagine <?= $titolo ?>" style="max-height:30rem" >
 								<div class="card-body py-3 " style="padding-bottom: 2%!important;">
