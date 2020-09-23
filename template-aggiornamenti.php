@@ -100,44 +100,49 @@ $ext = ['doc' => '<i class="icofont-file-document"></i>',
                                 //Aggiornamento varibile controllo data
                                 $lastdate = $date;
                                 //Bollettino
-                                $bollettino=$voce['grafica_bollettino'];
-                                $css="";
-                                
-                                if(!empty($bollettino)){
-                                   $css= 'databollettino';
-                                   $cssnot='bollettino';
-                                   $mex="Bollettino";
-                                }
-                                else{
-                                    $css= 'data';
-                                    $cssnot='';
-                                    $mex="";
+                                $bollettino = $voce['grafica_bollettino'];
+                                $css = "";
+
+                                if (!empty($bollettino)) {
+                                    $css = 'databollettino';
+                                    $cssnot = 'bollettino';
+                                    $mex = "Bollettino";
+                                } else {
+                                    $css = 'data';
+                                    $cssnot = '';
+                                    $mex = "";
                                 }
                                 //Origine
-                                $origine=$voce['origine'];
-                                $orig="";
-                                $tlogo="";
-                                
-                                if(!empty($origine)){
-                                   $orig= $loghi[$origine];
-                                   $tlogo= $origine;
+                                $origine = $voce['origine'];
+                                $orig = "";
+                                $tlogo = "";
+
+                                if (!empty($origine)) {
+                                    $orig = $loghi[$origine];
+                                    $tlogo = $origine;
                                 }
                                 ?>
 
                                 <!--  Blocco singola notizia    -->
-                               <?php $id_date=str_replace(' ', '', $voce['data_ora']);
-                               echo $id_date;?>
+                                <?php
+                                $id_date = str_replace(' ', '', $voce['data_ora']);
+                                $id_date = str_replace(':', '', $id_date);
+                                $id_date = str_replace('-', '', $id_date);
+//                                echo $id_date; ?>
+
                                 <div class="text-justify" id="arg-<?= $id_date ?>">
                                     <!--Stile data notizia-->
                                     <div class="<?= $css ?> mr-2 px-2 py-1">
                                         <strong class="p-1">
-                                        Ora <?= $time ?> - 
-                                        <img src="<?=  $orig ?>" style='max-width:30px;'>
-                                        <?= $ltesto[$tlogo] ?> 
+                                            Ora <?= $time ?> -
+                                            <img src="<?= $orig ?>" style='max-width:30px;'
+                                                 alt="<?= _('Logo', '360positive') . ' ' . $ltesto[$tlogo] ?>">
+                                            <?= $ltesto[$tlogo] ?>
                                         </strong>
-                                        <?php if(!empty($mex)){?>
-                                        <strong class="p-1" style="background:white; color:#C70039; text-transform:uppercase;" ><?= $mex ?></strong>
-                                        <?php }?>
+                                        <?php if (!empty($mex)) { ?>
+                                            <strong class="p-1"
+                                                    style="background:white; color:#C70039; text-transform:uppercase;"><?= $mex ?></strong>
+                                        <?php } ?>
                                     </div>
                                     <hr>
                                     <div style="font-size:0.9em" class="<?= $cssnot ?>"><?= $notizia; ?></div>
