@@ -1,26 +1,7 @@
 </div>
-<?php /*
- Personalizzazione del footer
- */
-//['nomelink','link',1 interno -0 esterno]
-
-$menu2 = [
-    ['Accesso civico', "/amm-trasparente/accesso-civico/", 1],
-    ['Amministrazione trasparente', '/amministrazione-trasparente/', 1],
-    ['Albo Pretorio', 'http://93.62.191.250/cmsacquiterme/portale/albopretorio/albopretorioconsultazione.aspx?IDNODE=2112', 0],
-    ['Whistleblowing', '/amm-trasparente/whistleblowing', 1],
-	['Privacy','https://privacy.nelcomune.it/comune.acquiterme.al.it']
-];
-
-$menu3 = [
-    ['Sportello unico attività produttive', "http://www.impresainungiorno.gov.it/web/guest/comune?codCatastale=A052", 0],
-    ['Centrale unica di committenza', '/cuc/', 1],
-    ['Ufficio relazioni pubblico', '/ufficio-relazioni-con-il-pubblico-urp', 1]
-];
-$list_point="icofont-arrow-right"
+<?php /*Richiamato parametri di configurazione generali del portale e le variabili di ambiente	*/
+include 'configuration/layout.php';
 ?>
-
-
 <footer id="footer" class="it-footer mt-5">
     <div class="it-footer-main mb-4 pb-4">
         <div class="container py-2">
@@ -28,35 +9,49 @@ $list_point="icofont-arrow-right"
                 <div class="col-sm-3">
                     <div class="mt-4 mb-3">
                         <?php
+
+                        //Definizione del logo
                         $custom_logo_id = get_theme_mod('custom_logo');
                         $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
                         $logo_alt = "logo-" . esc_html(get_bloginfo('name'));
 
                         if (has_custom_logo()) {
-                            /*---   Impostazione del logo FISSO - Problema di cropping bassa risoluzione   ----*/
-                            $path = "http://comune.acquiterme.al.it/wp-content/uploads/2019/09/logo_acqui_terme_-2.png";
+                            //Impostazione del logo FISSO - Problema di cropping bassa risoluzione
+                            $path = $logo;
                         } else {
-                            $path = get_template_directory_uri() . '/img/custom-logo.png';
+                            //Il logo specificato deve essere indicato con il percorso della cartella wp-content
+                            $path = $footer_logo;
                         }
                         ?>
-                        <img class="icon" style="width:100%; height:auto; min-width:300px;" src="<?= $path ?>" alt="<?= $logo_alt ?>">
+                        <img class="icon" style="width:100%; height:auto; min-width:300px;" src="<?= $path ?>"
+                             alt="<?= $logo_alt ?>">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
+                    <?php //I dati sono presi dal file di configurazione?>
                     <h2 class="footer"><?= __("Contatti"); ?></h2>
+                    <?php if (!empty($layout[indirizzo])): ?>
+                        <i class="icofont-bank-alt"></i> <?= $layout[indirizzo] ?><br>
+                    <?php endif ?>
+                    <?php if (!empty($layout[telprincipale])): ?>
+                        <i class="icofont-ui-dial-phone"></i> Centralino <a
+                                href="tel:<?= $layout[telprincipale] ?>"><?= $layout[telprincipale] ?></a><br>
+                    <?php endif ?>
+                    <?php if (!empty($footer_rubrica)): ?>
+                        <i class="icofont-ui-contact-list"></i> <a href="<?php $footer_rubrica ?>">Tutti i contatti</a>
+                        <br>
+                    <?php endif ?>
 
-                    <i class="icofont-bank-alt"></i> Piazza Levi, 12 - 15011 - Acqui Terme - AL - Italia<br>
-                    <i class="icofont-ui-dial-phone"></i> Centralino <a href="tel:+3901447701">+39 01447701</a><br>
-                    <i class="icofont-ui-contact-list"></i> <a href="/rubrica/">Tutti i contatti</a><br>
                 </div>
-                <div class="col-sm-4">
-                    <h2 class="footer"><?= __("Trasparenza")?></h2>
 
-                    <?php foreach ($menu2 as $entry_menu2) {
+
+                <div class="col-sm-4">
+                    <h2 class="footer"><?= __("Trasparenza") ?></h2>
+                    <?php foreach ($footer_menu2 as $entry_menu2) {
                         ?>
-                        <i class="<?= $list_point ?>"></i>
+                        <i class="<?= $footer_list_point ?>"></i>
                         <a target="_blank"
                            title="<?= _('Apre la pagina' . $entry_menu2[0]) ?>"
                            href="<?= $entry_menu2[2] == 1 ? get_site_url() . $entry_menu2[1] : $entry_menu2[1] ?>"> <?= _($entry_menu2[0]) ?> </a>
@@ -66,11 +61,11 @@ $list_point="icofont-arrow-right"
 
                 </div>
                 <div class="col-sm-4">
-                    <h2 class="footer"><?= __("Sportelli");?></h2>
+                    <h2 class="footer"><?= __("Sportelli"); ?></h2>
 
-                    <?php foreach ($menu3 as $entry_menu3) {
+                    <?php foreach ($footer_menu3 as $entry_menu3) {
                         ?>
-                        <i class="<?= $list_point ?>"></i>
+                        <i class="<?= $footer_list_point ?>"></i>
                         <a target="_blank"
                            title="<?= _('Apre la pagina' . $entry_menu3[0]) ?>"
                            href="<?= $entry_menu3[2] == 1 ? get_site_url() . $entry_menu3[1] : $entry_menu3[1] ?>"> <?= _($entry_menu3[0]) ?> </a>
@@ -78,15 +73,23 @@ $list_point="icofont-arrow-right"
                         <?php
                     } ?>
                 </div>
-                <!--<div class="col-sm-2">-->
-                <!--                        <h2 class="footer">Seguici su</h2>-->
-                <!--                        <hr>-->
-                <!--                        <i class="icofont-linkedin social"></i>-->
-                <!--                        <i class="icofont-instagram social"></i>-->
-                <!--                        <i class="icofont-brand-youtube social"></i>-->
-                <!--                        <i class="icofont-twitter social"></i>-->
-                <!--                        <i class="icofont-facebook social"></i>-->
-                <!--</div>-->
+                <?php if ($footer_social[active]): ?>
+                    <div class="col-sm-2">
+                        <h2 class="footer">Seguici su</h2>
+                        <hr>
+                        <?php
+                        foreach ($footer_social as $sx => $social):
+                            if ($social[active]): ?>
+                                <i class="icofont-<?= $social[name] ?> social">
+                                    <a href="<?= $social[link] ?>"><?= $social[name] ?></a>
+                                </i>
+                            <?php
+                            endif;
+                        endforeach;
+                        ?>
+
+                    </div>
+                <?php endif ?>
 
                 <div class="col-sm-7">
                     <?php if (is_active_sidebar('footer-widget-area')) : ?>
@@ -122,23 +125,38 @@ $list_point="icofont-arrow-right"
 
             <div class="row" style="padding-bottom:1rem;!important; word-wrap: break-word;">
                 <div class="col-md-12 text-center">
-                    <strong><i class="icofont-mail"></i> PEC:</strong>
-                    <a title="<?= _('Apre indrizzo di posta certificata') ?>"
-                       href="mailto:acqui.terme@cert.ruparpiemonte.it">acqui.terme@cert.ruparpiemonte.it</a><br>
+
+                    <?php if (!empty($layout[pec])): ?>
+                        <strong><i class="icofont-mail"></i> PEC:</strong>
+                        <a title="<?= _('Apre indrizzo di posta certificata') ?>"
+                           href="mailto:<?= $layout[pec] ?>"><?= $layout[pec] ?></a><br>
+                    <?php endif ?>
+
                     <a title="<?= _('Apre la pagina interna Mappa del sito') ?>"
-                       href="<?= get_site_url() ?>/sitemap"> <?= _('Mappa del sito') ?> </a>-
-                    <a title="<?= _('Apre la pagina interna Accessibilità') ?>"
-                       href="<?= get_site_url() ?>/accessibilita"> <?= _('Accessibilità') ?> </a>-
-                    <a title=" <?= _('Apre la pagina sul sito esterno della Privacy e dei cookie') ?>" target="_blank"
-                       href="https://privacy.nelcomune.it/comune.acquiterme.al.it">  <?= _('Privacy e cookie') ?> </a>-
+                       href="<?= get_site_url() ?>/sitemap"> <?= _('Mappa del sito') ?> </a>
+
+                    <?php if (!empty($footer_accessibilita)): ?>
+                        <a title="<?= _('Apre la pagina interna Accessibilità') ?>"
+                           href="<?= get_site_url() . $footer_accessibilita ?>"><?= _('Accessibilità') ?> </a>
+                    <?php endif ?>
+
+                    <?php if (!empty($footer_privacy)): ?>
+                        <a title=" <?= _('Apre la pagina sul sito esterno della Privacy e dei cookie') ?>"
+                           target="_blank"
+                           href="<?= get_site_url() . $footer_privacy ?>"><?= _('Privacy e cookie') ?> </a>
+                    <?php endif ?>
+
                     <?php
                     // _('Note Legali')
                     ?>
-                    <a title="<?= _('Apre la pagina interna Social media policy') ?>"
-                       href="<?= get_site_url() ?>/social-media-policy"> <?= _('Social media policy') ?> </a>-
 
-                    <span>P.IVA 00430560060 - Fatturazione Elettronica: UFBD6F</span>
-<br>
+                    <?php if (!empty($footer_socialmedia)): ?>
+                        <a title=" <?= _('Apre la pagina interna Social media policy') ?>" target="_blank"
+                           href="<?= get_site_url() . $footer_socialmedia ?>"><?= _('Social media policy') ?> </a>
+                    <?php endif ?>
+
+                    <span><?= $footer_partitaiva ?></span>
+                    <br>
                     <?php echo sprintf(__('%1$s %2$s %3$s', 'wppa'), '&copy;', date('Y'), esc_html(get_bloginfo('name'))); ?>
                     - Sviluppato da <a href="https://360positive.it"><strong>360 Positive</strong></a>
                 </div>
