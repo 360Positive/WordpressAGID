@@ -1,0 +1,141 @@
+.alertbox{
+    padding: 1rem 1rem 1rem 0.5rem!important;
+    margin:0px!important;
+}
+
+.alert-primary{
+letter-spacing: normal!important;    
+}
+
+section.topimage {
+	
+	min-height: 350px;
+	background-position: center!important;
+	background-size: cover!important;
+	padding-bottom: 0% !important;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.over {
+	padding: 2%;
+}
+
+#sidebar:after {
+	display: none;
+}
+
+.moreact {
+	background: yellow;
+	padding: 1%;
+}
+
+.breadcrumb {
+	margin-top: 0px;
+}
+
+.icofont- * {
+	font-size: 2em !important;
+}
+
+.alert-primary {
+	color: #3e4145;
+	background-color: #ffb402;
+	/*border-color: #ffb402;*/
+	/*background: rgb(255,195,53);*/
+ /*   background: linear-gradient(90deg, rgba(255,195,53,1) 0%, rgba(255,255,255,0) 100%);*/
+}
+
+.entry-title{
+	background: lightgray;
+	padding:1%;
+	display:block!important;
+	font-size:1.5rem!important;
+}
+ul, ul > li{
+	list-style-type: none;
+}
+
+.btn:not(:disabled):not(.disabled) {
+	cursor: pointer;
+	margin-left: 0px; 
+}
+.entry-header {
+	padding: 2%;
+}
+h5.card-title.big-heading {
+	min-height: 50px;
+    text-align:center;}
+
+#introduzione h2{
+	font-size:1.4rem!important;
+	background:#FFFFCC;
+}
+#introduzione h3{
+	font-size:1.3rem!important;
+	background:#DCDCDC;
+}
+#introduzione h4{
+	font-size:1.1rem!important;
+	background:#DCDCDC;
+	padding:1%;
+	text-transform: uppercase;
+}
+h2 > span{
+	background:none!important;
+}
+
+#introduzione ul, #introduzione ul > li {
+    list-style-type: circle!important;
+    padding-left: 1em!important;
+}
+
+
+
+/*ACCORDION*/
+.header-accordion {
+	background: red;
+	padding: 3%;
+}
+
+.small, small {
+	font-size: 80% !important;
+	font-weight: 800;
+}
+
+a.navigation.btn.btn-block {
+	background: #ffb421 !important;
+	white-space: normal;
+	
+}
+
+#sidenavigation {
+	background: lightgray !important;
+	padding: 1% !important;
+	width: 100% !important;
+}
+
+.evidenza {
+	background: #ffb421;
+	padding: 1%;
+}
+
+.card .card-body h5.card-title.big-heading {
+    font-size: 0.9rem!important;
+    line-height: 1rem!important;
+}
+
+.card.card-bg:after {
+    background: 0 0;
+}
+.card:after {
+    content: '';
+    height: 1px;
+    width: 128px;
+    background: #d9dadb;
+    display: block;
+    margin-top: 5px!important; 
+    margin-left: 24px;
+}
+
+

@@ -1,0 +1,51 @@
+section.topimage {
+        min-height: 350px;
+        background-position: center;
+        background-size: cover;
+        padding-bottom: 0% !important;
+        margin-top: -25px;
+        margin-bottom: 0px;
+    }
+
+    .over {
+        padding: 2%;
+    }
+
+    #sidebar:after {
+        display: none;
+    }
+
+    .moreact {
+        background: yellow;
+        padding: 1%;
+    }
+
+    .breadcrumb {
+        margin-top: 0px;
+    }
+
+    .card-body {
+        margin-bottom: 0px !important;
+        line-height: 95%;
+        padding-bottom: 0px!important;
+    }
+    div.card:after{
+        display: none!important;
+    }
+
+    a > h2.giunta {
+        font-size: 1.2rem !important;
+        color: black;
+        padding: 17px;
+        font-weight: 800 !important;
+    }
+    .card.giunta{
+        box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
+    }
+ 
+    .entry-title{
+        background: lightgray;
+        padding:1%;
+        display:block!important;
+        font-size:1.5rem!important;
+    }

@@ -1,0 +1,18 @@
+        .small, small {
+            font-size: 80% !important;
+            font-weight: 800;
+        }
+        .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-top:5px!important;
+    margin-bottom:5px!important;
+    margin-right:0px!important;
+    margin-left:0px!important;
+}
+
+.entry-title{
+            background: lightgray;
+            padding:1%;
+            display:block!important;
+            font-size:1.5rem!important;
+        }

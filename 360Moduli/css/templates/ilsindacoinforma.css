@@ -1,0 +1,20 @@
+h3.archiviosindaco{
+	font-size: 1.5rem!important;
+	}
+	#selectElement{
+	font-size: 1.1rem!important;
+    letter-spacing: .005em!important;}
+	
+	#selectElement > option{
+	font-size: 1.1rem!important;
+    letter-spacing: .005em!important;}
+	
+	#invia{
+	font-size: 0.955rem!important;
+    letter-spacing: .005em!important;
+	background:#420101;
+	color:white;
+	text-transform:uppercase;
+	margin-left:0px;
+	border-radius: 0px;
+	}

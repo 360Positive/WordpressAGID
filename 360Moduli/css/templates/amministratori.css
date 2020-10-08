@@ -1,0 +1,19 @@
+		h4.amministrazione{
+		font-size:1.25rem!important;
+		background:light-gray!important;
+		padding:2%!important;
+		}
+.toolbar {
+            float: left;
+            width: min-content;
+        }
+
+        .nominativo {
+            font-size: 2em !important;
+        }
+
+        tr.group,
+        tr.group:hover {
+            text-transform: uppercase !important;
+            background-color: #ddd !important;
+        }

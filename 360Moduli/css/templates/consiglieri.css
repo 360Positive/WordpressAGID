@@ -1,0 +1,41 @@
+section.topimage {
+
+        min-height: 350px;
+        background-position: center!important;
+        background-size: cover!important;
+        padding-bottom: 0% !important;
+        margin-top: -25px;
+        margin-bottom: 0px;
+    }
+
+    .over {
+        padding: 2%;
+    }
+
+    #sidebar:after {
+        display: none;
+    }
+
+    .breadcrumb {
+        margin-top: 0px;
+    }
+
+    h2.consiglio {
+        font-size: 1.2rem !important;
+        color: black;
+        padding: 17px;
+        font-weight: 800 !important;
+    }
+
+    .entry-title{
+        background: lightgray;
+        padding:1%;
+        display:block!important;
+        font-size:1.5rem!important;
+    }
+    .intestazione{
+        background: lightgray;
+        padding:1%;
+        display:block!important;
+        font-size:1.5rem!important;
+    }

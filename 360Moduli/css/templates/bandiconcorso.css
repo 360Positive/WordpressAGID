@@ -1,0 +1,25 @@
+a > h2.bandi{
+	
+	color:black!important;	
+	font-size: 1.2rem!important;	
+	padding: 17px;	
+	font-weight: 800!important;
+	
+}
+
+
+
+.tipo{	
+	color:red;	
+	text-transform: uppercase!important;	
+	font-weight:700;
+}
+
+.label{
+	font-weight:700;	
+}
+
+.titolo{	
+	font-size:1.5rem!important;
+	
+}

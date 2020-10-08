@@ -1,0 +1,126 @@
+ .row.rowBack {
+        background: #eeeeee;
+    }
+
+    .col-12.leftSlide, .col-12.rightSlide {
+        min-height: 400px !important;
+    }
+
+    .immagine {
+        min-height: 300px;
+    }
+
+    .leftSlide {
+        min-height: fit-content;
+        padding: 50px;
+
+    }
+
+    p.slidecontent {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .leftSlide {
+        background: #eeeeee;
+
+    }
+
+    .rightSlide > img {
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+
+    }
+
+    .rightSlide {
+        background: white;
+    }
+
+
+    @media only screen and (max-width: 800px) {
+        .col-12.leftSlide, .col-12.rightSlide {
+            min-height: 300px;
+        }
+
+        .immagine {
+            min-height: auto !important;
+        }
+    }
+
+    .carousel-indicators a {
+        border: 3px solid #8e001c;
+        border-radius: 100%;
+
+        height: 1em;
+        margin: .4em;
+        width: 1em;
+    }
+
+    .carousel-indicators a.active {
+        border: 3px solid #8e001c;
+        border-radius: 100%;
+        background: #8e001c;
+        height: 1em;
+        margin: .4em;
+        width: 1em;
+    }
+
+    span[class^="icofont-"] {
+        color: #8e001c;
+        height: 1em;
+        margin: .4em;
+        width: 1em;
+    }
+
+    .vl {
+        border-left: 2px solid grey;
+    }
+
+    .carousel-indicators {
+        justify-content: center;
+       
+    }
+
+    h1.titleslider {
+        font-size: 1.5rem !important;
+    }
+    a.btn.btn-block.btn-outline,
+    a.btn.btn-block.btn-outline:hover {
+        color: #a97701!important;
+        border: #ffb401 1px solid;
+    }
+	
+	
+		.header-accordion {
+		background: red;
+		padding: 3%;
+        }
+		
+        .small, small {
+		font-size: 80% !important;
+		font-weight: 800;
+        }
+		
+        a.navigation.btn.btn-block {
+		background: #ffb421 !important;
+		white-space: normal;
+		
+        }
+		
+        #sidenavigation {
+		background: lightgray !important;
+		padding: 1% !important;
+		width: 100% !important;
+        }
+		
+        .evidenza {
+		background: #ffb421;
+		padding: 1%;
+        }
+        
+        strong.leggi{
+            
+            font-size:1.5rem!important;
+            font-weight:600;
+        }

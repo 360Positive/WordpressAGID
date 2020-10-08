@@ -1,0 +1,83 @@
+section.topimage{
+	margin-top:0px!important;
+}
+    #back-to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        z-index: 9999;
+        width: 3em;
+        height: 3em;
+        text-align: center;
+        line-height: 3em;
+
+        background: #ffb401;
+        color: #444;
+        cursor: pointer;
+        border: 0;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: opacity 0.2s ease-out;
+        opacity: 0;
+
+    }
+
+    #back-to-top:hover {
+        background: #e9ebec;
+    }
+
+    #back-to-top.show {
+        opacity: 1;
+    }
+
+    #back-to-top > i {
+        font-size: 1.25em !important;
+    }
+
+
+/*Stile pagina*/
+
+    .it-footer-main {
+        color: white !important;
+        background: #30373d !important;
+    }
+
+
+    .haswithe {
+    }
+
+    .it-footer-main .it-brand-wrapper {
+        padding-top: 30px;
+    }
+
+    h2.footer {
+        font-size: 1.5rem !important;
+        letter-spacing: .007em !important;
+        padding-bottom: 0.8rem !important;
+        padding-top: 20px;
+
+    }
+
+
+    li.sportelli > small.text-muted {
+        display: none;
+    }
+
+    li.sportelli:hover > small.text-muted {
+        display: block;
+    }
+
+    i[class^="icofont-"].social.footer {
+        display: inline-block;
+        border-radius: 60px;
+        padding: 0.4em;
+        background: white;
+        color: #420101 !important;
+        float: none;
+        margin-right: 10px;
+}
+
+h2.footer{
+    border-bottom: 1px lightgrey solid;
+    margin-bottom:10px!important;
+}

@@ -1,0 +1,32 @@
+h1.sititematici {
+    font-size: 2rem !important;
+    padding: 15px;
+    font-weight: 700 !important;
+}
+
+.card.siti {
+    box-shadow: 1px 1px 5px 0px rgba(156, 156, 156, 1);
+    display: block !important;
+    width: auto !important;
+    height: fit-content;
+}
+
+a > h2.sititematici {
+    font-size: 1.2rem !important;
+
+    padding: 17px;
+    font-weight: 800 !important;
+}
+
+div.sito {
+    background: light-gray !important;
+}
+h1.sititematici {
+    font-size: 2rem!important;
+    padding: 15px;
+    font-weight: 700!important;
+    color:black;
+}
+
+
+

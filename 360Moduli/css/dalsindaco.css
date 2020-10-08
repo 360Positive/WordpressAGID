@@ -1,0 +1,16 @@
+.sindaco{
+	background:#EEEEEE;
+	padding:0.5%;
+	
+	}
+	
+	
+	div.introsindaco span {
+    font-size: 1.2rem!important;
+    text-transform: uppercase;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+	color:#420101!important;
+	font-weight:600!important;
+	}

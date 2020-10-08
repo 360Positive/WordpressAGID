@@ -1,0 +1,39 @@
+:root {
+    --colorbak: #959da6
+}
+
+section.topimage {
+
+    min-height: 350px;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 0% !important;
+    margin-top: -25px;
+    margin-bottom: 0px;
+}
+
+#sidebar:after {
+    display: none;
+}
+
+.moreact {
+    background: yellow;
+    padding: 1%;
+}
+
+.breadcrumb {
+    margin-top: 0px;
+}
+
+.icofont- * {
+    font-size: 2em !important;
+}
+
+.intestazione {
+    background: lightgray;
+    padding: 1%;
+    display: block !important;
+    font-size: 1.5rem !important;
+}
+/* Specifio per template*/
+

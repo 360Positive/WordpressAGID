@@ -1,0 +1,18 @@
+ ul, ul li{
+            
+        }
+        
+        widget-area li, .widget li {
+   list-style: none;
+   border-bottom: solid 17px #fff;
+   padding: 16px 15px 15px 5px;
+   background: #ffb421;
+   margin-left: -12px;
+   margin-right: 5%;
+}
+ul, ul li {
+    padding-left: 0;
+    list-style: none;
+    list-style-position: outside;
+
+} 

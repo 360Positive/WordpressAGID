@@ -1,0 +1,50 @@
+:root{
+    --redColor:#C70039;
+    --fontWeight:700;
+    --font-size-bandi:1.2rem;
+}
+div.container-fluid.bandi{
+    background:#eeeeee;
+    padding-bottom:2%;
+    padding-top:2%;
+}
+
+h1.bandi{
+    font-size: var(--font-size-bandi)!important;
+    color: black;
+    padding: 15px;
+    font-weight: 700!important;
+}
+
+div.col-md-3>div.servizi{
+    border-radius:3px;
+    background:white;
+    padding:3%;
+    margin:10px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
+    box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
+}
+
+a > h2.bandi{
+    color:black!important;
+    font-size: 1.2rem!important;
+    padding: 17px;
+    font-weight: 800!important;
+}
+
+
+.tipo{
+    color:var(--redColor)!important;
+    font-weight:var(--fontWeight);
+    text-transform: capitalize;
+}
+
+.sezione {
+    font-weight:var(--fontWeight);
+    text-transform: uppercase;
+}
+
+.titolo{
+    font-size:var(--font-size-bandi)!important;
+    }

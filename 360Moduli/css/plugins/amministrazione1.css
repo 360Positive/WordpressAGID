@@ -1,0 +1,21 @@
+/*AMMINISTRAZIONE TRASPARENTE*/
+.at-tableclass {
+width:49%!important;float:left!important; 
+padding:0px 0px 0px 5px!important;
+position:relative!important;
+min-width: 200px!important;}
+
+#at-s-23 { width:98%!important;float:left!important; }'!important;
+
+.at-tableclass h3 a { text-decoration:none!important; cursor: default!important; }
+.at-tableclass h3 {  border: 1px solid #eee!important; padding: 8px 10px!important; background: #FBFBFB!important; }
+.at-tableclass ul li a { text-decoration: none!important; }
+.at-number { float: right!important;
+	border-radius: 20px!important;
+	background-color: white!important;
+	height: 20px!important;
+		/*width: 20px!important;*/
+	border: 1px solid #eee!important;
+	text-align: center!important;
+	font-size: 0.8em!important;
+font-weight: bold!important; }

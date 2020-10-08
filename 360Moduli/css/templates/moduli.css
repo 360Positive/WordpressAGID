@@ -1,0 +1,78 @@
+section.topimage {
+	
+	min-height: 350px!important;
+	background-position: center!important;
+	
+	background-size: cover!important;
+	
+	padding-bottom: 0% !important;
+	
+	margin-top: -25px;
+	
+	margin-bottom: 0px;
+	
+}
+
+
+
+.over {
+	
+	padding: 2%;
+	
+}
+
+
+
+#sidebar:after {
+	
+	display: none;
+	
+}
+
+
+
+.moreact {
+	
+	background: yellow;
+	
+	padding: 1%;
+	
+}
+
+
+
+.breadcrumb {
+	
+	margin-top: 0px;
+	
+}
+
+
+
+.icofont- * {
+	
+	font-size: 2em !important;
+	
+}
+
+
+
+.entry-title {
+	
+	background: lightgray;
+	
+	padding: 1%;
+	
+	display: block !important;
+	
+	font-size: 1.5rem !important;
+	
+}
+
+
+.buttonfloat{
+            background: #ffb402;
+            padding: 2%;
+            cursor: pointer;
+            
+            }

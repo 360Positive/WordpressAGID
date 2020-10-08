@@ -1,0 +1,11 @@
+.entry-title{
+	background: lightgray;
+	padding:1%;
+	display:block!important;
+	font-size:1.5rem!important;
+}
+
+.btn:not(:disabled):not(.disabled) {
+	cursor: pointer;
+	margin:0px;
+}

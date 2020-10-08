@@ -1,0 +1,12 @@
+h2.entry-title {
+	background: lightgray;
+	padding:1%;
+	display:block!important;
+	font-size:1.5rem!important;
+}
+h1.entry-title {
+	background: lightgray!important;
+	padding:1%!important;
+	display:block!important;
+	font-size:1.5rem!important;
+}

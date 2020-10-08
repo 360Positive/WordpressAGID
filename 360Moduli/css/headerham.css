@@ -1,0 +1,282 @@
+a.social {
+display: inline-block;
+border-radius: 60px!important;
+padding: 0.4em!important;
+background: white!important;
+color: #420101 !important;
+margin-right: 5px;
+}
+			
+			i[class^="icofont-"].social:hover {
+			background: #e09d34 !important;
+			}
+			
+			li[class^="icofont-"] > a {
+			padding-left: 1%;
+			
+			}
+
+
+
+li.primaryham1 > a{
+    background: rgba(164,179,87,0);
+background: -moz-linear-gradient(left, rgba(164,179,87,0) 0%, rgba(164,179,87,0.57) 57%, rgba(117,137,12,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,0)), color-stop(57%, rgba(164,179,87,0.57)), color-stop(100%, rgba(117,137,12,1)));
+background: -webkit-linear-gradient(left, rgba(164,179,87,0) 0%, rgba(164,179,87,0.57) 57%, rgba(117,137,12,1) 100%);
+background: -o-linear-gradient(left, rgba(164,179,87,0) 0%, rgba(164,179,87,0.57) 57%, rgba(117,137,12,1) 100%);
+background: -ms-linear-gradient(left, rgba(164,179,87,0) 0%, rgba(164,179,87,0.57) 57%, rgba(117,137,12,1) 100%);
+background: linear-gradient(to right, rgba(164,179,87,0) 0%, rgba(164,179,87,0.57) 57%, rgba(117,137,12,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 );
+color:black;
+text-decoration: none;
+}
+
+li.primaryham1 > a:hover{
+    background:#75890c;
+    color:black;
+    text-decoration: none;
+}
+
+
+li.primaryham2 > a{
+    background: rgba(212,228,239,0);
+background: -moz-linear-gradient(left, rgba(212,228,239,0) 0%, rgba(134,174,204,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,0)), color-stop(100%, rgba(134,174,204,1)));
+background: -webkit-linear-gradient(left, rgba(212,228,239,0) 0%, rgba(134,174,204,1) 100%);
+background: -o-linear-gradient(left, rgba(212,228,239,0) 0%, rgba(134,174,204,1) 100%);
+background: -ms-linear-gradient(left, rgba(212,228,239,0) 0%, rgba(134,174,204,1) 100%);
+background: linear-gradient(to right, rgba(212,228,239,0) 0%, rgba(134,174,204,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+color:black;
+text-decoration: none;
+}
+li.primaryham2 > a:hover{
+    background: #86aecc;
+    color:black;
+    text-decoration: none;
+}
+
+li.primaryham3 > a{
+    background: rgba(242,246,248,0);
+background: -moz-linear-gradient(left, rgba(242,246,248,0) 0%, rgba(216,225,231,0.5) 50%, rgba(181,198,208,0.51) 51%, rgba(224,239,249,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,246,248,0)), color-stop(50%, rgba(216,225,231,0.5)), color-stop(51%, rgba(181,198,208,0.51)), color-stop(100%, rgba(224,239,249,1)));
+background: -webkit-linear-gradient(left, rgba(242,246,248,0) 0%, rgba(216,225,231,0.5) 50%, rgba(181,198,208,0.51) 51%, rgba(224,239,249,1) 100%);
+background: -o-linear-gradient(left, rgba(242,246,248,0) 0%, rgba(216,225,231,0.5) 50%, rgba(181,198,208,0.51) 51%, rgba(224,239,249,1) 100%);
+background: -ms-linear-gradient(left, rgba(242,246,248,0) 0%, rgba(216,225,231,0.5) 50%, rgba(181,198,208,0.51) 51%, rgba(224,239,249,1) 100%);
+background: linear-gradient(to right, rgba(242,246,248,0) 0%, rgba(216,225,231,0.5) 50%, rgba(181,198,208,0.51) 51%, rgba(224,239,249,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=1 );
+text-decoration: none;
+color:black;
+}
+
+li.primaryham3 > a:hover{
+    background: #e0eff9;
+text-decoration: none;
+color:black;
+}
+
+li.primaryham > a:hover{
+  background:#420101;
+  color:white;
+  text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 992px){
+    .searchform-header {
+        display: block;
+    }
+    
+}
+
+.vcenter {
+    display: block;
+    vertical-align: middle;
+    float: none;
+}
+
+.hamburger-menu{
+    background:#420101;
+    color:white;
+
+    cursor: pointer;
+    padding-bottom: 1.4rem;
+    padding-top: 1.4rem;
+}
+
+.hamburger-menu > span#ham-search > i, .hamburger-menu > span#ham-mobile > i{
+    font-size:5 rem!important;
+    cursor: pointer;
+    padding-bottom: 1.4rem;
+    padding-top: 1.4rem;
+}
+
+.isactiveHeader{
+    -moz-animation-delay: 3.5s;
+   -webkit-animation-delay: 3.5s;
+   -o-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+    transition: all 2s linear;
+}
+
+
+
+
+/*MENU DI NAVIGAZIONE LATERALE*/
+
+/* The Modal (background) */
+.modal {
+  display: inline; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  max-width:100%;
+  transition: width 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.sidebarheader{
+    background:#420101;
+}
+.sidebarmain{
+    background:white;
+}
+.sidebarfooter{
+    padding:8px;
+    background:lightgray;
+}
+.sidebardivider{
+    color: #868080;
+    font-size: 1.5em!important;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+i.closebtn{
+    font-size:2rem;
+    color:white;
+    text-align:right;
+    cursor:pointer;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color:#420101;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  transition-timing-function: ease-in-out;}
+  
+.sidebarmain > ul{
+  list-style:none!important;
+}
+
+
+
+/* Style the sidenav links and the dropdown button */
+.sidenav > a, .dropdown-btn {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  border-bottom:1px solid #420101;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #420101;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+/*.active {*/
+/*  background-color: green;*/
+/*  color: white;*/
+/*}*/
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: white;
+
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+
+.sidebarmain ul.sub-menu > li{
+    font-size:1.2em;
+    padding:5px 0px 5px 0px;
+    list-style: none!important;
+
+}
+.sidebrmain a:hover ul.sub-menu > li{
+    display:inline;
+}
+.section-btn{
+    font-size:1.05rem;
+    padding:3px;
+    color:#C70039;
+    text-decoration: none!important;
+}
+
+.divider{
+    margin:0px;
+}
+
+.sidebarmain ul.sub-menu > li[id^=menu-item].divider > ul > li{
+    border-bottom:1px solid grey;
+    font-size:1.1rem;
+    padding-left:10px;
+    border-bottom: 1px solid grey;
+}
+.sidebarmain ul.sub-menu > li[id^=menu-item].divider > ul.sub-menu > li[id^=menu-item]{
+  
+    background:lightgrey;
+    color:black;
+}
+
+img#logotablet {
+max-width:300px;
+    
+}
+
+a.mega-menu-link{
+    font-size:1.25rem!important;
+}
+
+li[id*='menu-item']{
+    list-style:none;
+    
+}
+ul.sub-menu.dropdown-container{
+    padding:3%!important;
+}

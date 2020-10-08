@@ -1,0 +1,40 @@
+a > h2.bandi{
+	color:black!important;
+	font-size: 1.2rem!important;
+	padding: 17px;
+	font-weight: 800!important;
+}
+
+span.tipo{
+	color:red;
+	text-transform: capitalize;
+	font-size:1rem!important;
+}
+
+span.label{
+	font-weight:700;
+	font-size:1rem!important;
+}
+
+span.titolo{
+	font-size:1.5rem!important;
+}
+
+.intestazione {
+	background: lightgray;
+	padding: 1%;
+	display: block !important;
+	font-size: 1.5rem !important;
+}
+
+.contenuto > p{
+letter-spacing:normal!important;
+line-height: 2em!important;
+}
+p{
+	margin:0px;
+}
+div.contenuto ul {
+     padding-left: 1em!important; 
+}
+

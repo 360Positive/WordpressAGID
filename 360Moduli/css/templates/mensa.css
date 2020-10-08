@@ -1,0 +1,51 @@
+h1.intestazione {
+	padding: 2%;
+	font-size: 1.5em !important;
+	background: #ffb401;
+}
+h2.intestazione {
+	padding: 2%;
+	font-size: 1.5em !important;
+	background: #ffb401;
+}
+
+h3.gruppo {
+	font-size: .9em !important;
+	text-transform: uppercase;
+}
+
+div.titolo {
+	font-size: 1em !important;
+	word-wrap: break-word !important;
+	line-break: normal !important;
+}
+
+div.prodotto {
+	background: lightgray;
+	border-color: darkgrey;
+	
+}
+
+.latticini {
+	background: lightgoldenrodyellow !important;
+}
+
+.carne {
+	background: #FF9F9F !important;
+}
+
+.cereali {
+	background: #D2B06A !important;
+}
+
+.pesce {
+	background: #71B2CF !important;
+}
+
+.vegetali_e_frutta {
+	background: #82C168 !important;
+}
+
+.btn:not(:disabled):not(.disabled) {
+	margin-left:0px;
+}

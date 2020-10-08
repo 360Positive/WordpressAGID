@@ -1,0 +1,37 @@
+/**
+ * Sistema di allertamento per la gestione della messaggistica
+ * Deve essere impostato nel file l'id della categoria al quale associare i post
+ */
+
+ 
+ div.rosso{
+        background:#ff704d!important;
+        
+
+    }
+div.arancio{
+        background:#ffb300!important;
+     
+
+    }
+div.giallo{
+        background:#F1C40F!important;
+
+
+    }
+div.verde{
+        background:#81bf5e!important;
+
+
+    }
+    h1.alert-heading, h1.alert-heading>i{
+        font-size:1.5rem!important;
+
+    }
+    .fullpge{
+     width:100%!important;   
+    }
+    .alert{
+        padding:3%!important;
+        /*text-align:justify;*/
+    }

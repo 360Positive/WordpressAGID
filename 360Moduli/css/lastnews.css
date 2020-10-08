@@ -1,0 +1,87 @@
+div.rosso {
+        background: #ff704d;
+        padding: 1%;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+
+    div.arancio {
+        background: #ff8533;
+        padding: 1%;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+
+    div.giallo {
+        background: #ffdb4d;
+        padding: 1%;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+
+    h1.alert-heading, h1.alert-heading > i {
+        font-size: 1.5rem !important;
+    }
+
+    .fullpge {
+        width: 100% !important;
+    }
+
+    .container-fluid.lastnews {
+        background: white !important;
+    }
+
+    .lastnews > a {
+        font-size: 13px !important;
+        font-weight: bold;
+        color: #420101
+    }
+
+    h1.lastnews {
+        font-size: 2rem !important;
+        color: black;
+        padding: 15px;
+        font-weight: 700 !important;
+    }
+
+    div.container-fluid.lastnews {
+        background: #30373d !important;
+
+    }
+
+    .card-body.lastnews {
+        background: #ffb401;
+        pading: 1%;
+    }
+
+    .card-body {
+        margin-bottom: 0px !important;
+        line-height: 95%;
+        padding-bottom: 0px!important;
+    }
+    div.card:after{
+        display: none!important;
+    }
+    span.date-card > a{
+        font-size: 0.8rem!important;
+    }
+    span.categroy-card > a{
+        color: #420401;
+        font-weight: 600;
+        font-size:1.2rem;
+    }
+
+    a > h2.lastnews {
+        font-size: 1.2rem !important;
+        color: black;
+        padding: 17px;
+        font-weight: 800 !important;
+    }
+    .card.lastnews{
+        box-shadow: 1px 1px 5px 0px rgba(156,156,156,1);
+        }
+
+    h5.card-title.align-middle {
+        margin-top: 2%;
+        margin-bottom: 0%;
+    }

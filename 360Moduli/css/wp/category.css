@@ -1,0 +1,7 @@
+ body.archive article, body.search article {
+        border-bottom: 0px;
+        padding: 2% 0;}
+        
+ div.entry-title{
+            background:lightgray;
+        }

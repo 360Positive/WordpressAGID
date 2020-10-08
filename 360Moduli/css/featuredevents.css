@@ -1,0 +1,39 @@
+ h1.events {
+    font-size: 2rem!important;
+    color: white;
+    padding: 15px;
+    font-weight: 700!important;
+    }
+    
+	.card{
+	border:0px!important;
+	}
+	
+	.events.card-body > p{
+	line-height: 1.55em;
+	color:#5a6772!important;
+	font-size: 18px!important;
+	}
+	
+	.events.card-header{
+	background:#ffb401;}
+	
+	.events.card-header > h3,span{
+	font-size: 0.9rem!important;
+	}
+	
+	.events.card-header > h3{
+	font-weight:bold;
+	}
+	
+	.events.card-title > h3 > a{
+	font-weight:bold;
+	font-size: 1.3rem!important;
+	}
+	
+a > h2.events {
+        font-size: 1.2rem !important;
+        color: white;
+        padding: 17px;
+        font-weight: 800 !important;
+    }
