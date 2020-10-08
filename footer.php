@@ -76,13 +76,13 @@ include 'configuration/layout.php';
                 <?php if ($footer_social[active]): ?>
                     <div class="col-sm-2">
                         <h2 class="footer">Seguici su</h2>
-                        <hr>
+
                         <?php
-                        foreach ($footer_social as $sx => $social):
+                        foreach ($footer_social as $sx=>$social):
                             if ($social[active]): ?>
-                                <i class="icofont-<?= $social[name] ?> social">
+                                <em class="icofont-<?= $social[name] ?> social text-capitalize">
                                     <a href="<?= $social[link] ?>"><?= $social[name] ?></a>
-                                </i>
+                                </em>
                             <?php
                             endif;
                         endforeach;
@@ -137,13 +137,12 @@ include 'configuration/layout.php';
 
                     <?php if (!empty($footer_accessibilita)): ?>
                         <a title="<?= _('Apre la pagina interna Accessibilità') ?>"
-                           href="<?= get_site_url() . $footer_accessibilita ?>"><?= _('Accessibilità') ?> </a>
+                           href="<?= get_site_url().$footer_accessibilita ?>"><?= _('Accessibilità') ?> </a>
                     <?php endif ?>
 
                     <?php if (!empty($footer_privacy)): ?>
-                        <a title=" <?= _('Apre la pagina sul sito esterno della Privacy e dei cookie') ?>"
-                           target="_blank"
-                           href="<?= get_site_url() . $footer_privacy ?>"><?= _('Privacy e cookie') ?> </a>
+                        <a title=" <?= _('Apre la pagina sul sito esterno della Privacy e dei cookie') ?>" target="_blank"
+                           href="<?= get_site_url().$footer_privacy ?>"><?= _('Privacy e cookie') ?> </a>
                     <?php endif ?>
 
                     <?php
@@ -152,10 +151,10 @@ include 'configuration/layout.php';
 
                     <?php if (!empty($footer_socialmedia)): ?>
                         <a title=" <?= _('Apre la pagina interna Social media policy') ?>" target="_blank"
-                           href="<?= get_site_url() . $footer_socialmedia ?>"><?= _('Social media policy') ?> </a>
+                           href="<?= get_site_url().$footer_socialmedia ?>"><?= _('Social media policy') ?> </a>
                     <?php endif ?>
 
-                    <span><?= $footer_partitaiva ?></span>
+                    <span><?=$footer_partitaiva?></span>
                     <br>
                     <?php echo sprintf(__('%1$s %2$s %3$s', 'wppa'), '&copy;', date('Y'), esc_html(get_bloginfo('name'))); ?>
                     - Sviluppato da <a href="https://360positive.it"><strong>360 Positive</strong></a>
